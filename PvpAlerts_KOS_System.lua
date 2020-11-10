@@ -212,7 +212,7 @@ function PVP:Who(name, contains)
 		return
 	end
 	
-	if KOSIndex ~= nil then    --single player account information returned
+	if KOSIndex ~= nil then	   --single player account information returned
 		local currentCP = ""
 		local accName = PVP.SV.playersDB[foundPlayerNames[1]].unitAccName
 		if self.SV.CP[accName] then currentCP = ' with '..PVP:Colorize(self.SV.CP[accName]..'cp', 'FFFFFF')..',' end

@@ -3,7 +3,7 @@
 local PVP = PVP_Alerts_Main_Table
 
 PVP.version=1.01
-PVP.textVersion="3.73"
+PVP.textVersion="3.74"
 PVP.name = "PvpAlerts"
 
 -- // initialization of global variables for this file //
@@ -41,7 +41,7 @@ function PVP:RemoveDuplicateNames() -- // a clean-up function for various arrays
 		PVP.totalPlayers[id]=nil
 	end
 	
-	if next(PVP.idToName)~=nil then
+	if PVP.idToName and next(PVP.idToName)~=nil then
 		local foundNames={}
 		for k,v in pairs (PVP.idToName) do
 			if not foundNames[v] then foundNames[v]= k
@@ -286,7 +286,7 @@ function PVP_test_SV()
 				accountsDB[v.unitAccName] = {}
 				accountsDB[v.unitAccName].CP = PVP.SV.CP[v.unitAccName]
 				accountsDB[v.unitAccName].players = {}
-				accountsDB[v.unitAccName].players.k = v 				
+				accountsDB[v.unitAccName].players.k = v					
 				
 				accountCountWithCP = accountCountWithCP + 1 
 				playerCountWithCP = playerCountWithCP + 1 
@@ -414,7 +414,7 @@ function PVP:CountTotal(currentTime)
 			self.totalPlayers[k]=nil 
 			self.playerSpec[self.idToName[k]]=nil
 			self.miscAbilities[self.idToName[k]]=nil
-			self.playerAlliance[k]=nil 			
+			self.playerAlliance[k]=nil			
 			self.idToName[k]=nil 
 		end
 	end
@@ -637,16 +637,16 @@ local SIDE_TO_TOOLTIP_SIDE =
 		[RIGHT] = LEFT,
 	}
     if side == nil then
-        InitializeTooltip(PVP_Tooltip)
-        ZO_Tooltips_SetupDynamicTooltipAnchors(PVP_Tooltip, control)
+	InitializeTooltip(PVP_Tooltip)
+	ZO_Tooltips_SetupDynamicTooltipAnchors(PVP_Tooltip, control)
     else
-        InitializeTooltip(PVP_Tooltip, control, SIDE_TO_TOOLTIP_SIDE[side], OFFSETS_X[side], OFFSETS_Y[side])
+	InitializeTooltip(PVP_Tooltip, control, SIDE_TO_TOOLTIP_SIDE[side], OFFSETS_X[side], OFFSETS_Y[side])
     end
 	PVP_Tooltip:SetDimensionConstraints(0,0,maxLength,0)
 
 	PVP_Tooltip:SetFont("ZoFontWinH5")
     for i = 1, select("#", ...) do
-        local line = select(i, ...)
+	local line = select(i, ...)
 		if isCounter then
 			PVP_Tooltip:AddLine(line, "", 1,1,1, LEFT, MODIFY_TEXT_TYPE_NONE, TEXT_ALIGN_LEFT, true)
 		else
@@ -709,7 +709,7 @@ function PVP:OnControlState(eventCode, keepId, objectiveId, battlegroundContext,
 
 end
 
-function PVP:OnCaptureStatus(eventCode, keepId,  objectiveId,  battlegroundContext,  capturePoolValue,  capturePoolMax,  capturingPlayers,  contestingPlayers,  owningAlliance)
+function PVP:OnCaptureStatus(eventCode, keepId,	 objectiveId,  battlegroundContext,  capturePoolValue,	capturePoolMax,	 capturingPlayers,  contestingPlayers,	owningAlliance)
 	if self.SV.unlocked or not self.SV.showCaptureFrame or not self:IsValidBattlegroundContext(battlegroundContext) or not keepId or keepId == 0 then return end
 	local zoneName=GetPlayerLocationName()
 	if not zoneName or zoneName == "" then return end
@@ -740,7 +740,7 @@ function PVP:OnEffect(eventCode, changeType, effectSlot, effectName, unitTag, be
 	
 	-- d(self.currentlyDead)
 	
-	if unitName=="" or self.currentlyDead[unitId] or self.IsCurrentlyDead(unitName) then return end
+	if unitName=="" or not self.currentlyDead or self.currentlyDead[unitId] or self.IsCurrentlyDead(unitName) then return end
 	
 	local currentTime=GetFrameTimeMilliseconds()
 		
@@ -1569,7 +1569,7 @@ end
 function PVP_SetupHighlightAnimation(control)
 	local function SetAnimData(control)
 		control.animData = ZO_AlphaAnimation:New(control) 
-		control.animData:SetMinMaxAlpha(0, 1) 	
+		control.animData:SetMinMaxAlpha(0, 1)	
 	end
 	
 	local glowLeft = control:GetNamedChild('AbilityIconFrameLeft'):GetNamedChild('Glow')
@@ -1681,41 +1681,41 @@ function PVP:StartAnimation(control, animationType, targetParameter)
     local timeline = ANIMATION_MANAGER:CreateTimeline()
 
 	if animationType=='main stealthed' then
-		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 100, 	0, 						ZO_EaseOutQuadratic,	0,				1)
-		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 100,   0, 						ZO_EaseOutQuadratic,	1, 				1.5, 	PVP_SET_SCALE_FROM_SV)
-		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 100, 	100, 					ZO_EaseInQuadratic,		1.5,   			1, 		PVP_SET_SCALE_FROM_SV)
-		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 250, 	PVP_FRAME_DISPLAY_TIME, ZO_EaseInQuintic, 		1,   			0, 		PVP_SET_SCALE_FROM_SV)
+		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 100,	0,						ZO_EaseOutQuadratic,	0,				1)
+		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 100,   0,						ZO_EaseOutQuadratic,	1,				1.5,	PVP_SET_SCALE_FROM_SV)
+		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 100,	100,					ZO_EaseInQuadratic,		1.5,			1,		PVP_SET_SCALE_FROM_SV)
+		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 250,	PVP_FRAME_DISPLAY_TIME, ZO_EaseInQuintic,		1,			0,		PVP_SET_SCALE_FROM_SV)
 	elseif animationType=='main piercing' then
-		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 50, 	0, 						ZO_EaseOutQuadratic, 	0, 				1)
-		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 100,   0, 						ZO_EaseOutQuadratic,   	1, 				1.2, 	PVP_SET_SCALE_FROM_SV)
-		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 250, 	350, 					ZO_EaseInQuadratic, 	1.2,   			1, 		PVP_SET_SCALE_FROM_SV)
+		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 50,	0,						ZO_EaseOutQuadratic,	0,				1)
+		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 100,   0,						ZO_EaseOutQuadratic,	1,				1.2,	PVP_SET_SCALE_FROM_SV)
+		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 250,	350,					ZO_EaseInQuadratic,	1.2,			1,		PVP_SET_SCALE_FROM_SV)
 		local currentAlpha=control:GetAlpha()
-		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 150,	1600, 					ZO_EaseOutQuadratic,  	currentAlpha,   0)
+		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 150,	1600,					ZO_EaseOutQuadratic,	currentAlpha,	0)
 	elseif animationType=='medal' then
-		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 250, 	0, 						ZO_EaseInQuadratic, 	0, 				1)
-		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 1000, 	2000, 					ZO_EaseOutQuadratic,  	1,   			0)
+		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 250,	0,						ZO_EaseInQuadratic,	0,				1)
+		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 1000,	2000,					ZO_EaseOutQuadratic,	1,			0)
 	elseif animationType=='main important' then
-		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 100, 	0, 						ZO_EaseOutQuadratic, 	0, 				1)
-		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 100,   0, 						ZO_EaseOutQuadratic,   	1, 				1.75, 	PVP_SET_SCALE_FROM_SV)
-		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 100, 	200, 					ZO_EaseInQuadratic, 	1.75,   		1, 		PVP_SET_SCALE_FROM_SV)
-		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 250, 	500, 					ZO_EaseInQuadratic, 	1,   			0, 		PVP_SET_SCALE_FROM_SV)
+		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 100,	0,						ZO_EaseOutQuadratic,	0,				1)
+		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 100,   0,						ZO_EaseOutQuadratic,	1,				1.75,	PVP_SET_SCALE_FROM_SV)
+		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 100,	200,					ZO_EaseInQuadratic,	1.75,			1,		PVP_SET_SCALE_FROM_SV)
+		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 250,	500,					ZO_EaseInQuadratic,	1,			0,		PVP_SET_SCALE_FROM_SV)
 	elseif animationType == 'camp' then
-		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 100, 	0, 						ZO_EaseOutQuadratic, 	0, 				1)
-		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 300,   0, 						ZO_EaseOutQuadratic,   	1, 				1.6, 	PVP_SET_SCALE_FROM_SV)
-		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 300, 	400, 					ZO_EaseInQuadratic, 	1.6,   			1, 		PVP_SET_SCALE_FROM_SV)
+		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 100,	0,						ZO_EaseOutQuadratic,	0,				1)
+		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 300,   0,						ZO_EaseOutQuadratic,	1,				1.6,	PVP_SET_SCALE_FROM_SV)
+		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 300,	400,					ZO_EaseInQuadratic,	1.6,			1,		PVP_SET_SCALE_FROM_SV)
 	elseif animationType == 'attackerFrame' then
-		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 100, 	0, 						ZO_EaseOutQuadratic, 	0, 				targetParameter)
-		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 200,   0, 						ZO_EaseOutQuadratic,   	self.SV.newAttackerFrameScale, 				self.SV.newAttackerFrameScale*1.6, 	PVP_SET_SCALE_FROM_SV)
-		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 200, 	250, 					ZO_EaseInQuadratic, 	self.SV.newAttackerFrameScale*1.6,   			self.SV.newAttackerFrameScale, 		PVP_SET_SCALE_FROM_SV)
-		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 1500, 	self.SV.newAttackerFrameDelayBeforeFadeout, 					ZO_EaseOutQuadratic, 	targetParameter, 0)
+		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 100,	0,						ZO_EaseOutQuadratic,	0,				targetParameter)
+		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 200,   0,						ZO_EaseOutQuadratic,	self.SV.newAttackerFrameScale,				self.SV.newAttackerFrameScale*1.6,	PVP_SET_SCALE_FROM_SV)
+		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 200,	250,					ZO_EaseInQuadratic,	self.SV.newAttackerFrameScale*1.6,			self.SV.newAttackerFrameScale,		PVP_SET_SCALE_FROM_SV)
+		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 1500,	self.SV.newAttackerFrameDelayBeforeFadeout,					ZO_EaseOutQuadratic,	targetParameter, 0)
 	elseif animationType == 'fadeOut' then
 		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, self.SV.targetNameFrameFadeoutTime, self.SV.targetNameFrameDelayBeforeFadeout, ZO_EaseOutQuadratic, control:GetAlpha(), 0)
 	else
-		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 50, 	0, 						ZO_EaseOutQuadratic, 	0, 				1)
-		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 150,   0, 						ZO_EaseOutQuadratic,   	1, 				1.4, 	PVP_SET_SCALE_FROM_SV)
-		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 250, 	250, 					ZO_EaseInQuadratic, 	1.4,   			1, 		PVP_SET_SCALE_FROM_SV)
+		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 50,	0,						ZO_EaseOutQuadratic,	0,				1)
+		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 150,   0,						ZO_EaseOutQuadratic,	1,				1.4,	PVP_SET_SCALE_FROM_SV)
+		self:InsertAnimationType(timeline, ANIMATION_SCALE, control, 250,	250,					ZO_EaseInQuadratic,	1.4,			1,		PVP_SET_SCALE_FROM_SV)
 		local currentAlpha=control:GetAlpha()
-		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 150,	1200, 					ZO_EaseOutQuadratic,  	currentAlpha,   0)
+		self:InsertAnimationType(timeline, ANIMATION_ALPHA, control, 150,	1200,					ZO_EaseOutQuadratic,	currentAlpha,	0)
 	end
 	
 	
@@ -3085,7 +3085,7 @@ CALLBACK_MANAGER:RegisterCallback(PVP.name.."_OnAddOnLoaded", function()
 
     local ShowPlayerContextMenu = CHAT_SYSTEM.ShowPlayerContextMenu
     function CHAT_SYSTEM:ShowPlayerContextMenu(playerName, rawName)
-        ShowPlayerContextMenu(self, playerName, rawName)
+	ShowPlayerContextMenu(self, playerName, rawName)
 		
 		local function IsAccInDB(accName)
 			for k,v in ipairs(PVP.SV.KOSList) do

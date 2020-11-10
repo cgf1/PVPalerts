@@ -332,7 +332,7 @@ end
 
 function PVP:GetGroupIcon(dimension)
 	dimension = dimension or 24
-	return self:Colorize(zo_iconFormatInheritColor(PVP_GROUP_ICON, dimension, dimension),"40BB40")  --C59B00
+	return self:Colorize(zo_iconFormatInheritColor(PVP_GROUP_ICON, dimension, dimension),"40BB40")	--C59B00
 end
 
 function PVP:GetGroupLeaderIcon(dimension)
@@ -520,10 +520,10 @@ function PVP:InsertAnimationType(animHandler, animType, control, animDuration, a
 		local animationAlpha, startAlpha, endAlpha = animHandler:InsertAnimation(ANIMATION_ALPHA, control, animDelay), ...
 		animationAlpha:SetAlphaValues(startAlpha, endAlpha)
 		animationAlpha:SetDuration(animDuration)
-		animationAlpha:SetEasingFunction(animEasing) 	
+		animationAlpha:SetEasingFunction(animEasing)	
 	elseif animType==ANIMATION_TRANSLATE then
 		local animationTranslate, startX, startY, offsetX, offsetY = animHandler:InsertAnimation(ANIMATION_TRANSLATE, control, animDelay), ...
-   		animationTranslate:SetTranslateOffsets(startX, startY, offsetX, offsetY)
+		animationTranslate:SetTranslateOffsets(startX, startY, offsetX, offsetY)
 		animationTranslate:SetDuration(animDuration)
 		animationTranslate:SetEasingFunction(animEasing)
 	elseif animType==ANIMATION_ROTATE3D then
@@ -569,10 +569,10 @@ function PVP:ProcessLengths(namesTable, maxLength)
 			namesTable[i]=string.sub(namesTable[i],1,(string.len(namesTable[i])-3)) 
 		elseif self:StringEnd(namesTable[i],"+**") then
 			if addedLength < 65 then addedLength = 65 end
-			namesTable[i]=string.sub(namesTable[i],1,(string.len(namesTable[i])-3)) 	
+			namesTable[i]=string.sub(namesTable[i],1,(string.len(namesTable[i])-3))		
 		elseif self:StringEnd(namesTable[i],"**") then
 			if addedLength < 45 then addedLength = 45 end
-			namesTable[i]=string.sub(namesTable[i],1,(string.len(namesTable[i])-2)) 			
+			namesTable[i]=string.sub(namesTable[i],1,(string.len(namesTable[i])-2))				
 		elseif self:StringEnd(namesTable[i],"*") then
 			if addedLength < 40 then addedLength = 40 end
 			namesTable[i]=string.sub(namesTable[i],1,(string.len(namesTable[i])-1))

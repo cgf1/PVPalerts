@@ -1,7 +1,7 @@
 local PVP = PVP_Alerts_Main_Table
 
-PVP.LMP = LibStub("LibMapPing")
-PVP.GPS = LibStub("LibGPS2")
+PVP.LMP = LibMapPing
+PVP.GPS = LibGPS2
 
 local Set3DRenderSpaceToCurrentCamera = Set3DRenderSpaceToCurrentCamera
 local GetPlayerCameraHeading = GetPlayerCameraHeading
@@ -119,7 +119,7 @@ local icControls = {
 }
 
 local function GetNumberOfAnimationPhases()
-	return ceil(GetFramerate()/6)          --// yep, just like that //
+	return ceil(GetFramerate()/6)	       --// yep, just like that //
 end
 
 function PVP:GetCaptureTexture(alliance, isCapture, threshold)
@@ -589,7 +589,7 @@ local function GetCurrentMapScaleTo3D()
 		local borderKeepId = IsInBorderKeepArea()
 		local currentMapIndex = GetCurrentMapIndex()
 		local doesMapMatchLocation = DoesCurrentMapMatchMapForPlayerLocation()
-		if borderKeepId then 													--// we are in a border keep area // 
+		if borderKeepId then													--// we are in a border keep area // 
 			if doesMapMatchLocation or not currentMapIndex then					--// the map is actually the map of the border keep area // 
 				return PVP.borderKeepIdToAreaScale[borderKeepId] or 453
 			else	
@@ -607,7 +607,7 @@ local function GetCurrentMapScaleTo3D()
 			-- return 2268
 			return 3000
 		elseif not currentMapIndex then
-			return PVP.borderKeepIdToAreaScale[ReturnClosestBorderKeepId()]   --// dirty hack // 
+			return PVP.borderKeepIdToAreaScale[ReturnClosestBorderKeepId()]	  --// dirty hack // 
 		else
 			return 10000
 		end
@@ -1750,24 +1750,24 @@ local function IsKeepLocked(keepId)
 		[3] = {109, 110, 5}, --warden
 		[4] = {109, 110, 5}, --rayles
 		[5] = {3, 4, 6, 7},  --glade
-		[6] = {5, 7, 18, 132},  --ash
+		[6] = {5, 7, 18, 132},	--ash
 		[7] = {5, 6, 8, 134},  --aw
 		[8] = {109, 110, 7, 9, 107, 108},  --claw
-		[9] = {10, 13, 8, 134},  --chal
-		[10] = {11, 12, 9, 13},  --arrius
-		[11] = {107, 108, 10},  --king
-		[12] = {107, 108, 10},  --farra
+		[9] = {10, 13, 8, 134},	 --chal
+		[10] = {11, 12, 9, 13},	 --arrius
+		[11] = {107, 108, 10},	--king
+		[12] = {107, 108, 10},	--farra
 		[13] = {10, 9, 14, 133},  --brk
 		[14] = {107, 108, 13, 15, 105, 106},  --drake
 		[15] = {16, 17, 14, 133},  --alessia
 		[16] = {19, 20, 15, 17},  --fare
 		[17] = {16, 15, 18, 132},  --roe
 		[18] = {105, 106, 109, 110, 17, 6},  --brindle
-		[19] = {105, 106, 16},  --bb
-		[20] = {105, 106, 16},  --bm
+		[19] = {105, 106, 16},	--bb
+		[20] = {105, 106, 16},	--bm
 		[132] = {6, 17},  --nik
 		[133] = {13,15},  --sej
-		[134] = {7, 9},  --bleaks
+		[134] = {7, 9},	 --bleaks
 		[163] = {8},  --Winter's Peak
 		[164] = {18},  --Carmala
 		[165] = {14},  --Harlun's
@@ -2927,7 +2927,7 @@ local function SetupNew3DMarker(keepId, distance, isActivated, isNewObjective)
 		
 		control.params.lastUpdate = GetFrameTimeMilliseconds()
 		if control:GetHandler() == nil then
-			control:SetHandler("OnUpdate", 	function() ControlOnUpdate(control) end)
+			control:SetHandler("OnUpdate",	function() ControlOnUpdate(control) end)
 		end
 	else
 		control:Set3DRenderSpaceOrigin(oldX, Z, oldY)
@@ -2998,6 +2998,9 @@ local function SetupNew3DPOIMarker(i, isActivated, isNewObjective)
 		control = PVP.currentNearbyPOIIds[i].control
 	end
 
+	if not control then
+	    return
+	end
 	local icon = control:GetNamedChild('Icon')
 	local iconUA = control:GetNamedChild('IconUA')
 	local iconBG = control:GetNamedChild('BG')
@@ -3351,7 +3354,7 @@ local function SetupNewBattlegroundObjective3DMarker(objectiveId, distance, isAc
 		end
 		control:Set3DRenderSpaceOrigin(X, Z, Y)
 		if control:GetHandler() == nil then
-			control:SetHandler("OnUpdate", 	function ()
+			control:SetHandler("OnUpdate",	function ()
 				local scaleAdjustment = GetCurrentMapScaleAdjustment()
 				
 				if Hide3DControl(control, scaleAdjustment) then return end
@@ -3852,7 +3855,7 @@ local function FindNearbyPOIs()
 					PVP.currentMapPings[i].targetX, PVP.currentMapPings[i].targetY = PVP.LMP:GetMapPing(MAP_PIN_TYPE_PING, PVP.currentMapPings[i].pingTag)
 				end
 				
-				if PVP.currentMapPings[i].targetX ~= 0  and PVP.currentMapPings[i].targetY ~= 0 then
+				if PVP.currentMapPings[i].targetX ~= 0	and PVP.currentMapPings[i].targetY ~= 0 then
 				
 					local distance = PVP:GetCoordsDistance2D(selfX, selfY, PVP.currentMapPings[i].targetX, PVP.currentMapPings[i].targetY)
 

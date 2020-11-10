@@ -863,8 +863,8 @@ PVP.importantAbilities={
 	["Assassin's Will"] = true, 
 	["Assassin's Scourge"] = true, 
 	["Crystal Fragments"] = true,
-	["Crystal Blast"] = true, 	
-	["Crystal Shard"] = true, 	
+	["Crystal Blast"] = true,	
+	["Crystal Shard"] = true,	
 	["Shock Touch"] = true, 
 	["Shock Reach"] = true, 
 	["Flame Reach"] = true, 
@@ -1097,26 +1097,26 @@ PVP.heavyAttackId={
 }
 
 PVP.hitTypes={
-	[ACTION_RESULT_BLOCKED] 				= true,
-	[ACTION_RESULT_ABSORBED] 				= true,
-	[ACTION_RESULT_BLOCKED_DAMAGE] 			= true,
-	[ACTION_RESULT_CRITICAL_DAMAGE] 		= true,
-	[ACTION_RESULT_DAMAGE] 					= true,
-	[ACTION_RESULT_DAMAGE_SHIELDED] 		= true,
-	[ACTION_RESULT_IMMUNE] 					= true,
-	[ACTION_RESULT_MISS] 					= true,
-	[ACTION_RESULT_PARTIAL_RESIST] 			= true,
-	[ACTION_RESULT_REFLECTED] 				= true,
-	[ACTION_RESULT_RESIST] 					= true,
-	[ACTION_RESULT_WRECKING_DAMAGE] 		= true,
+	[ACTION_RESULT_BLOCKED]					= true,
+	[ACTION_RESULT_ABSORBED]				= true,
+	[ACTION_RESULT_BLOCKED_DAMAGE]			= true,
+	[ACTION_RESULT_CRITICAL_DAMAGE]			= true,
+	[ACTION_RESULT_DAMAGE]					= true,
+	[ACTION_RESULT_DAMAGE_SHIELDED]			= true,
+	[ACTION_RESULT_IMMUNE]					= true,
+	[ACTION_RESULT_MISS]					= true,
+	[ACTION_RESULT_PARTIAL_RESIST]			= true,
+	[ACTION_RESULT_REFLECTED]				= true,
+	[ACTION_RESULT_RESIST]					= true,
+	[ACTION_RESULT_WRECKING_DAMAGE]			= true,
 	
-	[ACTION_RESULT_DODGED] 					= true,
-	[ACTION_RESULT_DISORIENTED] 			= true,
-	[ACTION_RESULT_EFFECT_GAINED] 			= true,
-	[ACTION_RESULT_EFFECT_GAINED_DURATION] 	= true,
-	[ACTION_RESULT_FEARED] 					= true,
-	[ACTION_RESULT_STUNNED] 				= true,
-	[ACTION_RESULT_OFFBALANCE] 				= true,
+	[ACTION_RESULT_DODGED]					= true,
+	[ACTION_RESULT_DISORIENTED]			= true,
+	[ACTION_RESULT_EFFECT_GAINED]			= true,
+	[ACTION_RESULT_EFFECT_GAINED_DURATION]	= true,
+	[ACTION_RESULT_FEARED]					= true,
+	[ACTION_RESULT_STUNNED]					= true,
+	[ACTION_RESULT_OFFBALANCE]				= true,
 }
 
 -- PVP.heavyAttackIdFrame={
@@ -1174,8 +1174,8 @@ PVP.chargeSnareId = {
 
 PVP.AVAids ={
 
-	[16] =  { 					-- Castle Faregyl
-	 	
+	[16] =	{					-- Castle Faregyl
+		
 		[1] = {					-- Castle Faregyl Apse
 			objectiveId = 60, 
 			height = 209.88,
@@ -1190,8 +1190,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[45] = {  					-- Castle Faregyl Mine
-	 	
+	[45] = {					-- Castle Faregyl Mine
+		
 		[1] = {					-- Faregyl Mine Flag
 			objectiveId = 64, 
 			height =  215.31,
@@ -1199,8 +1199,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[43] =  { 					-- Castle Faregyl Farm
-	 	
+	[43] =	{					-- Castle Faregyl Farm
+		
 		[1] = {					-- Faregyl Farm Flag
 			objectiveId = 62, 
 			height =  224.19,
@@ -1208,8 +1208,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[44] = {  					-- Castle Faregyl Lumbermill
-	 	
+	[44] = {					-- Castle Faregyl Lumbermill
+		
 		[1] = {					-- Faregyl Lumbermill Flag
 			objectiveId = 63, 
 			height =  235.64,
@@ -1219,8 +1219,8 @@ PVP.AVAids ={
 	
 ---------------------------------------------------------
 	
-	[15] =  { 					-- Castle Alessia
-	 	
+	[15] =	{					-- Castle Alessia
+		
 		[1] = {					-- Castle Alessia Apse
 			objectiveId = 167, 
 			height = 164.71,
@@ -1235,8 +1235,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[79] = {  					-- Castle Alessia Mine
-	 	
+	[79] = {					-- Castle Alessia Mine
+		
 		[1] = {					-- Alessia Mine Flag
 			objectiveId = 198, 
 			height =  160.28,
@@ -1244,8 +1244,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[81] =  { 					-- Castle Alessia Farm
-	 	
+	[81] =	{					-- Castle Alessia Farm
+		
 		[1] = {					-- Alessia Farm Flag
 			objectiveId = 197, 
 			height =  200.91,
@@ -1253,8 +1253,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[80] = {  					-- Castle Alessia Lumbermill
-	 	
+	[80] = {					-- Castle Alessia Lumbermill
+		
 		[1] = {					-- Alessia Lumbermill Flag
 			objectiveId = 196, 
 			height =  141.73,
@@ -1265,8 +1265,8 @@ PVP.AVAids ={
 ------------------------------------------------------------------------	
 	
 	
-	[19] =  { 					-- Castle Black Boot
-	 	
+	[19] =	{					-- Castle Black Boot
+		
 		[1] = {					-- Castle Black Boot Apse
 			objectiveId = 49, 
 			height = 186.76,
@@ -1281,8 +1281,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[35] = {  					-- Castle Black Boot Mine
-	 	
+	[35] = {					-- Castle Black Boot Mine
+		
 		[1] = {					-- Black Boot Mine Flag
 			objectiveId = 46, 
 			height =  178.82,
@@ -1290,8 +1290,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[36] =  { 					-- Castle Black Boot Farm
-	 	
+	[36] =	{					-- Castle Black Boot Farm
+		
 		[1] = {					-- Black Boot Farm Flag
 			objectiveId = 47, 
 			height =  183.12,
@@ -1299,8 +1299,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[34] = {  					-- Castle Black Boot Lumbermill
-	 	
+	[34] = {					-- Castle Black Boot Lumbermill
+		
 		[1] = {					-- Black Boot Lumbermill Flag
 			objectiveId = 45, 
 			height =  154.38,
@@ -1310,8 +1310,8 @@ PVP.AVAids ={
 
 ------------------------------------------------------------------------
 
-	[20] =  { 					-- Castle Bloodmayne
-	 	
+	[20] =	{					-- Castle Bloodmayne
+		
 		[1] = {					-- Castle Bloodmayne Apse
 			objectiveId = 40, 
 			height = 159.57,
@@ -1326,8 +1326,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[23] = {  					-- Castle Bloodmayne Mine
-	 	
+	[23] = {					-- Castle Bloodmayne Mine
+		
 		[1] = {					-- Bloodmayne Mine Flag
 			objectiveId = 80, 
 			height =  167.00,
@@ -1335,8 +1335,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[22] =  { 					-- Castle Bloodmayne Farm
-	 	
+	[22] =	{					-- Castle Bloodmayne Farm
+		
 		[1] = {					-- Bloodmayne Farm Flag
 			objectiveId = 42, 
 			height =  206.28,
@@ -1344,8 +1344,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[24] = {  					-- Castle Bloodmayne Lumbermill
-	 	
+	[24] = {					-- Castle Bloodmayne Lumbermill
+		
 		[1] = {					-- Bloodmayne Lumbermill Flag
 			objectiveId = 79, 
 			height =  179.00,
@@ -1355,8 +1355,8 @@ PVP.AVAids ={
 
 ------------------------------------------------------------------------
 
-	[17] =  { 					-- Castle Roebeck
-	 	
+	[17] =	{					-- Castle Roebeck
+		
 		[1] = {					-- Castle Roebeck Apse
 			objectiveId = 165, 
 			height = 255.21,
@@ -1371,8 +1371,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[82] = {  					-- Castle Roebeck Mine
-	 	
+	[82] = {					-- Castle Roebeck Mine
+		
 		[1] = {					-- Roebeck Mine Flag
 			objectiveId = 183, 
 			height =  256.99,
@@ -1380,8 +1380,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[84] =  { 					-- Castle Roebeck Farm
-	 	
+	[84] =	{					-- Castle Roebeck Farm
+		
 		[1] = {					-- Roebeck Farm Flag
 			objectiveId = 181, 
 			height =  230.59,
@@ -1389,8 +1389,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[83] = {  					-- Castle Roebeck Lumbermill
-	 	
+	[83] = {					-- Castle Roebeck Lumbermill
+		
 		[1] = {					-- Roebeck Lumbermill Flag
 			objectiveId = 182, 
 			height =  254.99,
@@ -1400,8 +1400,8 @@ PVP.AVAids ={
 
 ------------------------------------------------------------------------
 
-	[18] =  { 					-- Castle Brindle
-	 	
+	[18] =	{					-- Castle Brindle
+		
 		[1] = {					-- Castle Brindle Apse
 			objectiveId = 163, 
 			height = 260.70,
@@ -1416,8 +1416,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[85] = {  					-- Castle Brindle Mine
-	 	
+	[85] = {					-- Castle Brindle Mine
+		
 		[1] = {					-- Brindle Mine Flag
 			objectiveId = 162, 
 			height =  259.26,
@@ -1425,8 +1425,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[87] =  { 					-- Castle Brindle Farm
-	 	
+	[87] =	{					-- Castle Brindle Farm
+		
 		[1] = {					-- Brindle Farm Flag
 			objectiveId = 105, 
 			height =  207.83,
@@ -1434,8 +1434,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[86] = {  					-- Castle Brindle Lumbermill
-	 	
+	[86] = {					-- Castle Brindle Lumbermill
+		
 		[1] = {					-- Brindle Lumbermill Flag
 			objectiveId = 161, 
 			height =  258.02,
@@ -1445,8 +1445,8 @@ PVP.AVAids ={
 
 ------------------------------------------------------------------------
 
-	[14] =  { 					-- Drakelowe Keep
-	 	
+	[14] =	{					-- Drakelowe Keep
+		
 		[1] = {					-- Drakelowe Keep Apse
 			objectiveId = 171, 
 			height = 179.78,
@@ -1461,8 +1461,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[76] = {  					-- Drakelowe Keep Mine
-	 	
+	[76] = {					-- Drakelowe Keep Mine
+		
 		[1] = {					-- Drakelowe Mine Flag
 			objectiveId = 202, 
 			height =  156.10,
@@ -1470,8 +1470,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[78] =  { 					-- Drakelowe Keep Farm
-	 	
+	[78] =	{					-- Drakelowe Keep Farm
+		
 		[1] = {					-- Drakelowe Farm Flag
 			objectiveId = 204, 
 			height =  224.00,
@@ -1479,8 +1479,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[77] = {  					-- Drakelowe Keep Lumbermill
-	 	
+	[77] = {					-- Drakelowe Keep Lumbermill
+		
 		[1] = {					-- Drakelowe Lumbermill Flag
 			objectiveId = 203, 
 			height =  185.09,
@@ -1490,8 +1490,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 
-	[11] =  { 					-- Kingscrest Keep
-	 	
+	[11] =	{					-- Kingscrest Keep
+		
 		[1] = {					-- Kingscrest Keep Apse
 			objectiveId = 77, 
 			height = 360.57,
@@ -1506,8 +1506,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[54] = {  					-- Kingscrest Keep Mine
-	 	
+	[54] = {					-- Kingscrest Keep Mine
+		
 		[1] = {					-- Kingscrest Mine Flag
 			objectiveId = 83, 
 			height =  381.07,
@@ -1515,8 +1515,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[52] =  { 					-- Kingscrest Keep Farm
-	 	
+	[52] =	{					-- Kingscrest Keep Farm
+		
 		[1] = {					-- Kingscrest Farm Flag
 			objectiveId = 81, 
 			height =  350.43,
@@ -1524,8 +1524,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[53] = {  					-- Kingscrest Keep Lumbermill
-	 	
+	[53] = {					-- Kingscrest Keep Lumbermill
+		
 		[1] = {					-- Kingscrest Lumbermill Flag
 			objectiveId = 82, 
 			height =  380.03,
@@ -1535,8 +1535,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 
-	[12] =  { 					-- Farragut Keep
-	 	
+	[12] =	{					-- Farragut Keep
+		
 		[1] = {					-- Farragut Keep Apse
 			objectiveId = 51, 
 			height = 373.33,
@@ -1551,8 +1551,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[38] = {  					-- Farragut Keep Mine
-	 	
+	[38] = {					-- Farragut Keep Mine
+		
 		[1] = {					-- Farragut Mine Flag
 			objectiveId = 53, 
 			height =  370.02,
@@ -1560,8 +1560,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[39] =  { 					-- Farragut Keep Farm
-	 	
+	[39] =	{					-- Farragut Keep Farm
+		
 		[1] = {					-- Farragut Farm Flag
 			objectiveId = 54, 
 			height =  358.59,
@@ -1569,8 +1569,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[37] = {  					-- Farragut Keep Lumbermill
-	 	
+	[37] = {					-- Farragut Keep Lumbermill
+		
 		[1] = {					-- Farragut Lumbermill Flag
 			objectiveId = 52, 
 			height =  363.78,
@@ -1580,8 +1580,8 @@ PVP.AVAids ={
 
 ------------------------------------------------------------------------
 
-	[13] =  { 					-- Blue Road Keep
-	 	
+	[13] =	{					-- Blue Road Keep
+		
 		[1] = {					-- Blue Road Keep Apse
 			objectiveId = 176, 
 			height = 263.51,
@@ -1596,8 +1596,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[73] = {  					-- Blue Road Keep Mine
-	 	
+	[73] = {					-- Blue Road Keep Mine
+		
 		[1] = {					-- Blue Road Mine Flag
 			objectiveId = 184, 
 			height =  262.11,
@@ -1605,8 +1605,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[75] =  { 					-- Blue Road Keep Farm
-	 	
+	[75] =	{					-- Blue Road Keep Farm
+		
 		[1] = {					-- Blue Road Farm Flag
 			objectiveId = 186, 
 			height =  202.98,
@@ -1614,8 +1614,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[74] = {  					-- Blue Road Keep Lumbermill
-	 	
+	[74] = {					-- Blue Road Keep Lumbermill
+		
 		[1] = {					-- Blue Road Lumbermill Flag
 			objectiveId = 185, 
 			height =  267.12,
@@ -1625,8 +1625,8 @@ PVP.AVAids ={
 
 ------------------------------------------------------------------------
 
-	[6] =  { 					-- Fort Ash
-	 	
+	[6] =  {					-- Fort Ash
+		
 		[1] = {					-- Fort Ash Apse
 			objectiveId = 177, 
 			height = 263.51,
@@ -1641,8 +1641,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[63] = {  					-- Fort Ash Mine
-	 	
+	[63] = {					-- Fort Ash Mine
+		
 		[1] = {					-- Fort Ash Mine Flag
 			objectiveId = 194, 
 			height =  259.52,
@@ -1650,8 +1650,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[61] =  { 					-- Fort Ash Farm
-	 	
+	[61] =	{					-- Fort Ash Farm
+		
 		[1] = {					-- Fort Ash Farm Flag
 			objectiveId = 193, 
 			height =  247.45,
@@ -1659,8 +1659,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[62] = {  					-- Fort Ash Lumbermill
-	 	
+	[62] = {					-- Fort Ash Lumbermill
+		
 		[1] = {					-- Fort Ash Lumbermill Flag
 			objectiveId = 195, 
 			height =  219.17,
@@ -1670,8 +1670,8 @@ PVP.AVAids ={
 
 ------------------------------------------------------------------------
 
-	[10] =  { 					-- Arrius Keep
-	 	
+	[10] =	{					-- Arrius Keep
+		
 		[1] = {					-- Arrius Keep Apse
 			objectiveId = 65, 
 			height = 316.96,
@@ -1686,8 +1686,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[48] = {  					-- Arrius Keep Mine
-	 	
+	[48] = {					-- Arrius Keep Mine
+		
 		[1] = {					-- Arrius Keep Mine Flag
 			objectiveId = 69, 
 			height =  335.09,
@@ -1695,8 +1695,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[46] =  { 					-- Arrius Keep Farm
-	 	
+	[46] =	{					-- Arrius Keep Farm
+		
 		[1] = {					-- Arrius Keep Farm Flag
 			objectiveId = 67, 
 			height =  340.01,
@@ -1704,8 +1704,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[47] = {  					-- Arrius Keep Lumbermill
-	 	
+	[47] = {					-- Arrius Keep Lumbermill
+		
 		[1] = {					-- Arrius Keep Lumbermill Flag
 			objectiveId = 68, 
 			height =  306.04,
@@ -1715,8 +1715,8 @@ PVP.AVAids ={
 
 ------------------------------------------------------------------------
 
-	[9] =  { 					-- Chalman Keep
-	 	
+	[9] =  {					-- Chalman Keep
+		
 		[1] = {					-- Chalman Keep Apse
 			objectiveId = 179, 
 			height = 235.54,
@@ -1731,8 +1731,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[70] = {  					-- Chalman Keep Mine
-	 	
+	[70] = {					-- Chalman Keep Mine
+		
 		[1] = {					-- Chalman Keep Mine Flag
 			objectiveId = 190, 
 			height =  248.62,
@@ -1740,8 +1740,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[72] =  { 					-- Chalman Keep Farm
-	 	
+	[72] =	{					-- Chalman Keep Farm
+		
 		[1] = {					-- Chalman Keep Farm Flag
 			objectiveId = 192, 
 			height =  283.29,
@@ -1749,8 +1749,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[71] = {  					-- Chalman Keep Lumbermill
-	 	
+	[71] = {					-- Chalman Keep Lumbermill
+		
 		[1] = {					-- Chalman Keep Lumbermill Flag
 			objectiveId = 191, 
 			height =  210.76,
@@ -1760,8 +1760,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 
-	[7] =  { 					-- Fort Aleswell
-	 	
+	[7] =  {					-- Fort Aleswell
+		
 		[1] = {					-- Fort Aleswell Apse
 			objectiveId = 173, 
 			height = 214.29,
@@ -1776,8 +1776,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[64] = {  					-- Fort Aleswell Mine
-	 	
+	[64] = {					-- Fort Aleswell Mine
+		
 		[1] = {					-- Fort Aleswell Mine Flag
 			objectiveId = 189, 
 			height =  241.10,
@@ -1785,8 +1785,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[66] =  { 					-- Fort Aleswell Farm
-	 	
+	[66] =	{					-- Fort Aleswell Farm
+		
 		[1] = {					-- Fort Aleswell Farm Flag
 			objectiveId = 187, 
 			height =  229.53,
@@ -1794,8 +1794,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[65] = {  					-- Fort Aleswell Lumbermill
-	 	
+	[65] = {					-- Fort Aleswell Lumbermill
+		
 		[1] = {					-- Fort Aleswell Lumbermill Flag
 			objectiveId = 188, 
 			height =  211.05,
@@ -1805,8 +1805,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 
-	[4] =  { 					-- Fort Rayles
-	 	
+	[4] =  {					-- Fort Rayles
+		
 		[1] = {					-- Fort Rayles Apse
 			objectiveId = 75, 
 			height = 316.51,
@@ -1821,8 +1821,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[57] = {  					-- Fort Rayles Mine
-	 	
+	[57] = {					-- Fort Rayles Mine
+		
 		[1] = {					-- Fort Rayles Mine Flag
 			objectiveId = 86, 
 			height =  347.58,
@@ -1830,8 +1830,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[55] =  { 					-- Fort Rayles Farm
-	 	
+	[55] =	{					-- Fort Rayles Farm
+		
 		[1] = {					-- Fort Rayles Farm Flag
 			objectiveId = 84, 
 			height =  308.25,
@@ -1839,8 +1839,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[56] = {  					-- Fort Rayles Lumbermill
-	 	
+	[56] = {					-- Fort Rayles Lumbermill
+		
 		[1] = {					-- Fort Rayles Lumbermill Flag
 			objectiveId = 85, 
 			height =  308.12,
@@ -1850,8 +1850,8 @@ PVP.AVAids ={
 
 ------------------------------------------------------------------------
 
-	[3] =  { 					-- Fort Warden
-	 	
+	[3] =  {					-- Fort Warden
+		
 		[1] = {					-- Fort Warden Apse
 			objectiveId = 56, 
 			height = 362.01,
@@ -1866,8 +1866,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[42] = {  					-- Fort Warden Mine
-	 	
+	[42] = {					-- Fort Warden Mine
+		
 		[1] = {					-- Fort Warden Mine Flag
 			objectiveId = 59, 
 			height =  375.77,
@@ -1875,8 +1875,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[40] =  { 					-- Fort Warden Farm
-	 	
+	[40] =	{					-- Fort Warden Farm
+		
 		[1] = {					-- Fort Warden Farm Flag
 			objectiveId = 57, 
 			height =  384.36,
@@ -1884,8 +1884,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[41] = {  					-- Fort Warden Lumbermill
-	 	
+	[41] = {					-- Fort Warden Lumbermill
+		
 		[1] = {					-- Fort Warden Lumbermill Flag
 			objectiveId = 58, 
 			height =  368.02,
@@ -1895,8 +1895,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 
-	[8] =  { 					-- Fort Dragonclaw
-	 	
+	[8] =  {					-- Fort Dragonclaw
+		
 		[1] = {					-- Fort Dragonclaw Apse
 			objectiveId = 169, 
 			height = 414.02,
@@ -1911,8 +1911,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[67] = {  					-- Fort Dragonclaw Mine
-	 	
+	[67] = {					-- Fort Dragonclaw Mine
+		
 		[1] = {					-- Fort Dragonclaw Mine Flag
 			objectiveId = 199, 
 			height =  392.74,
@@ -1920,8 +1920,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[69] =  { 					-- Fort Dragonclaw Farm
-	 	
+	[69] =	{					-- Fort Dragonclaw Farm
+		
 		[1] = {					-- Fort Dragonclaw Farm Flag
 			objectiveId = 201, 
 			height =  402.99,
@@ -1929,8 +1929,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[68] = {  					-- Fort Dragonclaw Lumbermill
-	 	
+	[68] = {					-- Fort Dragonclaw Lumbermill
+		
 		[1] = {					-- Fort Dragonclaw Lumbermill Flag
 			objectiveId = 200, 
 			height =  422.65,
@@ -1940,8 +1940,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 
-	[5] =  { 					-- Fort Glademist
-	 	
+	[5] =  {					-- Fort Glademist
+		
 		[1] = {					-- Fort Glademist Apse
 			objectiveId = 70, 
 			height = 319.50,
@@ -1956,8 +1956,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[51] = {  					-- Fort Glademist Mine
-	 	
+	[51] = {					-- Fort Glademist Mine
+		
 		[1] = {					-- Fort Glademist Mine Flag
 			objectiveId = 74, 
 			height =  352.04,
@@ -1965,8 +1965,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[49] =  { 					-- Fort Glademist Farm
-	 	
+	[49] =	{					-- Fort Glademist Farm
+		
 		[1] = {					-- Fort Glademist Farm Flag
 			objectiveId = 72, 
 			height =  306.94,
@@ -1974,8 +1974,8 @@ PVP.AVAids ={
 		},
 	},
 	
-	[50] = {  					-- Fort Glademist Lumbermill
-	 	
+	[50] = {					-- Fort Glademist Lumbermill
+		
 		[1] = {					-- Fort Glademist Lumbermill Flag
 			objectiveId = 73, 
 			height =  307.71,
@@ -1986,8 +1986,8 @@ PVP.AVAids ={
 
 ------------------------------------------------------------------------
 
-	[133] =  { 					-- Sejanus Outpost
-	 	
+	[133] =	 {					-- Sejanus Outpost
+		
 		[1] = {					-- Sejanus Outpost Tower
 			objectiveId = 214, 
 			height = 223.71,
@@ -2000,8 +2000,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 
-	[132] =  { 					-- Nikel Outpost
-	 	
+	[132] =	 {					-- Nikel Outpost
+		
 		[1] = {					-- Nikel Outpost Tower
 			objectiveId = 216, 
 			height = 258.01,
@@ -2014,8 +2014,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 
-	[134] =  { 					-- Bleaker's Outpost
-	 	
+	[134] =	 {					-- Bleaker's Outpost
+		
 		[1] = {					-- Bleaker's Outpost Tower
 			objectiveId = 218, 
 			height = 249.53,
@@ -2028,8 +2028,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 
-	[164] =  { 					-- Carmala Outpost
-	 	
+	[164] =	 {					-- Carmala Outpost
+		
 		[1] = {					-- Carmala Outpost Tower
 			objectiveId = 433, 
 			height = 240.15,
@@ -2042,8 +2042,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 
-	[163] =  { 					-- Winter's Peak Outpost
-	 	
+	[163] =	 {					-- Winter's Peak Outpost
+		
 		[1] = {					-- Winter's Peak Outpost Tower
 			objectiveId = 431, 
 			height = 426.03,
@@ -2056,8 +2056,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 
-	[165] =  { 					-- Harlun's Outpost
-	 	
+	[165] =	 {					-- Harlun's Outpost
+		
 		[1] = {					-- Harlun's Outpost Tower
 			objectiveId = 435, 
 			height = 308.33,
@@ -2070,8 +2070,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 
-	[149] =  { 					-- Vlastarus
-	 	
+	[149] =	 {					-- Vlastarus
+		
 		[1] = {					-- Vlastarus Central Flag
 			objectiveId = 294, 
 			height = 230.75,
@@ -2088,8 +2088,8 @@ PVP.AVAids ={
 
 ------------------------------------------------------------------------
 	
-	[152] =  { 					-- Cropsford
-	 	
+	[152] =	 {					-- Cropsford
+		
 		[1] = {					-- Cropsford Central Flag
 			objectiveId = 300, 
 			height = 222.39,
@@ -2106,8 +2106,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[151] =  { 					-- Bruma
-	 	
+	[151] =	 {					-- Bruma
+		
 		[1] = {					-- Bruma Central Flag
 			objectiveId = 296, 
 			height = 331.56,
@@ -2124,8 +2124,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[119] =  { 					-- Scroll Temple of Mnem
-	 	
+	[119] =	 {					-- Scroll Temple of Mnem
+		
 		[1] = {					-- Elder Scroll of Mnem
 			objectiveId = 137, 
 			height = 223.77,
@@ -2134,8 +2134,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[118] =  { 					-- Scroll Temple of Altadoon
-	 	
+	[118] =	 {					-- Scroll Temple of Altadoon
+		
 		[1] = {					-- Elder Scroll of Altadoon
 			objectiveId = 136, 
 			height = 258.53,
@@ -2144,8 +2144,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[123] =  { 					-- Scroll Temple of Alma Ruma
-	 	
+	[123] =	 {					-- Scroll Temple of Alma Ruma
+		
 		[1] = {					-- Elder Scroll of Alma Ruma
 			objectiveId = 141, 
 			height = 375.05,
@@ -2154,8 +2154,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[122] =  { 					-- Scroll Temple of Ni-Mohk
-	 	
+	[122] =	 {					-- Scroll Temple of Ni-Mohk
+		
 		[1] = {					-- Elder Scroll of Ni-Mohk
 			objectiveId = 140, 
 			height = 375.02,
@@ -2164,8 +2164,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[121] =  { 					-- Scroll Temple of Chim
-	 	
+	[121] =	 {					-- Scroll Temple of Chim
+		
 		[1] = {					-- Elder Scroll of Chim
 			objectiveId = 139, 
 			height = 412.14,
@@ -2174,8 +2174,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 
-	[120] =  { 					-- Scroll Temple of Ghartok
-	 	
+	[120] =	 {					-- Scroll Temple of Ghartok
+		
 		[1] = {					-- Elder Scroll of Ghartok
 			objectiveId = 138, 
 			height = 409.12,
@@ -2184,8 +2184,8 @@ PVP.AVAids ={
 
 ------------------------------------------------------------------------
 	
-	[125] =  { 					-- Gate of Mnem
-	 	
+	[125] =	 {					-- Gate of Mnem
+		
 		[1] = {					
 			objectiveId = 0, 
 			height = 139.52,
@@ -2194,8 +2194,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[124] =  { 					-- Gate of Altadoon
-	 	
+	[124] =	 {					-- Gate of Altadoon
+		
 		[1] = {					
 			objectiveId = 0, 
 			height = 171.31,
@@ -2204,8 +2204,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[126] =  { 					-- Gate of Ghartok
-	 	
+	[126] =	 {					-- Gate of Ghartok
+		
 		[1] = {					
 			objectiveId = 0, 
 			height = 379.19,
@@ -2214,8 +2214,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[127] =  { 					-- Gate of Chim
-	 	
+	[127] =	 {					-- Gate of Chim
+		
 		[1] = {					
 			objectiveId = 0, 
 			height = 397.10,
@@ -2224,8 +2224,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[128] =  { 					-- Gate of Ni-Mohk
-	 	
+	[128] =	 {					-- Gate of Ni-Mohk
+		
 		[1] = {					
 			objectiveId = 0, 
 			height = 323.30,
@@ -2234,8 +2234,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[129] =  { 					-- Gate of Alma Ruma
-	 	
+	[129] =	 {					-- Gate of Alma Ruma
+		
 		[1] = {					
 			objectiveId = 0, 
 			height = 359.104,
@@ -2244,8 +2244,8 @@ PVP.AVAids ={
 
 ------------------------------------------------------------------------
 	
-	[105] =  { 					-- Western Elsweyr Gate
-	 	
+	[105] =	 {					-- Western Elsweyr Gate
+		
 		[1] = {					
 			objectiveId = 0, 
 			height = 257.51,
@@ -2272,8 +2272,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 
-	[106] =  { 					-- Eastern Elsweyr Gate
-	 	
+	[106] =	 {					-- Eastern Elsweyr Gate
+		
 		[1] = {					
 			objectiveId = 0, 
 			height = 251.722,
@@ -2302,8 +2302,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 
-	[107] =  { 					-- Southern Morrowind Gate
-	 	
+	[107] =	 {					-- Southern Morrowind Gate
+		
 		[1] = {					
 			objectiveId = 0, 
 			height = 411.73,
@@ -2331,8 +2331,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[108] =  { 					-- Northern Morrowind Gate
-	 	
+	[108] =	 {					-- Northern Morrowind Gate
+		
 		[1] = {					
 			objectiveId = 0, 
 			height = 424.27,
@@ -2359,8 +2359,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[109] =  { 					-- Southern Highrock Gate
-	 	
+	[109] =	 {					-- Southern Highrock Gate
+		
 		[1] = {					
 			objectiveId = 0, 
 			height = 388.72,
@@ -2387,8 +2387,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[110] =  { 					-- Northern Highrock Gate
-	 	
+	[110] =	 {					-- Northern Highrock Gate
+		
 		[1] = {					
 			objectiveId = 0, 
 			height = 353.94,
@@ -2415,8 +2415,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[141] =  { 					-- Nobles District
-	 	
+	[141] =	 {					-- Nobles District
+		
 		[1] = {					-- Nobles District Flag 
 			objectiveId = 291, 
 			height = 310.48,
@@ -2425,8 +2425,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[142] =  { 					-- Memorial District
-	 	
+	[142] =	 {					-- Memorial District
+		
 		[1] = {					-- Memorial District Flag
 			objectiveId = 289, 
 			height = 310,
@@ -2435,8 +2435,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[143] =  { 					-- Arboretum
-	 	
+	[143] =	 {					-- Arboretum
+		
 		[1] = {					-- Arboretum District Flag
 			objectiveId = 290, 
 			height = 310.62,
@@ -2445,8 +2445,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[146] =  { 					-- Arena District
-	 	
+	[146] =	 {					-- Arena District
+		
 		[1] = {					-- Arena District Flag
 			objectiveId = 288, 
 			height = 310.49,
@@ -2455,8 +2455,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[147] =  { 					-- Temple District
-	 	
+	[147] =	 {					-- Temple District
+		
 		[1] = {					-- Temple District Flag
 			objectiveId = 292, 
 			height = 310,
@@ -2465,8 +2465,8 @@ PVP.AVAids ={
 	
 ------------------------------------------------------------------------
 	
-	[148] =  { 					-- Elven Gardens District
-	 	
+	[148] =	 {					-- Elven Gardens District
+		
 		[1] = {					-- elven Gardens District Flag
 			objectiveId = 293, 
 			height = 310,
@@ -2479,34 +2479,34 @@ PVP.AVAids ={
 
 PVP.bgObjectives = {
 	-- ulara
-	[316] = 159.00,  -- ulara waterfall
-	[317] = 159.83,  -- ulara altar
-	[315] = 171.49,  -- ulara cenral
-	[318] = 159.26,  -- ulara mushroom
+	[316] = 159.00,	 -- ulara waterfall
+	[317] = 159.83,	 -- ulara altar
+	[315] = 171.49,	 -- ulara cenral
+	[318] = 159.26,	 -- ulara mushroom
 
 	-- foyada
-	[308] = 116.32,  -- foyada pit flag
-	[309] = 117.02,  -- foyada fire storm
-	[306] = 120.53,  -- foyada cenral
-	[310] = 116.53,  -- foyada storm pit
+	[308] = 116.32,	 -- foyada pit flag
+	[309] = 117.02,	 -- foyada fire storm
+	[306] = 120.53,	 -- foyada cenral
+	[310] = 116.53,	 -- foyada storm pit
 	
 	-- ald carac
-	[321] = 159.24,  -- ald carac Centurion
-	[319] = 155.77,  -- engine
-	[320] = 159.91,  -- forge
-	[314] = 155.16,  -- central
+	[321] = 159.24,	 -- ald carac Centurion
+	[319] = 155.77,	 -- engine
+	[320] = 159.91,	 -- forge
+	[314] = 155.16,	 -- central
 	
-	[337] = 161.00,  -- ald carac SL relic spawn
-	[338] = 161.00,  -- ald carac PD relic spawn approx
-	[339] = 161.00,  -- ald carac FD relic spawn approx
+	[337] = 161.00,	 -- ald carac SL relic spawn
+	[338] = 161.00,	 -- ald carac PD relic spawn approx
+	[339] = 161.00,	 -- ald carac FD relic spawn approx
 	
-	[335] = 123.71,  -- foyada SL relic spawn
-	[336] = 123.39,  -- foyada PD relic spawn
-	[334] = 123.91,  -- foyada FD relic spawn
+	[335] = 123.71,	 -- foyada SL relic spawn
+	[336] = 123.39,	 -- foyada PD relic spawn
+	[334] = 123.91,	 -- foyada FD relic spawn
 	
-	[340] = 165.79,  -- ullara SL relic spawn
-	[341] = 165.28,  -- ullara PD relic spawn
-	[342] = 165.06,  -- ullara FD relic spawn
+	[340] = 165.79,	 -- ullara SL relic spawn
+	[341] = 165.28,	 -- ullara PD relic spawn
+	[342] = 165.06,	 -- ullara FD relic spawn
 	
 }
 
@@ -2685,7 +2685,7 @@ PVP.bgMapScale = {
 
 -- PVP.mapIndexTo3DScale = {
 	-- [14] = 10000,  -- Cyrodiil 0.179999550
-	-- [26] = 949.64,  -- Imperial City 1067 ic = 0.0170935(949.64)  0.00636025 (353.35) (full sewers and base), cyro gates - 0.01096775 (609.3735)
+	-- [26] = 949.64,  -- Imperial City 1067 ic = 0.0170935(949.64)	 0.00636025 (353.35) (full sewers and base), cyro gates - 0.01096775 (609.3735)
 -- }
 
 PVP.borderKeepIdToAreaScale = {
@@ -2707,21 +2707,24 @@ PVP.borderKeepsIds = {
 }
 
 PVP.elderScrollsIds = {
-	[120] =  138, 		-- Elder Scroll of Ghartok
-	[119] =  137, 		-- Elder Scroll of Mnem
-	[118] =  136, 		-- Elder Scroll of Altadoon
-	[123] =  141, 		-- Elder Scroll of Alma Ruma
-	[122] =  140, 		-- Elder Scroll of Ni-Mohk
-	[121] =  139, 		-- Elder Scroll of Chim
+	[120] =	 138,		-- Elder Scroll of Ghartok
+	[119] =	 137,		-- Elder Scroll of Mnem
+	[118] =	 136,		-- Elder Scroll of Altadoon
+	[123] =	 141,		-- Elder Scroll of Alma Ruma
+	[122] =	 140,		-- Elder Scroll of Ni-Mohk
+	[121] =	 139,		-- Elder Scroll of Chim
 }
 
 PVP.elderScrollsPintypes = {
-	[117] =  true, 		-- Elder Scroll of Altadoon
-	[118] =  true, 		-- Elder Scroll of Mnem
-	[119] =  true, 		-- Elder Scroll of Ghartok
-	[120] =  true, 		-- Elder Scroll of Chim
-	[121] =  true, 		-- Elder Scroll of Ni-Mohk
-	[122] =  true, 		-- Elder Scroll of Alma Ruma
+	[117] =	 true,		-- Elder Scroll of Altadoon
+	[118] =	 true,		-- Elder Scroll of Mnem
+	[119] =	 true,		-- Elder Scroll of Ghartok
+	[120] =	 true,		-- Elder Scroll of Chim
+	[121] =	 true,		-- Elder Scroll of Ni-Mohk
+	[122] =	 true,		-- Elder Scroll of Alma Ruma
+	[123] =	 true,
+	[124] =	 true,
+	[125] =	 true,
 }
 
 
@@ -2997,24 +3000,24 @@ PVP.ayleidWellsCoords = {
 }
 
 PVP.killLocationPintypeToName = {
-	[183] = "|cEFD13C3-|r|c80AFFFway|r |cFF7161fight!|r",   
-	[184] = "|cEFD13C3-|r|c80AFFFway|r |cFF7161fight!|r",   
-	[185] = "|cEFD13C3-|r|c80AFFFway|r |cFF7161fight!|r",   
-	[186] = "|cEFD13CAD|r vs |cFF7161EP|r fight!",   
-	[187] = "|cEFD13CAD|r vs |cFF7161EP|r fight!",   
-	[188] = "|cEFD13CAD|r vs |cFF7161EP|r fight!",   
-	[189] = "|cEFD13CAD|r vs |c80AFFFDC|r fight!",   
-	[190] = "|cEFD13CAD|r vs |c80AFFFDC|r fight!",   
-	[191] = "|cEFD13CAD|r vs |c80AFFFDC|r fight!",   
-	[192] = "|cFF7161EP|r vs |c80AFFFDC|r fight!",   
-	[193] = "|cFF7161EP|r vs |c80AFFFDC|r fight!",   
-	[194] = "|cFF7161EP|r vs |c80AFFFDC|r fight!",   
+	[183] = "|cEFD13C3-|r|c80AFFFway|r |cFF7161fight!|r",	
+	[184] = "|cEFD13C3-|r|c80AFFFway|r |cFF7161fight!|r",	
+	[185] = "|cEFD13C3-|r|c80AFFFway|r |cFF7161fight!|r",	
+	[186] = "|cEFD13CAD|r vs |cFF7161EP|r fight!",	 
+	[187] = "|cEFD13CAD|r vs |cFF7161EP|r fight!",	 
+	[188] = "|cEFD13CAD|r vs |cFF7161EP|r fight!",	 
+	[189] = "|cEFD13CAD|r vs |c80AFFFDC|r fight!",	 
+	[190] = "|cEFD13CAD|r vs |c80AFFFDC|r fight!",	 
+	[191] = "|cEFD13CAD|r vs |c80AFFFDC|r fight!",	 
+	[192] = "|cFF7161EP|r vs |c80AFFFDC|r fight!",	 
+	[193] = "|cFF7161EP|r vs |c80AFFFDC|r fight!",	 
+	[194] = "|cFF7161EP|r vs |c80AFFFDC|r fight!",	 
 }
 
 PVP.icEntranceCoords = {
-	{x = 0.55724, y = 0.33651, z = 109.21}, -- Chal
-	{x = 0.51513, y = 0.54320, z = 102.57}, -- Alessia
-	{x = 0.39790, y = 0.41671, z = 123.50}, -- Ash
+	-- {x = 0.55724, y = 0.33651, z = 109.21}, -- Chal
+	-- {x = 0.51513, y = 0.54320, z = 102.57}, -- Alessia
+	-- {x = 0.39790, y = 0.41671, z = 123.50}, -- Ash
 }
 
 PVP.pingsColors = {
@@ -3074,50 +3077,50 @@ PVP.sewers = {
 }
 
 PVP.objectiveIcons = {
-	[KEEPTYPE_KEEP] = 					"/esoui/art/compass/ava_largekeep_neutral.dds",
-	[KEEPTYPE_OUTPOST] = 				"/esoui/art/compass/ava_outpost_neutral.dds",
-	[KEEPTYPE_TOWN] = 					"/esoui/art/compass/ava_town_neutral.dds",
+	[KEEPTYPE_KEEP] =					"/esoui/art/compass/ava_largekeep_neutral.dds",
+	[KEEPTYPE_OUTPOST] =				"/esoui/art/compass/ava_outpost_neutral.dds",
+	[KEEPTYPE_TOWN] =					"/esoui/art/compass/ava_town_neutral.dds",
 	[KEEPTYPE_IMPERIAL_CITY_DISTRICT] = "/esoui/art/compass/ava_imperialdistrict_neutral.dds",
 	
-	[RESOURCETYPE_FOOD] = 				"/esoui/art/compass/ava_farm_neutral.dds",
-	[RESOURCETYPE_ORE] = 				"/esoui/art/compass/ava_mine_neutral.dds",
-	[RESOURCETYPE_WOOD] = 				"/esoui/art/compass/ava_lumbermill_neutral.dds",
+	[RESOURCETYPE_FOOD] =				"/esoui/art/compass/ava_farm_neutral.dds",
+	[RESOURCETYPE_ORE] =				"/esoui/art/compass/ava_mine_neutral.dds",
+	[RESOURCETYPE_WOOD] =				"/esoui/art/compass/ava_lumbermill_neutral.dds",
 	
-	[KEEPTYPE_ARTIFACT_GATE] = 	{
-		[MAP_PIN_TYPE_ARTIFACT_GATE_CLOSED_ALDMERI_DOMINION] 		= 	"/esoui/art/compass/ava_artifactgate_aldmeri_closed.dds",
-		[MAP_PIN_TYPE_ARTIFACT_GATE_CLOSED_DAGGERFALL_COVENANT] 	= 	"/esoui/art/compass/ava_artifactgate_daggerfall_closed.dds",
-		[MAP_PIN_TYPE_ARTIFACT_GATE_CLOSED_EBONHEART_PACT] 			=	"/esoui/art/compass/ava_artifactgate_ebonheart_closed.dds",
-		[MAP_PIN_TYPE_ARTIFACT_GATE_OPEN_ALDMERI_DOMINION] 		= 	"/esoui/art/compass/ava_artifactgate_aldmeri_open.dds",
-		[MAP_PIN_TYPE_ARTIFACT_GATE_OPEN_DAGGERFALL_COVENANT] 	= 	"/esoui/art/compass/ava_artifactgate_daggerfall_open.dds",
-		[MAP_PIN_TYPE_ARTIFACT_GATE_OPEN_EBONHEART_PACT] 			=	"/esoui/art/compass/ava_artifactgate_ebonheart_open.dds",			
+	[KEEPTYPE_ARTIFACT_GATE] =	{
+		[MAP_PIN_TYPE_ARTIFACT_GATE_CLOSED_ALDMERI_DOMINION]		=	"/esoui/art/compass/ava_artifactgate_aldmeri_closed.dds",
+		[MAP_PIN_TYPE_ARTIFACT_GATE_CLOSED_DAGGERFALL_COVENANT]		=	"/esoui/art/compass/ava_artifactgate_daggerfall_closed.dds",
+		[MAP_PIN_TYPE_ARTIFACT_GATE_CLOSED_EBONHEART_PACT]			=	"/esoui/art/compass/ava_artifactgate_ebonheart_closed.dds",
+		[MAP_PIN_TYPE_ARTIFACT_GATE_OPEN_ALDMERI_DOMINION]		=	"/esoui/art/compass/ava_artifactgate_aldmeri_open.dds",
+		[MAP_PIN_TYPE_ARTIFACT_GATE_OPEN_DAGGERFALL_COVENANT]	=	"/esoui/art/compass/ava_artifactgate_daggerfall_open.dds",
+		[MAP_PIN_TYPE_ARTIFACT_GATE_OPEN_EBONHEART_PACT]			=	"/esoui/art/compass/ava_artifactgate_ebonheart_open.dds",			
 	},
 	
-	[PVP_KEEPTYPE_ARTIFACT_KEEP] = 	{
-		[ALLIANCE_ALDMERI_DOMINION] 	= 	"/esoui/art/compass/ava_artifacttemple_aldmeri.dds",
-		[ALLIANCE_DAGGERFALL_COVENANT] 	= 	"/esoui/art/compass/ava_artifacttemple_daggerfall.dds",
-		[ALLIANCE_EBONHEART_PACT] 		=	"/esoui/art/compass/ava_artifacttemple_ebonheart.dds",	
+	[PVP_KEEPTYPE_ARTIFACT_KEEP] =	{
+		[ALLIANCE_ALDMERI_DOMINION]	=	"/esoui/art/compass/ava_artifacttemple_aldmeri.dds",
+		[ALLIANCE_DAGGERFALL_COVENANT]	=	"/esoui/art/compass/ava_artifacttemple_daggerfall.dds",
+		[ALLIANCE_EBONHEART_PACT]		=	"/esoui/art/compass/ava_artifacttemple_ebonheart.dds",	
 	},
 	
-	[PVP_KEEPTYPE_BORDER_KEEP] = 	{
-		[ALLIANCE_ALDMERI_DOMINION] 	= 	"/esoui/art/compass/ava_borderkeep_pin_aldmeri.dds",
-		[ALLIANCE_DAGGERFALL_COVENANT] 	= 	"/esoui/art/compass/ava_borderkeep_pin_daggerfall.dds",
-		[ALLIANCE_EBONHEART_PACT] 		=	"/esoui/art/compass/ava_borderkeep_pin_ebonheart.dds",	
+	[PVP_KEEPTYPE_BORDER_KEEP] =	{
+		[ALLIANCE_ALDMERI_DOMINION]	=	"/esoui/art/compass/ava_borderkeep_pin_aldmeri.dds",
+		[ALLIANCE_DAGGERFALL_COVENANT]	=	"/esoui/art/compass/ava_borderkeep_pin_daggerfall.dds",
+		[ALLIANCE_EBONHEART_PACT]		=	"/esoui/art/compass/ava_borderkeep_pin_ebonheart.dds",	
 	},	
 	
-	-- [PVP_KEEPTYPE_BORDER_KEEP] = 	{
-		-- [ALLIANCE_ALDMERI_DOMINION] 	= 	"esoui/art/guild/banner_aldmeri.dds",
-		-- [ALLIANCE_DAGGERFALL_COVENANT] 	= 	"esoui/art/guild/banner_daggerfall.dds",
-		-- [ALLIANCE_EBONHEART_PACT] 		=	"esoui/art/guild/banner_ebonheart.dds",	
+	-- [PVP_KEEPTYPE_BORDER_KEEP] =		{
+		-- [ALLIANCE_ALDMERI_DOMINION]	=	"esoui/art/guild/banner_aldmeri.dds",
+		-- [ALLIANCE_DAGGERFALL_COVENANT]	=	"esoui/art/guild/banner_daggerfall.dds",
+		-- [ALLIANCE_EBONHEART_PACT]		=	"esoui/art/guild/banner_ebonheart.dds",	
 	-- },
 		
-	[FLAGTYPE_OTHER] = 					"/esoui/art/compass/ava_flagneutral.dds",
-	[FLAGTYPE_NAVE] = 					"/esoui/art/compass/ava_flagcarrier_neutral.dds",
-	[FLAGTYPE_APSE] = 					"/esoui/art/compass/ava_flagbase_neutral.dds",	
+	[FLAGTYPE_OTHER] =					"/esoui/art/compass/ava_flagneutral.dds",
+	[FLAGTYPE_NAVE] =					"/esoui/art/compass/ava_flagcarrier_neutral.dds",
+	[FLAGTYPE_APSE] =					"/esoui/art/compass/ava_flagbase_neutral.dds",	
 	
 	[PVP_ALLIANCE_BASE_IC] = {
-		[ALLIANCE_ALDMERI_DOMINION] 	= 	"/esoui/art/campaign/overview_allianceicon_aldmeri.dds",
-		[ALLIANCE_DAGGERFALL_COVENANT] 	= 	"/esoui/art/campaign/overview_allianceicon_daggefall.dds",
-		[ALLIANCE_EBONHEART_PACT] 		=	"/esoui/art/campaign/overview_allianceicon_ebonheart.dds",	
+		[ALLIANCE_ALDMERI_DOMINION]	=	"/esoui/art/campaign/overview_allianceicon_aldmeri.dds",
+		[ALLIANCE_DAGGERFALL_COVENANT]	=	"/esoui/art/campaign/overview_allianceicon_daggefall.dds",
+		[ALLIANCE_EBONHEART_PACT]		=	"/esoui/art/campaign/overview_allianceicon_ebonheart.dds",	
 	},
 }
 

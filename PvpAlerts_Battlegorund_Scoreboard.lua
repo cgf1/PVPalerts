@@ -11,9 +11,9 @@ local PVP_SPECIALS_ICON_DM = "esoui/art/deathrecap/deathrecap_killingblow_icon.d
 local PVP_SPECIALS_ICON_CTF = "esoui/art/compass/ava_flagcarrier_neutral.dds"
 
 local BATTLEGROUND_ALLIANCE_TO_BG_TEXTURE = {
-        [BATTLEGROUND_ALLIANCE_FIRE_DRAKES] = "EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_orange.dds",
-        [BATTLEGROUND_ALLIANCE_PIT_DAEMONS] = "EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_green.dds",
-        [BATTLEGROUND_ALLIANCE_STORM_LORDS] = "EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_purple.dds",
+	[BATTLEGROUND_ALLIANCE_FIRE_DRAKES] = "EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_orange.dds",
+	[BATTLEGROUND_ALLIANCE_PIT_DAEMONS] = "EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_green.dds",
+	[BATTLEGROUND_ALLIANCE_STORM_LORDS] = "EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_purple.dds",
 }
 
 local PVP_GOLD_COLOR = ZO_ColorDef:New("CCCC00")
@@ -115,7 +115,7 @@ function ScoreboardList:Setup( )
 		["assists"]   = { caseInsensitive = true, tiebreaker = "points" },
 		["damage"]   = { caseInsensitive = true, tiebreaker = "points" },
 		["healing"]   = { caseInsensitive = true, tiebreaker = "points" },
-		-- ["medals"]   = { caseInsensitive = true, tiebreaker = "points" },
+		-- ["medals"]	= { caseInsensitive = true, tiebreaker = "points" },
 		["specials"]   = { caseInsensitive = true, tiebreaker = "points" },
 	}
 
@@ -501,9 +501,9 @@ function ScoreboardList:FilterScrollList( )
 		local alliance1Text = PVP:ColorizeToBgTeamColor(1, PVP:GetBattlegroundTeamBadgeTextFormattedIcon(1)..""..tostring(PVP.bgScoreboard.allianceCounts[1]))
 		local alliance2Text = PVP:ColorizeToBgTeamColor(2, PVP:GetBattlegroundTeamBadgeTextFormattedIcon(2)..""..tostring(PVP.bgScoreboard.allianceCounts[2]))
 		local alliance3Text = PVP:ColorizeToBgTeamColor(3, PVP:GetBattlegroundTeamBadgeTextFormattedIcon(3)..""..tostring(PVP.bgScoreboard.allianceCounts[3]))
-		PVP_ScoreboardPlayers:SetText(totalPlayersText.." : "..alliance1Text.."  "..alliance2Text.."  "..alliance3Text)
+		PVP_ScoreboardPlayers:SetText(totalPlayersText.." : "..alliance1Text.."	 "..alliance2Text.."  "..alliance3Text)
 	else
-		PVP_ScoreboardPlayers:SetText("TOTAL PLAYERS - 15 : |c794993"..PVP:GetBattlegroundTeamBadgeTextFormattedIcon(3).." - 4|r  |CC1572D"..PVP:GetBattlegroundTeamBadgeTextFormattedIcon(1).." - 4|R  |c589726"..PVP:GetBattlegroundTeamBadgeTextFormattedIcon(2).." - 4|r")
+		PVP_ScoreboardPlayers:SetText("TOTAL PLAYERS - 15 : |c794993"..PVP:GetBattlegroundTeamBadgeTextFormattedIcon(3).." - 4|r  |CC1572D"..PVP:GetBattlegroundTeamBadgeTextFormattedIcon(1).." - 4|R	|c589726"..PVP:GetBattlegroundTeamBadgeTextFormattedIcon(2).." - 4|r")
 	end
 
 	local team1Control = PVP_ScoreboardScoreTeam1
@@ -964,8 +964,8 @@ function PVP_CreateSparkleAnimation(control)
 
     local animData = 
     { 
-        sparkle = sparkle,
-        sparkleTimeLine = ANIMATION_MANAGER:CreateTimelineFromVirtual("SparkleStarburstAnim", sparkle),
+	sparkle = sparkle,
+	sparkleTimeLine = ANIMATION_MANAGER:CreateTimelineFromVirtual("SparkleStarburstAnim", sparkle),
     }
 
     local ccwAnim = animData.sparkleTimeLine:GetAnimation(2)
