@@ -54,13 +54,13 @@ PVP.defaults={
 	playCampSound=true,
 	playBuffsSound=true,
 	-- stealthOnly=false,
-	
+
 	showAttacks = true,
 	showImportant = true,
 	showHeavyAttacks = true,
 	showSnipes = true,
 	-- showNumberStealthed=true,
-	
+
 	showKOSFrame=true,
 	showCounterFrame=true,
 	showCampFrame=true,
@@ -107,7 +107,7 @@ PVP.defaults={
 	compass3dColor = {0,0,0.5,0.5},
 	compass3dColorNorth = {0.5,0,0,0.5},
 	useDepthBufferCompass = true,
-	
+
 	pingWaypoint = true,
 	showNewTargetInfo = true,
 	showMaxTargetCP = true,
@@ -119,17 +119,17 @@ PVP.defaults={
 	offsetX=0,
 	offsetY=-100,
 	counterOffsetX=400,
-	counterOffsetY=400,	
+	counterOffsetY=400,
 	feedOffsetX=0,
-	feedOffsetY=550,	
+	feedOffsetY=550,
 	campOffsetX=350,
-	campOffsetY=350,	
+	campOffsetY=350,
 	newAttackerOffsetX=0,
 	newAttackerOffsetY=0,
 	targetOffsetX=0,
-	targetOffsetY=0,	
-	medalsOffsetX=0,	
-	medalsOffsetY=350,	
+	targetOffsetY=0,
+	medalsOffsetX=0,
+	medalsOffsetY=350,
 	captureOffsetX=200,
 	captureOffsetY=200,
 	namesOffsetX=350,
@@ -140,13 +140,13 @@ PVP.defaults={
 	onScreenOffsetY=-300,
 	onScreenScale=1,
 	KOSmode=4,
-	
+
 	showHybridJustification = false,
 	reportSavedInfo=false,
-	
+
 	colors={
-		normal="EEEE00", 
-		stealthed="AB0100", 
+		normal="EEEE00",
+		stealthed="AB0100",
 		piercing="FFAA00",
 	},
 	playersDB={},
@@ -162,36 +162,36 @@ PVP.accents = {
     ["ä"] = "a",
     ["å"] = "a",
     ["ą"] = "a",
-	
+
     ["ß"] = "b",
-	
+
     ["ĥ"] = "h",
-	
+
     ["ç"] = "c",
     ["æ"] = "ae",
-	
+
     ["è"] = "e",
     ["é"] = "e",
     ["ê"] = "e",
     ["ë"] = "e",
     ["ę"] = "e",
-	
+
     ["ì"] = "i",
     ["í"] = "i",
     ["î"] = "i",
     ["ï"] = "i",
     ["ı"] = "i",
     ["į"] = "i",
-	
+
     ["ł"] = "l",
-	
+
     ["ñ"] = "n",
 
     ["ð"] = "d",
     ["š"] = "s",
-	
+
     ["þ"] = "p",
-	
+
     ["ò"] = "o",
     ["ó"] = "o",
     ["ô"] = "o",
@@ -201,23 +201,23 @@ PVP.accents = {
     ["ð"] = "o",
     ["ø"] = "o",
     ["ǫ"] = "o",
-	
+
     ["ẅ"] = "w",
-	
+
     ["ş"] = "s",
     ["š"] = "s",
-	
+
     ["ù"] = "u",
     ["ú"] = "u",
     ["û"] = "u",
     ["ü"] = "u",
     ["ų"] = "u",
-	
+
     ["ý"] = "y",
     ["ÿ"] = "y",
     ["ŷ"] = "y",
 
-	
+
     ["À"] = "A",
     ["Á"] = "A",
     ["Â"] = "A",
@@ -225,36 +225,36 @@ PVP.accents = {
     ["Ä"] = "A",
     ["Å"] = "A",
     ["Ą"] = "A",
-	
+
     ["ẞ"] = "B",
-	
+
     ["Ĥ"] = "H",
-	
+
     ["Ç"] = "C",
     ["Æ"] = "Ae",
-	
+
     ["È"] = "E",
     ["É"] = "E",
     ["Ê"] = "E",
     ["Ë"] = "E",
     ["Ę"] = "E",
-	
+
     ["Ì"] = "I",
     ["Í"] = "I",
     ["Î"] = "I",
     ["Ï"] = "I",
     ["Į"] = "I",
-	
+
     ["Ł"] = "L",
-	
+
     ["Ñ"] = "N",
-    
+
 	["Ð"] = "D",
 	["Š"] = "S",
 	["Ş"] = "S",
 
 	["Þ"] = "P",
-	
+
     ["Ò"] = "O",
     ["Ó"] = "O",
     ["Ô"] = "O",
@@ -262,19 +262,19 @@ PVP.accents = {
     ["Ö"] = "O",
     ["Ø"] = "O",
     ["Ǫ"] = "O",
-	
+
     ["Ẅ"] = "W",
-	
+
     ["Ù"] = "U",
     ["Ú"] = "U",
     ["Û"] = "U",
     ["Ü"] = "U",
     ["Ų"] = "U",
-	
+
     ["Ý"] = "Y",
     ["Ÿ"] = "Y",
     ["Ŷ"] = "Y",
-	
+
 }
 
 PVP.classIcons={
@@ -296,20 +296,20 @@ PVP.classIconsLarge={
 }
 
 PVP.snipeNames={
-	["Lethal Arrow"] = true,	
-	["Focused Aim"] = true, 
-	["Snipe"] = true, 
-	["Dark Flare"] = true, 
-	["Solar Flare"] = true, 
-	["Assassin's Will"] = true, 
-	["Assassin's Scourge"] = true, 
-	["Crystal Fragments"] = true, 
-	["Crystal Blast"] = true, 
-	["Crystal Shard"] = true, 
-	["Uppercut"] = true, 
-	["Wrecking Blow"] = true, 
+	["Lethal Arrow"] = true,
+	["Focused Aim"] = true,
+	["Snipe"] = true,
+	["Dark Flare"] = true,
+	["Solar Flare"] = true,
+	["Assassin's Will"] = true,
+	["Assassin's Scourge"] = true,
+	["Crystal Fragments"] = true,
+	["Crystal Blast"] = true,
+	["Crystal Shard"] = true,
+	["Uppercut"] = true,
+	["Wrecking Blow"] = true,
 	["Dizzying Swing"] = true,
-	
+
 	["Crushing Swipe"] = true,
 }
 
@@ -325,19 +325,19 @@ PVP.snipeId={
 	[40903] = 3, --Focused Aim Active
 	[40907] = 4, --Focused Aim Active
 
-	
+
 	[28882] = 1, --Snipe Active
 	[40890] = 2, --Snipe Active
 	[40891] = 3, --Snipe Active
 	[40892] = 4, --Snipe Active
 
-	
+
 	[22110] = 1, --Dark Flare Active
 	[24129] = 2, --Dark Flare Active
 	[24139] = 3, --Dark Flare Active
 	[24147] = 4, --Dark Flare Active
- 
-	
+
+
 	[22057] = 1, --Solar Flare Active
 	[24080] = 2, --Solar Flare Active
 	[24101] = 3, --Solar Flare Active
@@ -347,12 +347,12 @@ PVP.snipeId={
 	[62132] = 2, --Assassin's Will Active
 	[62135] = 3, --Assassin's Will Active
 	[62138] = 4, --Assassin's Will Active
-	
+
 	[61932] = 1, --Assassin's Scourge Active
 	[62126] = 2, --Assassin's Scourge Active
 	[62128] = 3, --Assassin's Scourge Active
 	[62130] = 4, --Assassin's Scourge Active
-	
+
 	[46324] = 1, --Crystal Fragments Active
 	[47565] = 2, --Crystal Fragments Active
 	[47567] = 3, --Crystal Fragments Active
@@ -373,7 +373,7 @@ PVP.snipeId={
 	[39965] = 3, --Uppercut Active
 	[39968] = 4, --Uppercut Active
 
-	
+
 	[38807] = 1, --Wrecking Blow Active
 	[40000] = 2, --Wrecking Blow Active
 	[40004] = 3, --Wrecking Blow Active
@@ -383,8 +383,8 @@ PVP.snipeId={
 	[39976] = 2, --Dizzying Swing Active
 	[39980] = 3, --Dizzying Swing Active
 	[39984] = 4, --Dizzying Swing Active
-	
-	
+
+
 	[89128] = 1, --Crushing Swipe
 	[89220] = 2, --Crushing Swipe
 }
@@ -399,7 +399,7 @@ PVP.ambushId = {
 	[35886] = 2, --Ambush Active
 	[35892] = 3, --Ambush Active
 	[35898] = 4, --Ambush Active
-	
+
 	[18342] = 1, --Teleport Strike Active
 	[35864] = 2, --Teleport Strike Active
 	[35868] = 3, --Teleport Strike Active
@@ -422,7 +422,7 @@ PVP.excludedAbilityIds={
 	[8077] = true,
 	[5614] = true,
 	--NEW NEEDS MORE TESTING
-	[46272] = true, 
+	[46272] = true,
 	[31373] = true,
 	[64303] = true, --drinking mead
 	[55041] = true, --webdrop
@@ -451,51 +451,51 @@ PVP.magickaAbilitiesSmall={
 }
 
 PVP.staminaAbilities={
-		
+
 	---nightblade
-	
-	["Incapacitating Strike"] = true, 
+
+	["Incapacitating Strike"] = true,
 	["Ambush"] = true,
 	["Killer's Blade"] = true,
 	["Relentless Focus"] = true,
 	["Power Extraction"] = true,
-	["Assassin's Scourge"] = true, 
-	["Surprise Attack"] = true, 
-	
+	["Assassin's Scourge"] = true,
+	["Surprise Attack"] = true,
+
 	---sorcerer-----
-	
+
 	["Bound Armaments"] = true,
 	["Hurricane"] = true,
 	["Critical Surge"] = true,
-	
+
 	----dk-----
-	
+
 	["Venomous Claw"] = true,
 	["Noxious Breath"] = true,
 	["Corrosive Armor"] = true,
 	["Take Flight"] = true,
 
 	-----templar----
-	
+
 	["Biting Jabs"] = true,
 	["Binding Javelin"] = true,
 	["Power of the Light"] = true,
 	["Crescent Sweep"] = true,
-	
-	
+
+
 	-----warden----
-	
+
 	["Cutting Dive"] = true,
 	["Subterranian Assault"] = true,
 	["Soothing Spores"] = true,
 
 	----AVA----
-	
+
 	["Resolving Vigor"] = true,
 	["Echoing Vigor"] = true,
 	["Vigor"] = true,
-	
-	
+
+
 	["Rearming Trap"] = true,
 	["Trap Beast"] = true,
 	["Lightweight Beast Trap"] = true,
@@ -505,8 +505,8 @@ PVP.staminaAbilities={
 	["Flawless Dawnbreaker"] = true,
 
 	["Spiked Bone Shield"] = true,
-	
-	
+
+
 	["Pounce"] = true,
 	["Brutal Pounce"] = true,
 	["Feral Pounce"] = true,
@@ -519,18 +519,18 @@ PVP.staminaAbilities={
 	["Infectious Claws"] = true,
 	["Claws of Anguish"] = true,
 	["Claws of Life"] = true,
-	
+
 	["Trapping Webs"] = true,
 	["Shadow Silk"] = true,
 	["Tangling Webs"] = true,
-	
+
 	["Tremorscale"] = true,
 	["Viper"] = true,
-	
-		
-	
-	["Heavy Attack (2H)"] = true, 
-	["Heavy Attack (Bow)"] = true,	
+
+
+
+	["Heavy Attack (2H)"] = true,
+	["Heavy Attack (Bow)"] = true,
 }
 
 PVP.staminaAbilitiesSmallID={
@@ -552,35 +552,35 @@ PVP.staminaAbilitiesID={
 	[36901] = true, --Power Extraction
 	[61932] = true, --Assassin's Scourge
 	[25260] = true, --Surprise Attack
-	
+
 
 	---sorcerer-----
-	
+
 	[24165] = true, --Bound Armaments
 	[23231] = true, --Hurricane
 	[23678] = true, --Critical Surge
-	
+
 	----dk-----
-	
+
 	[20668] = true, --Venomous Claw
 	[20944] = true, --Noxious Breath
 	[17878] = true, --Corrosive Armor
 	[32719] = true, --Take Flight
 
 	-----templar----
-	
+
 	[26792] = true, --Biting Jabs
 	[26804] = true, --Binding Javelin
 	[21763] = true, --Power of the Light
 	[22139] = true, --Crescent Sweep
 
 	----AVA----
-	
+
 	[61507] = true, --Resolving Vigor
 	[61505] = true, --Echoing Vigor
 	[63236] = true, --Vigor
-	
-	
+
+
 	[40382] = true, --Rearming Trap
 	[35750] = true, --Trap Beast
 	[40372] = true, --Lightweight Beast Trap
@@ -591,8 +591,8 @@ PVP.staminaAbilitiesID={
 	[35713] = true, --Dawnbreaker
 
 	[42138] = true, --Spiked Bone Shield
-	
-	
+
+
 	[32632] = true, --Pounce
 	[39105] = true, --Brutal Pounce
 	[39104] = true, --Feral Pounce
@@ -605,16 +605,16 @@ PVP.staminaAbilitiesID={
 	[58855] = true, --Infectious Claws
 	[58864] = true, --Claws of Anguish
 	[58879] = true, --Claws of Life
-	
+
 	["Trapping Webs"] = true,
 	["Shadow Silk"] = true,
 	["Tangling Webs"] = true,
-	
+
 	["Tremorscale"] = true,
 	["Viper"] = true,
-	
-	["Heavy Attack (2H)"] = true, 
-	["Heavy Attack (Bow)"] = true,	
+
+	["Heavy Attack (2H)"] = true,
+	["Heavy Attack (Bow)"] = true,
 
 }
 
@@ -623,7 +623,7 @@ PVP.staminaAbilitiesID={
 PVP.selfStamAbilities={
 	["Shuffle"] = true,
 	["Elude"] = true,
-	
+
 	["Boon: The Serpent"] = true,
 	["Boon: The Warrior"] = true,
 }
@@ -644,7 +644,7 @@ PVP.selfBigStamAbilities = {
 	["Hawk Eye"] = true,
 	["Increase Max Health & Stamina"] = true,
 	["Increase Max Health & Health"] = true,
-	
+
 	["Bull Netch"] = true,
 	["Green Lotus"] = true,
 }
@@ -666,7 +666,7 @@ PVP.selfBigMagAbilities = {
 	["Inferno"] = true,
 	["Increase Max Health & Magicka"] = true,
 	["Witchmother's Potent Brew"] = true,
-	
+
 	["Blue Betty"] = true,
 	["Lotus Blossom"] = true,
 }
@@ -675,7 +675,7 @@ PVP.selfBigMagAbilities = {
 PVP.magickaAbilities={
 
 		----nightblade----
-		
+
 	-- ["Impale"] = true,
 	["Lotus Fan"] = true,
 	["Merciless Resolve"] = true,
@@ -692,12 +692,12 @@ PVP.magickaAbilities={
 	["Prolonged Suffering"] = true,
 	["Malefic Wreath"] = true,
 	["Agony"] = true,
-	
-	
+
+
 
 
 	----sorcerer----
-	
+
 	["Dark Conversion"] = true,
 	["Unstable Clannfear"] = true,
 	["Volatile Familiar"] = true,
@@ -721,10 +721,10 @@ PVP.magickaAbilities={
 	["Rune Prison"] = true,
 	["Boundless Storm"] = true,
 
-	
-	
+
+
 	-----dk-----
-	
+
 	["Engulfing Flames"] = true,
 	["Lava Whip"] = true,
 	["Molten Whip"] = true,
@@ -742,10 +742,10 @@ PVP.magickaAbilities={
 	["Burning Embers"] = true,
 
 	["Shattering Rocks"] = true,
-	
-	
+
+
 	----templar----
-	
+
 	["Puncturing Sweep"] = true,
 	["Empowering Sweep"] = true,
 	["Aurora Javelin"] = true,
@@ -754,11 +754,11 @@ PVP.magickaAbilities={
 	["Blazing Spear"] = true,
 	["Explosive Charge"] = true,
 	["Focused Charge"] = true,
-	
+
 	["Sun Fire"] = true,
 	["Vampire's Bane"] = true,
 	["Reflective Light"] = true,
-	
+
 	["Dark Flare"] = true,
 	["Solar Barrage"] = true,
 	["Purifying Light"] = true,
@@ -779,19 +779,19 @@ PVP.magickaAbilities={
 	["Healing Ritual"] = true,
 	["Ritual of Rebirth"] = true,
 	["Hasty Prayer"] = true,
-	
+
 	["Radiant Aura"] = true,
-	
+
 	["Rite of Passage"] = true,
 	["Remembrance"] = true,
 	["Practiced Incantation"] = true,
-	
+
 	["Eclipse"] = true,
 	["Total Dark"] = true,
 	["Unstable Core"] = true,
-	
+
 	-- warden
-	
+
 	["Screaming Cliff Racer"] = true,
 	["Deep Fissure"] = true,
 	["Fetcher Infection"] = true,
@@ -802,32 +802,32 @@ PVP.magickaAbilities={
 	["Northern Storm"] = true,
 
 
-	
+
 	["Meteor"] = true,
 	["Shooting Star"] = true,
 	["Ice Comet"] = true,
-	
+
 	["Bat Swarm"] = true,
 	["Devouring Swarm"] = true,
 	["Clouding Swarm"] = true,
-	
+
 	["Accelerating Drain"] = true,
 	["Invigorating Drain"] = true,
 	["Drain Essence"] = true,
-	
+
 	["Baleful Mist"] = true,
-	
+
 	["Soul Strike"] = true,
 	["Shatter Soul"] = true,
 	["Soul Assault"] = true,
-	
+
 	["Soul Trap"] = true,
 	["Soul Spitting Trap"] = true,
 	["Consuming Trap"] = true,
-	
-	
+
+
 	----AVA----
-	
+
 	["Proximity Detonation"] = true,
 	["Entrophy"] = true,
 	["Degeneration"] = true,
@@ -838,13 +838,13 @@ PVP.magickaAbilities={
 	["Necrotic Orb"] = true,
 	["Mystic Orb"] = true,
 	["Energy Orb"] = true,
-	
-	
+
+
 	["Heavy Attack (Flame)"] = true,
 	["Heavy Attack (Frost)"] = true,
 	["Heavy Attack (Shock)"] = true,
 	["Heavy Attack (Restoration)"] = true,
-	
+
 }
 
 PVP.staminaSkillLines={
@@ -860,22 +860,22 @@ PVP.magickaSkillLines={
 }
 
 PVP.importantAbilities={
-	["Assassin's Will"] = true, 
-	["Assassin's Scourge"] = true, 
+	["Assassin's Will"] = true,
+	["Assassin's Scourge"] = true,
 	["Crystal Fragments"] = true,
-	["Crystal Blast"] = true,	
-	["Crystal Shard"] = true,	
-	["Shock Touch"] = true, 
-	["Shock Reach"] = true, 
-	["Flame Reach"] = true, 
-	["Flame Touch"] = true, 
-	["Aurora Javelin"] = true, 
-	["Piercing Javelin"] = true, 
-	["Binding Javelin"] = true, 
-	["Stonefist"] = true, 
-	["Obsidian Shard"] = true, 
+	["Crystal Blast"] = true,
+	["Crystal Shard"] = true,
+	["Shock Touch"] = true,
+	["Shock Reach"] = true,
+	["Flame Reach"] = true,
+	["Flame Touch"] = true,
+	["Aurora Javelin"] = true,
+	["Piercing Javelin"] = true,
+	["Binding Javelin"] = true,
+	["Stonefist"] = true,
+	["Obsidian Shard"] = true,
 	["Stone Giant"] = true,
-	-- ["Unrelenting Grip"] = true,	
+	-- ["Unrelenting Grip"] = true,
 }
 
 PVP.smallImportantAbilitiesNames = {
@@ -886,17 +886,17 @@ PVP.smallImportantAbilitiesNames = {
 }
 
 PVP.importantAbilitiesId={
-	
+
 	[61930] = 1, --Assassin's Will Active
 	[62132] = 2, --Assassin's Will Active
 	[62135] = 3, --Assassin's Will Active
 	[62138] = 4, --Assassin's Will Active
-	
+
 	[61932] = 1, --Assassin's Scourge Active
 	[62126] = 2, --Assassin's Scourge Active
 	[62128] = 3, --Assassin's Scourge Active
 	[62130] = 4, --Assassin's Scourge Active
-	
+
 	[46324] = 1, --Crystal Fragments Active
 	[47565] = 2, --Crystal Fragments Active
 	[47567] = 3, --Crystal Fragments Active
@@ -911,7 +911,7 @@ PVP.importantAbilitiesId={
 	[47548] = 2, --Crystal Shard Active
 	[47550] = 3, --Crystal Shard Active
 	[47552] = 4, --Crystal Shard Active
-	
+
 	[29089] = 1, --Shock Touch Active
 	[40953] = 2, --Shock Touch Active
 	[40962] = 3, --Shock Touch Active
@@ -921,12 +921,12 @@ PVP.importantAbilitiesId={
 	[41036] = 2, --Shock Reach Active
 	[41045] = 3, --Shock Reach Active
 	[41054] = 4, --Shock Reach Active
-	
+
 	[38993] = 1, --Shock Clench Active
 	[40991] = 2, --Shock Clench Active
 	[41003] = 3, --Shock Clench Active
 	[41016] = 4, --Shock Clench Active
-	
+
 	[38944] = 1, --Flame Reach Active
 	[41030] = 2, --Flame Reach Active
 	[41039] = 3, --Flame Reach Active
@@ -936,12 +936,12 @@ PVP.importantAbilitiesId={
 	[40948] = 2, --Flame Touch Active
 	[40957] = 3, --Flame Touch Active
 	[40965] = 4, --Flame Touch Active
-	
+
 	[38985] = 1, --Flame Clench Active
 	[40984] = 2, --Flame Clench Active
 	[40996] = 3, --Flame Clench Active
 	[41009] = 4, --Flame Clench Active
-	
+
 	[26800] = 1, --Aurora Javelin Active
 	[26977] = 2, --Aurora Javelin Active
 	[26980] = 3, --Aurora Javelin Active
@@ -971,28 +971,28 @@ PVP.importantAbilitiesId={
 	[32203] = 2, --Stone Giant Active
 	[32204] = 3, --Stone Giant Active
 	[32205] = 4, --Stone Giant Active
-	
+
 	[20496] = 1, --Unrelenting Grip Active
 	[23770] = 2, --Unrelenting Grip Active
 	[23774] = 3, --Unrelenting Grip Active
 	[23778] = 4, --Unrelenting Grip Active
-	
+
 	[28879] = 1, --Scatter Shot Active
 	[40852] = 2, --Scatter Shot Active
 	[40855] = 3, --Scatter Shot Active
 	[40858] = 4, --Scatter Shot Active
-	
+
 	[38672] = 1, --Magnum Shot Active
 	[40861] = 2, --Magnum Shot Active
 	[40865] = 3, --Magnum Shot Active
 	[40869] = 4, --Magnum Shot Active
-	
+
 	[38669] = 1, --Draining Shot Active
 	[40873] = 2, --Draining Shot Active
 	[40878] = 3, --Draining Shot Active
 	[40883] = 4, --Draining Shot Active
-	
-	
+
+
 	[38685] = 1, --Lethal Arrow Active
 	[40893] = 2, --Lethal Arrow Active
 	[40895] = 3, --Lethal Arrow Active
@@ -1003,19 +1003,19 @@ PVP.importantAbilitiesId={
 	[40903] = 3, --Focused Aim Active
 	[40907] = 4, --Focused Aim Active
 
-	
+
 	[28882] = 1, --Snipe Active
 	[40890] = 2, --Snipe Active
 	[40891] = 3, --Snipe Active
 	[40892] = 4, --Snipe Active
 
-	
+
 	[22110] = 1, --Dark Flare Active
 	[24129] = 2, --Dark Flare Active
 	[24139] = 3, --Dark Flare Active
 	[24147] = 4, --Dark Flare Active
- 
-	
+
+
 	[22057] = 1, --Solar Flare Active
 	[24080] = 2, --Solar Flare Active
 	[24101] = 3, --Solar Flare Active
@@ -1028,12 +1028,12 @@ PVP.majorImportantAbilitiesId={
 	[62132] = 2, --Assassin's Will Active
 	[62135] = 3, --Assassin's Will Active
 	[62138] = 4, --Assassin's Will Active
-	
+
 	[61932] = 1, --Assassin's Scourge Active
 	[62126] = 2, --Assassin's Scourge Active
 	[62128] = 3, --Assassin's Scourge Active
 	[62130] = 4, --Assassin's Scourge Active
-	
+
 	[46324] = 1, --Crystal Fragments Active
 	[47565] = 2, --Crystal Fragments Active
 	[47567] = 3, --Crystal Fragments Active
@@ -1048,7 +1048,7 @@ PVP.majorImportantAbilitiesId={
 	[47548] = 2, --Crystal Shard Active
 	[47550] = 3, --Crystal Shard Active
 	[47552] = 4, --Crystal Shard Active
-	
+
 	[38685] = 1, --Lethal Arrow Active
 	[40893] = 2, --Lethal Arrow Active
 	[40895] = 3, --Lethal Arrow Active
@@ -1059,19 +1059,19 @@ PVP.majorImportantAbilitiesId={
 	[40903] = 3, --Focused Aim Active
 	[40907] = 4, --Focused Aim Active
 
-	
+
 	[28882] = 1, --Snipe Active
 	[40890] = 2, --Snipe Active
 	[40891] = 3, --Snipe Active
 	[40892] = 4, --Snipe Active
 
-	
+
 	[22110] = 1, --Dark Flare Active
 	[24129] = 2, --Dark Flare Active
 	[24139] = 3, --Dark Flare Active
 	[24147] = 4, --Dark Flare Active
- 
-	
+
+
 	[22057] = 1, --Solar Flare Active
 	[24080] = 2, --Solar Flare Active
 	[24101] = 3, --Solar Flare Active
@@ -1079,8 +1079,8 @@ PVP.majorImportantAbilitiesId={
 }
 
 PVP.heavyAttackNames={
-	["Heavy Attack (2H)"] = PVP_2H_HA_ICON, 
-	["Heavy Attack (Bow)"] = PVP_BOW_HA_ICON,	
+	["Heavy Attack (2H)"] = PVP_2H_HA_ICON,
+	["Heavy Attack (Bow)"] = PVP_BOW_HA_ICON,
 	["Heavy Attack (Dual Wield)"] = PVP_DW_HA_ICON,
 	["Heavy Attack (1H)"] = PVP_SB_HA_ICON,
 	["Heavy Attack (Flame)"] = PVP_FLAME_HA_ICON,
@@ -1088,8 +1088,8 @@ PVP.heavyAttackNames={
 }
 
 PVP.heavyAttackId={
-	[16041] = PVP_2H_HA_ICON, 
-	[16691] = PVP_BOW_HA_ICON,	
+	[16041] = PVP_2H_HA_ICON,
+	[16691] = PVP_BOW_HA_ICON,
 	[16420] = PVP_DW_HA_ICON,
 	[15279] = PVP_SB_HA_ICON,
 	[15383] = PVP_FLAME_HA_ICON,
@@ -1109,7 +1109,7 @@ PVP.hitTypes={
 	[ACTION_RESULT_REFLECTED]				= true,
 	[ACTION_RESULT_RESIST]					= true,
 	[ACTION_RESULT_WRECKING_DAMAGE]			= true,
-	
+
 	[ACTION_RESULT_DODGED]					= true,
 	[ACTION_RESULT_DISORIENTED]			= true,
 	[ACTION_RESULT_EFFECT_GAINED]			= true,
@@ -1120,8 +1120,8 @@ PVP.hitTypes={
 }
 
 -- PVP.heavyAttackIdFrame={
-	-- [16041] = PVP_2H_HA_ICON, 
-	-- [16691] = PVP_BOW_HA_ICON,	
+	-- [16041] = PVP_2H_HA_ICON,
+	-- [16691] = PVP_BOW_HA_ICON,
 	-- [16420] = PVP_DW_HA_ICON,
 	-- [15279] = PVP_SB_HA_ICON,
 	-- [15383] = PVP_FLAME_HA_ICON,
@@ -1131,8 +1131,8 @@ PVP.hitTypes={
 -- }
 
 -- PVP.heavyIconColors={
-	-- [16041] = PVP_2H_HA_COLOR, 
-	-- [16691] = PVP_BOW_HA_COLOR,	
+	-- [16041] = PVP_2H_HA_COLOR,
+	-- [16691] = PVP_BOW_HA_COLOR,
 	-- [16420] = PVP_DW_HA_COLOR,
 	-- [15279] = PVP_SB_HA_COLOR,
 	-- [15383] = PVP_FLAME_HA_COLOR,
@@ -1175,134 +1175,134 @@ PVP.chargeSnareId = {
 PVP.AVAids ={
 
 	[16] =	{					-- Castle Faregyl
-		
+
 		[1] = {					-- Castle Faregyl Apse
-			objectiveId = 60, 
+			objectiveId = 60,
 			height = 209.88,
 		},
 		[2] = {					-- Castle Faregyl Nave
-			objectiveId = 61, 
+			objectiveId = 61,
 			height = 209.88,
 		},
 		[3] = {					-- Castle Faregyl Artifact Storage
-			objectiveId = 155, 
+			objectiveId = 155,
 			height = 209.88,
 		},
 	},
-	
+
 	[45] = {					-- Castle Faregyl Mine
-		
+
 		[1] = {					-- Faregyl Mine Flag
-			objectiveId = 64, 
+			objectiveId = 64,
 			height =  215.31,
 			parentKeepId = 16,
 		},
 	},
-	
+
 	[43] =	{					-- Castle Faregyl Farm
-		
+
 		[1] = {					-- Faregyl Farm Flag
-			objectiveId = 62, 
+			objectiveId = 62,
 			height =  224.19,
 			parentKeepId = 16,
 		},
 	},
-	
+
 	[44] = {					-- Castle Faregyl Lumbermill
-		
+
 		[1] = {					-- Faregyl Lumbermill Flag
-			objectiveId = 63, 
+			objectiveId = 63,
 			height =  235.64,
 			parentKeepId = 16,
 		},
 	},
-	
+
 ---------------------------------------------------------
-	
+
 	[15] =	{					-- Castle Alessia
-		
+
 		[1] = {					-- Castle Alessia Apse
-			objectiveId = 167, 
+			objectiveId = 167,
 			height = 164.71,
 		},
 		[2] = {					-- Castle Alessia Nave
-			objectiveId = 168, 
+			objectiveId = 168,
 			height = 164.71,
 		},
 		[3] = {					-- Castle Alessia Artifact Storage
-			objectiveId = 154, 
+			objectiveId = 154,
 			height = 164.71,
 		},
 	},
-	
+
 	[79] = {					-- Castle Alessia Mine
-		
+
 		[1] = {					-- Alessia Mine Flag
-			objectiveId = 198, 
+			objectiveId = 198,
 			height =  160.28,
 			parentKeepId = 15,
 		},
 	},
-	
+
 	[81] =	{					-- Castle Alessia Farm
-		
+
 		[1] = {					-- Alessia Farm Flag
-			objectiveId = 197, 
+			objectiveId = 197,
 			height =  200.91,
 			parentKeepId = 15,
 		},
 	},
-	
+
 	[80] = {					-- Castle Alessia Lumbermill
-		
+
 		[1] = {					-- Alessia Lumbermill Flag
-			objectiveId = 196, 
+			objectiveId = 196,
 			height =  141.73,
 			parentKeepId = 15,
 		},
 	},
 
-------------------------------------------------------------------------	
-	
-	
+------------------------------------------------------------------------
+
+
 	[19] =	{					-- Castle Black Boot
-		
+
 		[1] = {					-- Castle Black Boot Apse
-			objectiveId = 49, 
+			objectiveId = 49,
 			height = 186.76,
 		},
 		[2] = {					-- Castle Black Boot Nave
-			objectiveId = 48, 
+			objectiveId = 48,
 			height = 186.76,
 		},
 		[3] = {					-- Castle Black Boot Artifact Storage
-			objectiveId = 158, 
+			objectiveId = 158,
 			height = 186.76,
 		},
 	},
-	
+
 	[35] = {					-- Castle Black Boot Mine
-		
+
 		[1] = {					-- Black Boot Mine Flag
-			objectiveId = 46, 
+			objectiveId = 46,
 			height =  178.82,
 			parentKeepId = 19,
 		},
 	},
-	
+
 	[36] =	{					-- Castle Black Boot Farm
-		
+
 		[1] = {					-- Black Boot Farm Flag
-			objectiveId = 47, 
+			objectiveId = 47,
 			height =  183.12,
 			parentKeepId = 19,
 		},
 	},
-	
+
 	[34] = {					-- Castle Black Boot Lumbermill
-		
+
 		[1] = {					-- Black Boot Lumbermill Flag
-			objectiveId = 45, 
+			objectiveId = 45,
 			height =  154.38,
 			parentKeepId = 19,
 		},
@@ -1311,43 +1311,43 @@ PVP.AVAids ={
 ------------------------------------------------------------------------
 
 	[20] =	{					-- Castle Bloodmayne
-		
+
 		[1] = {					-- Castle Bloodmayne Apse
-			objectiveId = 40, 
+			objectiveId = 40,
 			height = 159.57,
 		},
 		[2] = {					-- Castle Bloodmayne Nave
-			objectiveId = 41, 
+			objectiveId = 41,
 			height = 159.57,
 		},
 		[3] = {					-- Castle Bloodmayne Artifact Storage
-			objectiveId = 159, 
+			objectiveId = 159,
 			height = 159.57,
 		},
 	},
-	
+
 	[23] = {					-- Castle Bloodmayne Mine
-		
+
 		[1] = {					-- Bloodmayne Mine Flag
-			objectiveId = 80, 
+			objectiveId = 80,
 			height =  167.00,
 			parentKeepId = 20,
 		},
 	},
-	
+
 	[22] =	{					-- Castle Bloodmayne Farm
-		
+
 		[1] = {					-- Bloodmayne Farm Flag
-			objectiveId = 42, 
+			objectiveId = 42,
 			height =  206.28,
 			parentKeepId = 20,
 		},
 	},
-	
+
 	[24] = {					-- Castle Bloodmayne Lumbermill
-		
+
 		[1] = {					-- Bloodmayne Lumbermill Flag
-			objectiveId = 79, 
+			objectiveId = 79,
 			height =  179.00,
 			parentKeepId = 20,
 		},
@@ -1356,43 +1356,43 @@ PVP.AVAids ={
 ------------------------------------------------------------------------
 
 	[17] =	{					-- Castle Roebeck
-		
+
 		[1] = {					-- Castle Roebeck Apse
-			objectiveId = 165, 
+			objectiveId = 165,
 			height = 255.21,
 		},
 		[2] = {					-- Castle Roebeck Nave
-			objectiveId = 166, 
+			objectiveId = 166,
 			height = 255.21,
 		},
 		[3] = {					-- Castle Roebeck Artifact Storage
-			objectiveId = 156, 
+			objectiveId = 156,
 			height = 255.21,
 		},
 	},
-	
+
 	[82] = {					-- Castle Roebeck Mine
-		
+
 		[1] = {					-- Roebeck Mine Flag
-			objectiveId = 183, 
+			objectiveId = 183,
 			height =  256.99,
 			parentKeepId = 17,
 		},
 	},
-	
+
 	[84] =	{					-- Castle Roebeck Farm
-		
+
 		[1] = {					-- Roebeck Farm Flag
-			objectiveId = 181, 
+			objectiveId = 181,
 			height =  230.59,
 			parentKeepId = 17,
 		},
 	},
-	
+
 	[83] = {					-- Castle Roebeck Lumbermill
-		
+
 		[1] = {					-- Roebeck Lumbermill Flag
-			objectiveId = 182, 
+			objectiveId = 182,
 			height =  254.99,
 			parentKeepId = 17,
 		},
@@ -1401,43 +1401,43 @@ PVP.AVAids ={
 ------------------------------------------------------------------------
 
 	[18] =	{					-- Castle Brindle
-		
+
 		[1] = {					-- Castle Brindle Apse
-			objectiveId = 163, 
+			objectiveId = 163,
 			height = 260.70,
 		},
 		[2] = {					-- Castle Brindle Nave
-			objectiveId = 164, 
+			objectiveId = 164,
 			height = 260.70,
 		},
 		[3] = {					-- Castle Brindle Artifact Storage
-			objectiveId = 157, 
+			objectiveId = 157,
 			height = 260.70,
 		},
 	},
-	
+
 	[85] = {					-- Castle Brindle Mine
-		
+
 		[1] = {					-- Brindle Mine Flag
-			objectiveId = 162, 
+			objectiveId = 162,
 			height =  259.26,
 			parentKeepId = 18,
 		},
 	},
-	
+
 	[87] =	{					-- Castle Brindle Farm
-		
+
 		[1] = {					-- Brindle Farm Flag
-			objectiveId = 105, 
+			objectiveId = 105,
 			height =  207.83,
 			parentKeepId = 18,
 		},
 	},
-	
+
 	[86] = {					-- Castle Brindle Lumbermill
-		
+
 		[1] = {					-- Brindle Lumbermill Flag
-			objectiveId = 161, 
+			objectiveId = 161,
 			height =  258.02,
 			parentKeepId = 18,
 		},
@@ -1446,133 +1446,133 @@ PVP.AVAids ={
 ------------------------------------------------------------------------
 
 	[14] =	{					-- Drakelowe Keep
-		
+
 		[1] = {					-- Drakelowe Keep Apse
-			objectiveId = 171, 
+			objectiveId = 171,
 			height = 179.78,
 		},
 		[2] = {					-- Drakelowe Keep Nave
-			objectiveId = 172, 
+			objectiveId = 172,
 			height = 179.78,
 		},
 		[3] = {					-- Drakelowe Keep Artifact Storage
-			objectiveId = 153, 
+			objectiveId = 153,
 			height = 179.78,
 		},
 	},
-	
+
 	[76] = {					-- Drakelowe Keep Mine
-		
+
 		[1] = {					-- Drakelowe Mine Flag
-			objectiveId = 202, 
+			objectiveId = 202,
 			height =  156.10,
 			parentKeepId = 14,
 		},
 	},
-	
+
 	[78] =	{					-- Drakelowe Keep Farm
-		
+
 		[1] = {					-- Drakelowe Farm Flag
-			objectiveId = 204, 
+			objectiveId = 204,
 			height =  224.00,
 			parentKeepId = 14,
 		},
 	},
-	
+
 	[77] = {					-- Drakelowe Keep Lumbermill
-		
+
 		[1] = {					-- Drakelowe Lumbermill Flag
-			objectiveId = 203, 
+			objectiveId = 203,
 			height =  185.09,
 			parentKeepId = 14,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
 
 	[11] =	{					-- Kingscrest Keep
-		
+
 		[1] = {					-- Kingscrest Keep Apse
-			objectiveId = 77, 
+			objectiveId = 77,
 			height = 360.57,
 		},
 		[2] = {					-- Kingscrest Keep Nave
-			objectiveId = 78, 
+			objectiveId = 78,
 			height = 357.40,
 		},
 		[3] = {					-- Kingscrest Keep Artifact Storage
-			objectiveId = 150, 
+			objectiveId = 150,
 			height = 362.24,
 		},
 	},
-	
+
 	[54] = {					-- Kingscrest Keep Mine
-		
+
 		[1] = {					-- Kingscrest Mine Flag
-			objectiveId = 83, 
+			objectiveId = 83,
 			height =  381.07,
 			parentKeepId = 11,
 		},
 	},
-	
+
 	[52] =	{					-- Kingscrest Keep Farm
-		
+
 		[1] = {					-- Kingscrest Farm Flag
-			objectiveId = 81, 
+			objectiveId = 81,
 			height =  350.43,
 			parentKeepId = 11,
 		},
 	},
-	
+
 	[53] = {					-- Kingscrest Keep Lumbermill
-		
+
 		[1] = {					-- Kingscrest Lumbermill Flag
-			objectiveId = 82, 
+			objectiveId = 82,
 			height =  380.03,
 			parentKeepId = 11,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
 
 	[12] =	{					-- Farragut Keep
-		
+
 		[1] = {					-- Farragut Keep Apse
-			objectiveId = 51, 
+			objectiveId = 51,
 			height = 373.33,
 		},
 		[2] = {					-- Farragut Keep Nave
-			objectiveId = 50, 
+			objectiveId = 50,
 			height = 370.16,
 		},
 		[3] = {					-- Farragut Keep Artifact Storage
-			objectiveId = 151, 
+			objectiveId = 151,
 			height = 375.00,
 		},
 	},
-	
+
 	[38] = {					-- Farragut Keep Mine
-		
+
 		[1] = {					-- Farragut Mine Flag
-			objectiveId = 53, 
+			objectiveId = 53,
 			height =  370.02,
 			parentKeepId = 12,
 		},
 	},
-	
+
 	[39] =	{					-- Farragut Keep Farm
-		
+
 		[1] = {					-- Farragut Farm Flag
-			objectiveId = 54, 
+			objectiveId = 54,
 			height =  358.59,
 			parentKeepId = 12,
 		},
 	},
-	
+
 	[37] = {					-- Farragut Keep Lumbermill
-		
+
 		[1] = {					-- Farragut Lumbermill Flag
-			objectiveId = 52, 
+			objectiveId = 52,
 			height =  363.78,
 			parentKeepId = 12,
 		},
@@ -1581,43 +1581,43 @@ PVP.AVAids ={
 ------------------------------------------------------------------------
 
 	[13] =	{					-- Blue Road Keep
-		
+
 		[1] = {					-- Blue Road Keep Apse
-			objectiveId = 176, 
+			objectiveId = 176,
 			height = 263.51,
 		},
 		[2] = {					-- Blue Road Keep Nave
-			objectiveId = 175, 
+			objectiveId = 175,
 			height = 263.51,
 		},
 		[3] = {					-- Blue Road Keep Artifact Storage
-			objectiveId = 152, 
+			objectiveId = 152,
 			height = 263.51,
 		},
 	},
-	
+
 	[73] = {					-- Blue Road Keep Mine
-		
+
 		[1] = {					-- Blue Road Mine Flag
-			objectiveId = 184, 
+			objectiveId = 184,
 			height =  262.11,
 			parentKeepId = 13,
 		},
 	},
-	
+
 	[75] =	{					-- Blue Road Keep Farm
-		
+
 		[1] = {					-- Blue Road Farm Flag
-			objectiveId = 186, 
+			objectiveId = 186,
 			height =  202.98,
 			parentKeepId = 13,
 		},
 	},
-	
+
 	[74] = {					-- Blue Road Keep Lumbermill
-		
+
 		[1] = {					-- Blue Road Lumbermill Flag
-			objectiveId = 185, 
+			objectiveId = 185,
 			height =  267.12,
 			parentKeepId = 13,
 		},
@@ -1626,43 +1626,43 @@ PVP.AVAids ={
 ------------------------------------------------------------------------
 
 	[6] =  {					-- Fort Ash
-		
+
 		[1] = {					-- Fort Ash Apse
-			objectiveId = 177, 
+			objectiveId = 177,
 			height = 263.51,
 		},
 		[2] = {					-- Fort Ash Nave
-			objectiveId = 178, 
+			objectiveId = 178,
 			height = 263.51,
 		},
 		[3] = {					-- Fort Ash Artifact Storage
-			objectiveId = 145, 
+			objectiveId = 145,
 			height = 263.51,
 		},
 	},
-	
+
 	[63] = {					-- Fort Ash Mine
-		
+
 		[1] = {					-- Fort Ash Mine Flag
-			objectiveId = 194, 
+			objectiveId = 194,
 			height =  259.52,
 			parentKeepId = 6,
 		},
 	},
-	
+
 	[61] =	{					-- Fort Ash Farm
-		
+
 		[1] = {					-- Fort Ash Farm Flag
-			objectiveId = 193, 
+			objectiveId = 193,
 			height =  247.45,
 			parentKeepId = 6,
 		},
 	},
-	
+
 	[62] = {					-- Fort Ash Lumbermill
-		
+
 		[1] = {					-- Fort Ash Lumbermill Flag
-			objectiveId = 195, 
+			objectiveId = 195,
 			height =  219.17,
 			parentKeepId = 6,
 		},
@@ -1671,43 +1671,43 @@ PVP.AVAids ={
 ------------------------------------------------------------------------
 
 	[10] =	{					-- Arrius Keep
-		
+
 		[1] = {					-- Arrius Keep Apse
-			objectiveId = 65, 
+			objectiveId = 65,
 			height = 316.96,
 		},
 		[2] = {					-- Arrius Keep Nave
-			objectiveId = 66, 
+			objectiveId = 66,
 			height = 313.79,
 		},
 		[3] = {					-- Arrius Keep Artifact Storage
-			objectiveId = 149, 
+			objectiveId = 149,
 			height = 318.63,
 		},
 	},
-	
+
 	[48] = {					-- Arrius Keep Mine
-		
+
 		[1] = {					-- Arrius Keep Mine Flag
-			objectiveId = 69, 
+			objectiveId = 69,
 			height =  335.09,
 			parentKeepId = 10,
 		},
 	},
-	
+
 	[46] =	{					-- Arrius Keep Farm
-		
+
 		[1] = {					-- Arrius Keep Farm Flag
-			objectiveId = 67, 
+			objectiveId = 67,
 			height =  340.01,
 			parentKeepId = 10,
 		},
 	},
-	
+
 	[47] = {					-- Arrius Keep Lumbermill
-		
+
 		[1] = {					-- Arrius Keep Lumbermill Flag
-			objectiveId = 68, 
+			objectiveId = 68,
 			height =  306.04,
 			parentKeepId = 10,
 		},
@@ -1716,133 +1716,133 @@ PVP.AVAids ={
 ------------------------------------------------------------------------
 
 	[9] =  {					-- Chalman Keep
-		
+
 		[1] = {					-- Chalman Keep Apse
-			objectiveId = 179, 
+			objectiveId = 179,
 			height = 235.54,
 		},
 		[2] = {					-- Chalman Keep Nave
-			objectiveId = 180, 
+			objectiveId = 180,
 			height = 233.58,
 		},
 		[3] = {					-- Chalman Keep Artifact Storage
-			objectiveId = 148, 
+			objectiveId = 148,
 			height = 236.47,
 		},
 	},
-	
+
 	[70] = {					-- Chalman Keep Mine
-		
+
 		[1] = {					-- Chalman Keep Mine Flag
-			objectiveId = 190, 
+			objectiveId = 190,
 			height =  248.62,
 			parentKeepId = 9,
 		},
 	},
-	
+
 	[72] =	{					-- Chalman Keep Farm
-		
+
 		[1] = {					-- Chalman Keep Farm Flag
-			objectiveId = 192, 
+			objectiveId = 192,
 			height =  283.29,
 			parentKeepId = 9,
 		},
 	},
-	
+
 	[71] = {					-- Chalman Keep Lumbermill
-		
+
 		[1] = {					-- Chalman Keep Lumbermill Flag
-			objectiveId = 191, 
+			objectiveId = 191,
 			height =  210.76,
 			parentKeepId = 9,
 		},
-	},	
-	
+	},
+
 ------------------------------------------------------------------------
 
 	[7] =  {					-- Fort Aleswell
-		
+
 		[1] = {					-- Fort Aleswell Apse
-			objectiveId = 173, 
+			objectiveId = 173,
 			height = 214.29,
 		},
 		[2] = {					-- Fort Aleswell Nave
-			objectiveId = 174, 
+			objectiveId = 174,
 			height = 212.33,
 		},
 		[3] = {					-- Fort Aleswell Artifact Storage
-			objectiveId = 146, 
+			objectiveId = 146,
 			height = 215.30,
 		},
 	},
-	
+
 	[64] = {					-- Fort Aleswell Mine
-		
+
 		[1] = {					-- Fort Aleswell Mine Flag
-			objectiveId = 189, 
+			objectiveId = 189,
 			height =  241.10,
 			parentKeepId = 7,
 		},
 	},
-	
+
 	[66] =	{					-- Fort Aleswell Farm
-		
+
 		[1] = {					-- Fort Aleswell Farm Flag
-			objectiveId = 187, 
+			objectiveId = 187,
 			height =  229.53,
 			parentKeepId = 7,
 		},
 	},
-	
+
 	[65] = {					-- Fort Aleswell Lumbermill
-		
+
 		[1] = {					-- Fort Aleswell Lumbermill Flag
-			objectiveId = 188, 
+			objectiveId = 188,
 			height =  211.05,
 			parentKeepId = 7,
 		},
-	},	
-	
+	},
+
 ------------------------------------------------------------------------
 
 	[4] =  {					-- Fort Rayles
-		
+
 		[1] = {					-- Fort Rayles Apse
-			objectiveId = 75, 
+			objectiveId = 75,
 			height = 316.51,
 		},
 		[2] = {					-- Fort Rayles Nave
-			objectiveId = 76, 
+			objectiveId = 76,
 			height = 313.34,
 		},
 		[3] = {					-- Fort Rayles Artifact Storage
-			objectiveId = 143, 
+			objectiveId = 143,
 			height = 318.18,
 		},
 	},
-	
+
 	[57] = {					-- Fort Rayles Mine
-		
+
 		[1] = {					-- Fort Rayles Mine Flag
-			objectiveId = 86, 
+			objectiveId = 86,
 			height =  347.58,
 			parentKeepId = 4,
 		},
 	},
-	
+
 	[55] =	{					-- Fort Rayles Farm
-		
+
 		[1] = {					-- Fort Rayles Farm Flag
-			objectiveId = 84, 
+			objectiveId = 84,
 			height =  308.25,
 			parentKeepId = 4,
 		},
 	},
-	
+
 	[56] = {					-- Fort Rayles Lumbermill
-		
+
 		[1] = {					-- Fort Rayles Lumbermill Flag
-			objectiveId = 85, 
+			objectiveId = 85,
 			height =  308.12,
 			parentKeepId = 4,
 		},
@@ -1851,409 +1851,409 @@ PVP.AVAids ={
 ------------------------------------------------------------------------
 
 	[3] =  {					-- Fort Warden
-		
+
 		[1] = {					-- Fort Warden Apse
-			objectiveId = 56, 
+			objectiveId = 56,
 			height = 362.01,
 		},
 		[2] = {					-- Fort Warden Nave
-			objectiveId = 55, 
+			objectiveId = 55,
 			height = 358.84,
 		},
 		[3] = {					-- Fort Warden Artifact Storage
-			objectiveId = 142, 
+			objectiveId = 142,
 			height = 363.68,
 		},
 	},
-	
+
 	[42] = {					-- Fort Warden Mine
-		
+
 		[1] = {					-- Fort Warden Mine Flag
-			objectiveId = 59, 
+			objectiveId = 59,
 			height =  375.77,
 			parentKeepId = 3,
 		},
 	},
-	
+
 	[40] =	{					-- Fort Warden Farm
-		
+
 		[1] = {					-- Fort Warden Farm Flag
-			objectiveId = 57, 
+			objectiveId = 57,
 			height =  384.36,
 			parentKeepId = 3,
 		},
 	},
-	
+
 	[41] = {					-- Fort Warden Lumbermill
-		
+
 		[1] = {					-- Fort Warden Lumbermill Flag
-			objectiveId = 58, 
+			objectiveId = 58,
 			height =  368.02,
 			parentKeepId = 3,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
 
 	[8] =  {					-- Fort Dragonclaw
-		
+
 		[1] = {					-- Fort Dragonclaw Apse
-			objectiveId = 169, 
+			objectiveId = 169,
 			height = 414.02,
 		},
 		[2] = {					-- Fort Dragonclaw Nave
-			objectiveId = 170, 
+			objectiveId = 170,
 			height = 412.14,
 		},
 		[3] = {					-- Fort Dragonclaw Artifact Storage
-			objectiveId = 147, 
+			objectiveId = 147,
 			height = 415.03,
 		},
 	},
-	
+
 	[67] = {					-- Fort Dragonclaw Mine
-		
+
 		[1] = {					-- Fort Dragonclaw Mine Flag
-			objectiveId = 199, 
+			objectiveId = 199,
 			height =  392.74,
 			parentKeepId = 8,
 		},
 	},
-	
+
 	[69] =	{					-- Fort Dragonclaw Farm
-		
+
 		[1] = {					-- Fort Dragonclaw Farm Flag
-			objectiveId = 201, 
+			objectiveId = 201,
 			height =  402.99,
 			parentKeepId = 8,
 		},
 	},
-	
+
 	[68] = {					-- Fort Dragonclaw Lumbermill
-		
+
 		[1] = {					-- Fort Dragonclaw Lumbermill Flag
-			objectiveId = 200, 
+			objectiveId = 200,
 			height =  422.65,
 			parentKeepId = 8,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
 
 	[5] =  {					-- Fort Glademist
-		
+
 		[1] = {					-- Fort Glademist Apse
-			objectiveId = 70, 
+			objectiveId = 70,
 			height = 319.50,
 		},
 		[2] = {					-- Fort Glademist Nave
-			objectiveId = 71, 
+			objectiveId = 71,
 			height = 316.33,
 		},
 		[3] = {					-- Fort Glademist Artifact Storage
-			objectiveId = 144, 
+			objectiveId = 144,
 			height = 321.17,
 		},
 	},
-	
+
 	[51] = {					-- Fort Glademist Mine
-		
+
 		[1] = {					-- Fort Glademist Mine Flag
-			objectiveId = 74, 
+			objectiveId = 74,
 			height =  352.04,
 			parentKeepId = 5,
 		},
 	},
-	
+
 	[49] =	{					-- Fort Glademist Farm
-		
+
 		[1] = {					-- Fort Glademist Farm Flag
-			objectiveId = 72, 
+			objectiveId = 72,
 			height =  306.94,
 			parentKeepId = 5,
 		},
 	},
-	
+
 	[50] = {					-- Fort Glademist Lumbermill
-		
+
 		[1] = {					-- Fort Glademist Lumbermill Flag
-			objectiveId = 73, 
+			objectiveId = 73,
 			height =  307.71,
 			parentKeepId = 5,
 		},
 	},
-	
+
 
 ------------------------------------------------------------------------
 
 	[133] =	 {					-- Sejanus Outpost
-		
+
 		[1] = {					-- Sejanus Outpost Tower
-			objectiveId = 214, 
+			objectiveId = 214,
 			height = 223.71,
 		},
 		[2] = {					-- Sejanus Outpost Courtyard
-			objectiveId = 215, 
+			objectiveId = 215,
 			height = 223.71,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
 
 	[132] =	 {					-- Nikel Outpost
-		
+
 		[1] = {					-- Nikel Outpost Tower
-			objectiveId = 216, 
+			objectiveId = 216,
 			height = 258.01,
 		},
 		[2] = {					-- Nikel Outpost Courtyard
-			objectiveId = 217, 
+			objectiveId = 217,
 			height = 258.01,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
 
 	[134] =	 {					-- Bleaker's Outpost
-		
+
 		[1] = {					-- Bleaker's Outpost Tower
-			objectiveId = 218, 
+			objectiveId = 218,
 			height = 249.53,
 		},
 		[2] = {					-- Bleaker's Outpost Courtyard
-			objectiveId = 219, 
+			objectiveId = 219,
 			height = 247.57,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
 
 	[164] =	 {					-- Carmala Outpost
-		
+
 		[1] = {					-- Carmala Outpost Tower
-			objectiveId = 433, 
+			objectiveId = 433,
 			height = 240.15,
 		},
 		[2] = {					-- Carmala Outpost Courtyard
-			objectiveId = 434, 
+			objectiveId = 434,
 			height = 238.19,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
 
 	[163] =	 {					-- Winter's Peak Outpost
-		
+
 		[1] = {					-- Winter's Peak Outpost Tower
-			objectiveId = 431, 
+			objectiveId = 431,
 			height = 426.03,
 		},
 		[2] = {					-- Winter's Peak Outpost Courtyard
-			objectiveId = 432, 
+			objectiveId = 432,
 			height = 424.07,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
 
 	[165] =	 {					-- Harlun's Outpost
-		
+
 		[1] = {					-- Harlun's Outpost Tower
-			objectiveId = 435, 
+			objectiveId = 435,
 			height = 308.33,
 		},
 		[2] = {					-- Harlun's Outpost Courtyard
-			objectiveId = 436, 
+			objectiveId = 436,
 			height = 306.36,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
 
 	[149] =	 {					-- Vlastarus
-		
+
 		[1] = {					-- Vlastarus Central Flag
-			objectiveId = 294, 
+			objectiveId = 294,
 			height = 230.75,
 		},
 		[2] = {					-- Vlastarus Merchant Flag
-			objectiveId = 303, 
+			objectiveId = 303,
 			height = 238.42,
 		},
 		[3] = {					-- Vlastarus Outlier Flag
-			objectiveId = 304, 
+			objectiveId = 304,
 			height = 232.93,
 		},
 	},
 
 ------------------------------------------------------------------------
-	
+
 	[152] =	 {					-- Cropsford
-		
+
 		[1] = {					-- Cropsford Central Flag
-			objectiveId = 300, 
+			objectiveId = 300,
 			height = 222.39,
 		},
 		[2] = {					-- Cropsford Merchant Flag
-			objectiveId = 301, 
+			objectiveId = 301,
 			height = 207.28,
 		},
 		[3] = {					-- Cropsford Outlier Flag
-			objectiveId = 302, 
+			objectiveId = 302,
 			height = 219.32,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
-	
+
 	[151] =	 {					-- Bruma
-		
+
 		[1] = {					-- Bruma Central Flag
-			objectiveId = 296, 
+			objectiveId = 296,
 			height = 331.56,
 		},
 		[2] = {					-- Bruma Merchant Flag
-			objectiveId = 299, 
+			objectiveId = 299,
 			height = 336.48,
 		},
 		[3] = {					-- Bruma Outlier Flag
-			objectiveId = 297, 
+			objectiveId = 297,
 			height = 337.24,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
-	
+
 	[119] =	 {					-- Scroll Temple of Mnem
-		
+
 		[1] = {					-- Elder Scroll of Mnem
-			objectiveId = 137, 
+			objectiveId = 137,
 			height = 223.77,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
-	
+
 	[118] =	 {					-- Scroll Temple of Altadoon
-		
+
 		[1] = {					-- Elder Scroll of Altadoon
-			objectiveId = 136, 
+			objectiveId = 136,
 			height = 258.53,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
-	
+
 	[123] =	 {					-- Scroll Temple of Alma Ruma
-		
+
 		[1] = {					-- Elder Scroll of Alma Ruma
-			objectiveId = 141, 
+			objectiveId = 141,
 			height = 375.05,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
-	
+
 	[122] =	 {					-- Scroll Temple of Ni-Mohk
-		
+
 		[1] = {					-- Elder Scroll of Ni-Mohk
-			objectiveId = 140, 
+			objectiveId = 140,
 			height = 375.02,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
-	
+
 	[121] =	 {					-- Scroll Temple of Chim
-		
+
 		[1] = {					-- Elder Scroll of Chim
-			objectiveId = 139, 
+			objectiveId = 139,
 			height = 412.14,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
 
 	[120] =	 {					-- Scroll Temple of Ghartok
-		
+
 		[1] = {					-- Elder Scroll of Ghartok
-			objectiveId = 138, 
+			objectiveId = 138,
 			height = 409.12,
 		},
 	},
 
 ------------------------------------------------------------------------
-	
+
 	[125] =	 {					-- Gate of Mnem
-		
-		[1] = {					
-			objectiveId = 0, 
+
+		[1] = {
+			objectiveId = 0,
 			height = 139.52,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
-	
+
 	[124] =	 {					-- Gate of Altadoon
-		
-		[1] = {					
-			objectiveId = 0, 
+
+		[1] = {
+			objectiveId = 0,
 			height = 171.31,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
-	
+
 	[126] =	 {					-- Gate of Ghartok
-		
-		[1] = {					
-			objectiveId = 0, 
+
+		[1] = {
+			objectiveId = 0,
 			height = 379.19,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
-	
+
 	[127] =	 {					-- Gate of Chim
-		
-		[1] = {					
-			objectiveId = 0, 
+
+		[1] = {
+			objectiveId = 0,
 			height = 397.10,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
-	
+
 	[128] =	 {					-- Gate of Ni-Mohk
-		
-		[1] = {					
-			objectiveId = 0, 
+
+		[1] = {
+			objectiveId = 0,
 			height = 323.30,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
-	
+
 	[129] =	 {					-- Gate of Alma Ruma
-		
-		[1] = {					
-			objectiveId = 0, 
+
+		[1] = {
+			objectiveId = 0,
 			height = 359.104,
 		},
 	},
 
 ------------------------------------------------------------------------
-	
+
 	[105] =	 {					-- Western Elsweyr Gate
-		
-		[1] = {					
-			objectiveId = 0, 
+
+		[1] = {
+			objectiveId = 0,
 			height = 257.51,
 			coords = {
 				insideCorner1 = {
 					x = 0.461968511343,
 					y = 0.54347509145737,
-				},				
+				},
 				insideCorner2 = {
 					x = 0.45691725611687,
 					y = 0.53950273990631,
@@ -2261,7 +2261,7 @@ PVP.AVAids ={
 				outsideCorner1 = {
 					x = 0.38421556353569,
 					y = 0.89181333780289,
-				},				
+				},
 				outsideCorner2 = {
 					x = 0.38398665189743,
 					y = 0.89163333177567,
@@ -2269,19 +2269,19 @@ PVP.AVAids ={
 			},
 		},
 	},
-	
+
 ------------------------------------------------------------------------
 
 	[106] =	 {					-- Eastern Elsweyr Gate
-		
-		[1] = {					
-			objectiveId = 0, 
+
+		[1] = {
+			objectiveId = 0,
 			height = 251.722,
 			coords = {
 				insideCorner1 = {
 					x = 0.43370285630226,
 					y = 0.39417254924774,
-				},				
+				},
 				insideCorner2 = {
 					x = 0.42899861931801,
 					y = 0.39391729235649,
@@ -2289,7 +2289,7 @@ PVP.AVAids ={
 				outsideCorner1 = {
 					x = 0.6035777926445,
 					y = 0.8824177980423,
-				},				
+				},
 				outsideCorner2 = {
 					x = 0.60329109430313,
 					y = 0.88240224123001,
@@ -2297,21 +2297,21 @@ PVP.AVAids ={
 			},
 		},
 	},
-	
 
-	
+
+
 ------------------------------------------------------------------------
 
 	[107] =	 {					-- Southern Morrowind Gate
-		
-		[1] = {					
-			objectiveId = 0, 
+
+		[1] = {
+			objectiveId = 0,
 			height = 411.73,
 			coords = {
 				insideCorner1 = {
 					x = 0.53014594316483,
 					y = 0.47470769286156,
-				},				
+				},
 				insideCorner2 = {
 					x = 0.52724635601044,
 					y = 0.47757571935654,
@@ -2319,7 +2319,7 @@ PVP.AVAids ={
 				outsideCorner1 = {
 					x = 0.92780888080597,
 					y = 0.30632221698761,
-				},				
+				},
 				outsideCorner2 = {
 					x = 0.92760443687439,
 					y = 0.30652445554733,
@@ -2327,20 +2327,20 @@ PVP.AVAids ={
 			},
 		},
 	},
-	
-	
+
+
 ------------------------------------------------------------------------
-	
+
 	[108] =	 {					-- Northern Morrowind Gate
-		
-		[1] = {					
-			objectiveId = 0, 
+
+		[1] = {
+			objectiveId = 0,
 			height = 424.27,
 			coords = {
 				insideCorner1 = {
 					x = 0.48236629366875,
 					y = 0.5524914264679,
-				},				
+				},
 				insideCorner2 = {
 					x = 0.48526585102081,
 					y = 0.55539095401764,
@@ -2348,7 +2348,7 @@ PVP.AVAids ={
 				outsideCorner1 = {
 					x = 0.837526679039,
 					y = 0.11551778018475,
-				},				
+				},
 				outsideCorner2 = {
 					x = 0.83773112297058,
 					y = 0.11572222411633,
@@ -2356,19 +2356,19 @@ PVP.AVAids ={
 			},
 		},
 	},
-	
+
 ------------------------------------------------------------------------
-	
+
 	[109] =	 {					-- Southern Highrock Gate
-		
-		[1] = {					
-			objectiveId = 0, 
+
+		[1] = {
+			objectiveId = 0,
 			height = 388.72,
 			coords = {
 				insideCorner1 = {
 					x = 0.65259683132172,
 					y = 0.4966089725944,
-				},				
+				},
 				insideCorner2 = {
 					x = 0.65558630228043,
 					y = 0.4916116297245,
@@ -2376,7 +2376,7 @@ PVP.AVAids ={
 				outsideCorner1 = {
 					x = 0.068831108510494,
 					y = 0.28527998924255,
-				},				
+				},
 				outsideCorner2 = {
 					x = 0.068980000913143,
 					y = 0.28503111004829,
@@ -2384,19 +2384,19 @@ PVP.AVAids ={
 			},
 		},
 	},
-	
+
 ------------------------------------------------------------------------
-	
+
 	[110] =	 {					-- Northern Highrock Gate
-		
-		[1] = {					
-			objectiveId = 0, 
+
+		[1] = {
+			objectiveId = 0,
 			height = 353.94,
 			coords = {
 				insideCorner1 = {
 					x = 0.53899747133255,
 					y = 0.64700305461884,
-				},				
+				},
 				insideCorner2 = {
 					x = 0.53450405597687,
 					y = 0.6440349817276,
@@ -2404,7 +2404,7 @@ PVP.AVAids ={
 				outsideCorner1 = {
 					x = 0.15952444076538,
 					y = 0.10226000100374,
-				},				
+				},
 				outsideCorner2 = {
 					x = 0.15928222239017,
 					y = 0.10209999978542,
@@ -2412,69 +2412,69 @@ PVP.AVAids ={
 			},
 		},
 	},
-	
+
 ------------------------------------------------------------------------
-	
+
 	[141] =	 {					-- Nobles District
-		
-		[1] = {					-- Nobles District Flag 
-			objectiveId = 291, 
+
+		[1] = {					-- Nobles District Flag
+			objectiveId = 291,
 			height = 310.48,
 		},
 	},
-	
+
 ------------------------------------------------------------------------
-	
+
 	[142] =	 {					-- Memorial District
-		
+
 		[1] = {					-- Memorial District Flag
-			objectiveId = 289, 
-			height = 310,
-		},
-	},
-	
-------------------------------------------------------------------------
-	
-	[143] =	 {					-- Arboretum
-		
-		[1] = {					-- Arboretum District Flag
-			objectiveId = 290, 
-			height = 310.62,
-		},
-	},
-	
-------------------------------------------------------------------------
-	
-	[146] =	 {					-- Arena District
-		
-		[1] = {					-- Arena District Flag
-			objectiveId = 288, 
-			height = 310.49,
-		},
-	},
-	
-------------------------------------------------------------------------
-	
-	[147] =	 {					-- Temple District
-		
-		[1] = {					-- Temple District Flag
-			objectiveId = 292, 
-			height = 310,
-		},
-	},
-	
-------------------------------------------------------------------------
-	
-	[148] =	 {					-- Elven Gardens District
-		
-		[1] = {					-- elven Gardens District Flag
-			objectiveId = 293, 
+			objectiveId = 289,
 			height = 310,
 		},
 	},
 
-------------------------------------------------------------------------						
-		
+------------------------------------------------------------------------
+
+	[143] =	 {					-- Arboretum
+
+		[1] = {					-- Arboretum District Flag
+			objectiveId = 290,
+			height = 310.62,
+		},
+	},
+
+------------------------------------------------------------------------
+
+	[146] =	 {					-- Arena District
+
+		[1] = {					-- Arena District Flag
+			objectiveId = 288,
+			height = 310.49,
+		},
+	},
+
+------------------------------------------------------------------------
+
+	[147] =	 {					-- Temple District
+
+		[1] = {					-- Temple District Flag
+			objectiveId = 292,
+			height = 310,
+		},
+	},
+
+------------------------------------------------------------------------
+
+	[148] =	 {					-- Elven Gardens District
+
+		[1] = {					-- elven Gardens District Flag
+			objectiveId = 293,
+			height = 310,
+		},
+	},
+
+------------------------------------------------------------------------
+
 }
 
 PVP.bgObjectives = {
@@ -2489,25 +2489,25 @@ PVP.bgObjectives = {
 	[309] = 117.02,	 -- foyada fire storm
 	[306] = 120.53,	 -- foyada cenral
 	[310] = 116.53,	 -- foyada storm pit
-	
+
 	-- ald carac
 	[321] = 159.24,	 -- ald carac Centurion
 	[319] = 155.77,	 -- engine
 	[320] = 159.91,	 -- forge
 	[314] = 155.16,	 -- central
-	
+
 	[337] = 161.00,	 -- ald carac SL relic spawn
 	[338] = 161.00,	 -- ald carac PD relic spawn approx
 	[339] = 161.00,	 -- ald carac FD relic spawn approx
-	
+
 	[335] = 123.71,	 -- foyada SL relic spawn
 	[336] = 123.39,	 -- foyada PD relic spawn
 	[334] = 123.91,	 -- foyada FD relic spawn
-	
+
 	[340] = 165.79,	 -- ullara SL relic spawn
 	[341] = 165.28,	 -- ullara PD relic spawn
 	[342] = 165.06,	 -- ullara FD relic spawn
-	
+
 }
 
 PVP.ullaraIds = {
@@ -2570,7 +2570,7 @@ PVP.bgDamagePowerups = {
 		{x = 0.862167, y = 0.492712, z = 162.20},
 		{x = 0.579847, y = 0.488910, z = 155.16},
 	},
-	
+
 	-- [41] = { -- foyada DM
 	foyada = { -- foyada DM
 		{x = 0.626567, y = 0.681125, z = 116.90},
@@ -2578,7 +2578,7 @@ PVP.bgDamagePowerups = {
 		{x = 0.63842, y = 0.35276, z = 116.22},
 		{x = 0.530667, y = 0.503219, z = 120.52},
 	},
-	
+
 	ullara = { -- ullara DM
 		{x = 0.397900, y = 0.728109, z = 159.84},
 		{x = 0.541144, y = 0.490289, z = 177.52},
@@ -2594,53 +2594,53 @@ PVP.bgTeamBases = {
 		{x = 0.748098, y = 0.208174, z = 170.03, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS},
 		{x = 0.739860, y = 0.772813, z = 169.90, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS},
 	},
-	
+
 	[42] = { -- arc DM
 		{x = 0.243979, y = 0.497148, z = 169.91, alliance = BATTLEGROUND_ALLIANCE_FIRE_DRAKES},
 		{x = 0.748098, y = 0.208174, z = 170.03, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS},
 		{x = 0.739860, y = 0.772813, z = 169.90, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS},
 	},
-	
+
 	[84] = { -- arc CTF
 		{x = 0.243979, y = 0.497148, z = 169.91, alliance = BATTLEGROUND_ALLIANCE_FIRE_DRAKES},
 		{x = 0.748098, y = 0.208174, z = 170.03, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS},
 		{x = 0.739860, y = 0.772813, z = 169.90, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS},
 	},
-	
+
 	[70] = { -- foyada DON
 		{x = 0.259573, y = 0.572009, z = 132.64, alliance = BATTLEGROUND_ALLIANCE_FIRE_DRAKES},
-		{x = 0.679091, y = 0.756353, z = 133.19, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS}, 
-		{x = 0.691968, y = 0.281260, z = 132.59, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS}, 
-	},	
-	
+		{x = 0.679091, y = 0.756353, z = 133.19, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS},
+		{x = 0.691968, y = 0.281260, z = 132.59, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS},
+	},
+
 	[41] = { -- foyada DM
 		{x = 0.259573, y = 0.572009, z = 132.64, alliance = BATTLEGROUND_ALLIANCE_FIRE_DRAKES},
-		{x = 0.679091, y = 0.756353, z = 133.19, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS}, 
-		{x = 0.691968, y = 0.281260, z = 132.59, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS}, 
+		{x = 0.679091, y = 0.756353, z = 133.19, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS},
+		{x = 0.691968, y = 0.281260, z = 132.59, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS},
 	},
-	
+
 	[83] = { -- foyada CTF
 		{x = 0.259573, y = 0.572009, z = 132.64, alliance = BATTLEGROUND_ALLIANCE_FIRE_DRAKES},
-		{x = 0.679091, y = 0.756353, z = 133.19, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS}, 
-		{x = 0.691968, y = 0.281260, z = 132.59, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS}, 
+		{x = 0.679091, y = 0.756353, z = 133.19, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS},
+		{x = 0.691968, y = 0.281260, z = 132.59, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS},
 	},
-	
+
 	[72] = { -- ularra DOM
-		{x = 0.216728, y = 0.496081, z = 176.42, alliance = BATTLEGROUND_ALLIANCE_FIRE_DRAKES}, 
+		{x = 0.216728, y = 0.496081, z = 176.42, alliance = BATTLEGROUND_ALLIANCE_FIRE_DRAKES},
 		{x = 0.700304, y = 0.213287, z = 176.54, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS},
-		{x = 0.695902, y = 0.773083, z = 176.03, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS}, 
+		{x = 0.695902, y = 0.773083, z = 176.03, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS},
 	},
-	
+
 	[43] = { -- ularra DM
-		{x = 0.216728, y = 0.496081, z = 176.42, alliance = BATTLEGROUND_ALLIANCE_FIRE_DRAKES}, 
+		{x = 0.216728, y = 0.496081, z = 176.42, alliance = BATTLEGROUND_ALLIANCE_FIRE_DRAKES},
 		{x = 0.700304, y = 0.213287, z = 176.54, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS},
-		{x = 0.695902, y = 0.773083, z = 176.03, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS}, 
+		{x = 0.695902, y = 0.773083, z = 176.03, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS},
 	},
-	
+
 	[85] = { -- ularra CTF
-		{x = 0.216728, y = 0.496081, z = 176.42, alliance = BATTLEGROUND_ALLIANCE_FIRE_DRAKES}, 
+		{x = 0.216728, y = 0.496081, z = 176.42, alliance = BATTLEGROUND_ALLIANCE_FIRE_DRAKES},
 		{x = 0.700304, y = 0.213287, z = 176.54, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS},
-		{x = 0.695902, y = 0.773083, z = 176.03, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS}, 
+		{x = 0.695902, y = 0.773083, z = 176.03, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS},
 	},
 }
 
@@ -2650,17 +2650,17 @@ PVP.bgTeamBasesFull = {
 		{x = 0.748098, y = 0.208174, z = 170.03, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS},
 		{x = 0.739860, y = 0.772813, z = 169.90, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS},
 	},
-	
+
 	foya = { -- foyada DON
 		{x = 0.259573, y = 0.572009, z = 132.64, alliance = BATTLEGROUND_ALLIANCE_FIRE_DRAKES},
-		{x = 0.679091, y = 0.756353, z = 133.19, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS}, 
-		{x = 0.691968, y = 0.281260, z = 132.59, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS}, 
-	},	
-	
+		{x = 0.679091, y = 0.756353, z = 133.19, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS},
+		{x = 0.691968, y = 0.281260, z = 132.59, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS},
+	},
+
 	ul = { -- ularra DOM
-		{x = 0.216728, y = 0.496081, z = 176.42, alliance = BATTLEGROUND_ALLIANCE_FIRE_DRAKES}, 
+		{x = 0.216728, y = 0.496081, z = 176.42, alliance = BATTLEGROUND_ALLIANCE_FIRE_DRAKES},
 		{x = 0.700304, y = 0.213287, z = 176.54, alliance = BATTLEGROUND_ALLIANCE_PIT_DAEMONS},
-		{x = 0.695902, y = 0.773083, z = 176.03, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS}, 
+		{x = 0.695902, y = 0.773083, z = 176.03, alliance = BATTLEGROUND_ALLIANCE_STORM_LORDS},
 	},
 }
 
@@ -2737,38 +2737,38 @@ PVP.districtKeepIdToSubzoneNumber = {
 	[141] = 29, -- Nobles
 }
 
-	
+
 PVP.icAllianceBases = {
 	[29] = {
 		{x = 0.29688304662704, y = 0.53833013772964, z = 318.37, alliance = ALLIANCE_ALDMERI_DOMINION}, --Nobles AD
 		{x = 0.35189777612686, y = 0.71287500858307, z = 318.37, alliance = ALLIANCE_EBONHEART_PACT}, --Nobles EP
 		{x = 0.27476951479912, y = 0.76019096374512, z = 318.37, alliance = ALLIANCE_DAGGERFALL_COVENANT}, --Nobles DC
 	},
-	
+
 	[28] = {
 		{x = 0.56690222024918, y = 0.19403754174709, z = 318.28, alliance = ALLIANCE_ALDMERI_DOMINION}, --Memorial AD
 		{x = 0.40852716565132, y = 0.23505873978138, z = 318.28, alliance = ALLIANCE_EBONHEART_PACT}, --Memorial EP
 		{x = 0.54188704490662, y = 0.29721066355705, z = 318.28, alliance = ALLIANCE_DAGGERFALL_COVENANT}, --Memorial DC
 	},
-	
+
 	[25] = {
 		{x = 0.84852808713913, y = 0.60808724164963, z = 321.45, alliance = ALLIANCE_ALDMERI_DOMINION}, --Aboretum AD
 		{x = 0.86488509178162, y = 0.53390741348267, z = 321.45, alliance = ALLIANCE_EBONHEART_PACT}, --Aboretum EP
 		{x = 0.79854446649551, y = 0.71916973590851, z = 321.45, alliance = ALLIANCE_DAGGERFALL_COVENANT}, --Aboretum DC
 	},
-	
+
 	[26] = {
 		{x = 0.64620679616928, y = 0.31478446722031, z = 320.59, alliance = ALLIANCE_ALDMERI_DOMINION}, --Arena AD
 		{x = 0.85056394338608, y = 0.45338606834412, z = 320.59, alliance = ALLIANCE_EBONHEART_PACT}, --Arena EP
 		{x = 0.73601818084717, y = 0.47287872433662, z = 320.59, alliance = ALLIANCE_DAGGERFALL_COVENANT}, --Arena DC
 	},
-	
+
 	[30] = {
 		{x = 0.63827395439148, y = 0.80923855304718, z = 325.51, alliance = ALLIANCE_ALDMERI_DOMINION}, --Temple AD
 		{x = 0.55000704526901, y = 0.72186082601547, z = 325.51, alliance = ALLIANCE_EBONHEART_PACT}, --Temple EP
 		{x = 0.38119530677795, y = 0.78682076931000, z = 325.51, alliance = ALLIANCE_DAGGERFALL_COVENANT}, --Temple DC
 	},
-	
+
 	[27] = {
 		{x = 0.34522861242294, y = 0.36383208632469, z = 319.70, alliance = ALLIANCE_ALDMERI_DOMINION}, --Elven Garden AD
 		{x = 0.30879393219948, y = 0.45453268289566, z = 319.70, alliance = ALLIANCE_EBONHEART_PACT}, --Elven Garden EP
@@ -2781,106 +2781,106 @@ PVP.icDoors = {
 		{x = 0.38386297, y = 0.68715775, z = 314.83, location = 147, type = 2},
 		{x = 0.32358309, y = 0.79430896, z = 315.03, location = 147, type = 2},
 		{x = 0.39329341, y = 0.66911590, z = 310.13, location = 147, type = 1},
-		
+
 		{x = 0.36172601, y = 0.73922401, z = 309.83, location = 147, type = 1},
 		{x = 0.31766274, y = 0.80299061, z = 310.13, location = 147, type = 1},
-		
+
 		{x = 0.14988066, y = 0.51649737, z = 310.06, location = 148, type = 1},
-		
+
 		{x = 0.29189872, y = 0.51506996, z = 314.68, location = 148, type = 2},
-		
+
 		{x = 0.30212476, y = 0.51530396, z = 310.14, location = 148, type = 1},
 		{x = 0.22661112, y = 0.50912624, z = 309.90, location = 148, type = 1},
-		
+
 		{x = 0.17063696, y = 0.51584219, z = 314.68, location = 148, type = 2},
 	},
-	
+
 	[28] = { --Memorial
 		{x = 0.33453455, y = 0.21425563, z = 314.61, location = 148, type = 2},
 		{x = 0.39600786, y = 0.32077503, z = 314.72, location = 148, type = 2},
 		{x = 0.32944566, y = 0.20536340, z = 309.94, location = 148, type = 1},
-		
+
 		{x = 0.40630412, y = 0.33809146, z = 310.10, location = 148, type = 1},
 		{x = 0.36200684, y = 0.27544811, z = 309.75, location = 148, type = 1},
-		
-		
+
+
 		{x = 0.66211915, y = 0.20643983, z = 309.67, location = 146, type = 1},
 		{x = 0.65205693, y = 0.22445827, z = 314.61, location = 146, type = 2},
-		
+
 		{x = 0.62870311, y = 0.27575233, z = 309.94, location = 146, type = 1},
 		{x = 0.58550566, y = 0.33806803, z = 309.85, location = 146, type = 1},
-		
+
 		{x = 0.59079420, y = 0.32938644, z = 314.25, location = 146, type = 2},
 	},
-	
+
 	[25] = { --Aboretum
-		{x = 0.69019985, y = 0.51663780, z = 310.49, location = 146, type = 1, angle = math.pi * 21/64}, 
-		{x = 0.76671969, y = 0.50919640, z = 309.84, location = 146, type = 1, angle = math.pi * 21/64}, 
-		{x = 0.67379605, y = 0.79480004, z = 312.68, location = 147, type = 1, angle = math.pi * 21/64}, 
-		{x = 0.63417887, y = 0.74053448, z = 309.90, location = 147, type = 1, angle = math.pi * 21/64}, 
-		
-		{x = 0.60658961, y = 0.68100339, z = 315.26, location = 147, type = 2, angle = math.pi * 21/64}, 
-		
-		{x = 0.82346612, y = 0.51460194, z = 314.95, location = 146, type = 2, angle = math.pi * 21/64}, 
-		
-		{x = 0.83359855, y = 0.51516354, z = 313.88, location = 146, type = 1, angle = math.pi * 21/64}, 
-		{x = 0.71062856, y = 0.51574856, z = 315.30, location = 146, type = 2, angle = math.pi * 21/64}, 
-		
-		{x = 0.66258716, y = 0.77708613, z = 316.10, location = 147, type = 2, angle = math.pi * 21/64}, 
-		{x = 0.60169887, y = 0.67204099, z = 310.70, location = 147, type = 1, angle = math.pi * 21/64}, 
+		{x = 0.69019985, y = 0.51663780, z = 310.49, location = 146, type = 1, angle = math.pi * 21/64},
+		{x = 0.76671969, y = 0.50919640, z = 309.84, location = 146, type = 1, angle = math.pi * 21/64},
+		{x = 0.67379605, y = 0.79480004, z = 312.68, location = 147, type = 1, angle = math.pi * 21/64},
+		{x = 0.63417887, y = 0.74053448, z = 309.90, location = 147, type = 1, angle = math.pi * 21/64},
+
+		{x = 0.60658961, y = 0.68100339, z = 315.26, location = 147, type = 2, angle = math.pi * 21/64},
+
+		{x = 0.82346612, y = 0.51460194, z = 314.95, location = 146, type = 2, angle = math.pi * 21/64},
+
+		{x = 0.83359855, y = 0.51516354, z = 313.88, location = 146, type = 1, angle = math.pi * 21/64},
+		{x = 0.71062856, y = 0.51574856, z = 315.30, location = 146, type = 2, angle = math.pi * 21/64},
+
+		{x = 0.66258716, y = 0.77708613, z = 316.10, location = 147, type = 2, angle = math.pi * 21/64},
+		{x = 0.60169887, y = 0.67204099, z = 310.70, location = 147, type = 1, angle = math.pi * 21/64},
 	},
-	
+
 	[26] = { --Arena
-		{x = 0.66193193, y = 0.23807740, z = 314.88, location = 142, type = 2, angle = math.pi * 21/64}, 
-		{x = 0.61115270, y = 0.32650816, z = 314.76, location = 142, type = 2, angle = math.pi * 21/64}, 
-		{x = 0.66700989, y = 0.22909158, z = 311.96, location = 142, type = 1, angle = math.pi * 21/64}, 
+		{x = 0.66193193, y = 0.23807740, z = 314.88, location = 142, type = 2, angle = math.pi * 21/64},
+		{x = 0.61115270, y = 0.32650816, z = 314.76, location = 142, type = 2, angle = math.pi * 21/64},
+		{x = 0.66700989, y = 0.22909158, z = 311.96, location = 142, type = 1, angle = math.pi * 21/64},
 		{x = 0.60132449, y = 0.34431600, z = 310.26, location = 142, type = 1, angle = math.pi * 21/64},
 		{x = 0.63352364, y = 0.27460569, z = 309.83, location = 142, type = 1, angle = math.pi * 21/64},
 
 		{x = 0.84412878, y = 0.49836194, z = 310.25, location = 143, type = 1, angle = math.pi * 21/64},
-		
-		{x = 0.70218092, y = 0.49913418, z = 314.69, location = 143, type = 2, angle = math.pi * 21/64},
-		
-		{x = 0.69181448, y = 0.49899378, z = 310.25, location = 143, type = 1, angle = math.pi * 21/64},
-		
-		{x = 0.76723450, y = 0.50507789, z = 309.90, location = 143, type = 1, angle = math.pi * 21/64},
-		
 
-		
+		{x = 0.70218092, y = 0.49913418, z = 314.69, location = 143, type = 2, angle = math.pi * 21/64},
+
+		{x = 0.69181448, y = 0.49899378, z = 310.25, location = 143, type = 1, angle = math.pi * 21/64},
+
+		{x = 0.76723450, y = 0.50507789, z = 309.90, location = 143, type = 1, angle = math.pi * 21/64},
+
+
+
 		{x = 0.82381707, y = 0.49857255, z = 314.77, location = 143, type = 2, angle = math.pi * 21/64},
 	},
-	
+
 	[30] = { --Temple
-		{x = 0.66474002, y = 0.79341977, z = 314.59, location = 143, type = 2}, 
-		{x = 0.58779895, y = 0.67286002, z = 310.16, location = 143, type = 1}, 
-		{x = 0.63481068, y = 0.73358452, z = 309.82, location = 143, type = 1}, 
-		
-		{x = 0.33781063, y = 0.81576728, z = 310.19, location = 141, type = 1}, 
-		
-		{x = 0.36788037, y = 0.74476999, z = 309.90, location = 141, type = 1}, 
-		{x = 0.40873777, y = 0.68088638, z = 310.17, location = 141, type = 1}, 
+		{x = 0.66474002, y = 0.79341977, z = 314.59, location = 143, type = 2},
+		{x = 0.58779895, y = 0.67286002, z = 310.16, location = 143, type = 1},
+		{x = 0.63481068, y = 0.73358452, z = 309.82, location = 143, type = 1},
+
+		{x = 0.33781063, y = 0.81576728, z = 310.19, location = 141, type = 1},
+
+		{x = 0.36788037, y = 0.74476999, z = 309.90, location = 141, type = 1},
+		{x = 0.40873777, y = 0.68088638, z = 310.17, location = 141, type = 1},
 		{x = 0.40380024, y = 0.69001263, z = 314.77, location = 141, type = 2},
-		
-		{x = 0.66894134, y = 0.80268639, z = 310.16, location = 143, type = 1}, 
-		
-		{x = 0.59921842, y = 0.68984884, z = 314.73, location = 143, type = 2}, 
-		
-		{x = 0.34733468, y = 0.79756164, z = 314.75, location = 141, type = 2}, 
+
+		{x = 0.66894134, y = 0.80268639, z = 310.16, location = 143, type = 1},
+
+		{x = 0.59921842, y = 0.68984884, z = 314.73, location = 143, type = 2},
+
+		{x = 0.34733468, y = 0.79756164, z = 314.75, location = 141, type = 2},
 	},
-	
+
 	[27] = { --Elven
 		{x = 0.16043432, y = 0.50109982, z = 314.46, location = 141, type = 2},
 		{x = 0.28338092, y = 0.50124025, z = 314.75, location = 141, type = 2},
 		{x = 0.15018486, y = 0.50058501, z = 310.48, location = 141, type = 1},
 		{x = 0.22719614, y = 0.50737118, z = 309.84, location = 141, type = 1},
 		{x = 0.30362239, y = 0.50107640, z = 310.29, location = 141, type = 1},
-		
+
 		{x = 0.31756913, y = 0.21350680, z = 310.01, location = 142, type = 1},
 		{x = 0.32838022, y = 0.23138484, z = 314.51, location = 142, type = 2},
-		
+
 		{x = 0.36149200, y = 0.27692234, z = 309.91, location = 142, type = 1},
 		{x = 0.39308279, y = 0.34583702, z = 309.92, location = 142, type = 1},
-		
+
 		{x = 0.38828566, y = 0.33673420, z = 314.75, location = 142, type = 2},
 	},
 }
@@ -2889,23 +2889,23 @@ PVP.icVaults = {
 	[29] = { --Nobles
 		{x = 0.20545701, y = 0.72253942, z = 310.69, poiId = 32},
 	},
-	
+
 	[28] = { --Memorial
 		{x = 0.52651286, y = 0.14985725, z = 309.27, poiId = 34},
 	},
-	
+
 	[25] = { --Aboretum
 		{x = 0.71273458, y = 0.79288154, z = 312.84, poiId = 36},
 	},
-	
+
 	[26] = { --Arena
 		{x = 0.81127440, y = 0.32491692, z = 307.55, poiId = 35},
 	},
-	
+
 	[30] = { --Temple
 		{x = 0.63317263, y = 0.83774042, z = 309.29, poiId = 37},
 	},
-	
+
 	[27] = { --Elven
 		{x = 0.27381008, y = 0.23014461, z = 309.55, poiId = 33},
 	},
@@ -2914,29 +2914,29 @@ PVP.icGrates = {
 	[29] = { --Nobles
 		{x = 0.15615200, y = 0.63319605, z = 310.28, name = "To Lambent Passage"},
 	},
-	
+
 	[28] = { --Memorial
 		{x = 0.60446012, y = 0.16380399, z = 308.11, name = "To Harena Hypogeum"},
 	},
-	
+
 	[25] = { --Aboretum
 		{x = 0.85278901, y = 0.57275235, z = 312.90, name = "To Irrigation Tunnels"},
 	},
-	
+
 	[26] = { --Arena
 		{x = 0.79515141, y = 0.30315440, z = 308.03, name = "To Harena Hypogeum"},
 	},
-	
+
 	[30] = { --Temple
 		{x = 0.46733281, y = 0.86603170, z = 308.06, name = "To Irrigation Tunnels"},
 	},
-	
+
 	[27] = { --Elven
 		{x = 0.13612112, y = 0.47999250, z = 309.19, name = "To Lambent Passage"},
 	},
 }
 PVP.delvesCoords = {
-	
+
 	{x = 0.67226, y = 0.59793, z = 208.98, name = 'Cracked Wood Cave'}, --upd
 	{x = 0.72170, y = 0.69504, z = 111.33, name = 'Newt Cave'}, --upd
 	{x = 0.53730, y = 0.81005, z = 115.28, name = 'Bloodmane Cave'}, --upd
@@ -2958,66 +2958,60 @@ PVP.delvesCoords = {
 }
 
 PVP.miscCoords = {
-	
-	{x = 0.61220, y = 0.64072, z = 132.91, name = 'Niben River Bridge', pinType = PVP_PINTYPE_BRIDGE, alliance = ALLIANCE_NONE, keepId = 156}, 
-	{x = 0.66992, y = 0.13765, z = 385.14, name = 'Kingscrest Milegate', pinType = PVP_PINTYPE_MILEGATE, alliance = ALLIANCE_NONE, keepId = 160}, 
-	{x = 0.66469, y = 0.71974, z = 121.52, name = 'Bay Bridge', pinType = PVP_PINTYPE_BRIDGE, alliance = ALLIANCE_NONE, keepId = 157}, 
-	{x = 0.16387, y = 0.41751, z = 257.76, name = 'Chorrol Milegate', pinType = PVP_PINTYPE_MILEGATE, alliance = ALLIANCE_NONE, keepId = 159}, 
-	{x = 0.61824, y = 0.21514, z = 321.10, name = 'Horunn Milegate', pinType = PVP_PINTYPE_MILEGATE, alliance = ALLIANCE_NONE, keepId = 161}, 
-	{x = 0.24247, y = 0.41867, z = 241.42, name = 'Priory Milegate', pinType = PVP_PINTYPE_MILEGATE, alliance = ALLIANCE_NONE, keepId = 158}, 
-	{x = 0.54010, y = 0.29418, z = 254.83, name = 'Chalman Milegate', pinType = PVP_PINTYPE_MILEGATE, alliance = 9, keepId = 162}, 
-	{x = 0.35996, y = 0.46201, z = 248.67, name = 'Ash Milegate', pinType = PVP_PINTYPE_MILEGATE, alliance = 6, keepId = 155}, 
-	{x = 0.58858, y = 0.53298, z = 141.97, name = 'Alessia Bridge', pinType = PVP_PINTYPE_BRIDGE, alliance = 15, keepId = 154}, 
-	{x = 0.78137, y = 0.38986, z = 312.47, name = 'Cheydinhal', pinType = 'town'}, 
+
+	{x = 0.61220, y = 0.64072, z = 132.91, name = 'Niben River Bridge', pinType = PVP_PINTYPE_BRIDGE, alliance = ALLIANCE_NONE, keepId = 156},
+	{x = 0.66992, y = 0.13765, z = 385.14, name = 'Kingscrest Milegate', pinType = PVP_PINTYPE_MILEGATE, alliance = ALLIANCE_NONE, keepId = 160},
+	{x = 0.66469, y = 0.71974, z = 121.52, name = 'Bay Bridge', pinType = PVP_PINTYPE_BRIDGE, alliance = ALLIANCE_NONE, keepId = 157},
+	{x = 0.16387, y = 0.41751, z = 257.76, name = 'Chorrol Milegate', pinType = PVP_PINTYPE_MILEGATE, alliance = ALLIANCE_NONE, keepId = 159},
+	{x = 0.61824, y = 0.21514, z = 321.10, name = 'Horunn Milegate', pinType = PVP_PINTYPE_MILEGATE, alliance = ALLIANCE_NONE, keepId = 161},
+	{x = 0.24247, y = 0.41867, z = 241.42, name = 'Priory Milegate', pinType = PVP_PINTYPE_MILEGATE, alliance = ALLIANCE_NONE, keepId = 158},
+	{x = 0.54010, y = 0.29418, z = 254.83, name = 'Chalman Milegate', pinType = PVP_PINTYPE_MILEGATE, alliance = 9, keepId = 162},
+	{x = 0.35996, y = 0.46201, z = 248.67, name = 'Ash Milegate', pinType = PVP_PINTYPE_MILEGATE, alliance = 6, keepId = 155},
+	{x = 0.58858, y = 0.53298, z = 141.97, name = 'Alessia Bridge', pinType = PVP_PINTYPE_BRIDGE, alliance = 15, keepId = 154},
+	{x = 0.78137, y = 0.38986, z = 312.47, name = 'Cheydinhal', pinType = 'town'},
 }
 
 PVP.icCoords = {
-	x = 0.496, 
-	y = 0.429, 
-	z = 800, 
-	name = 'Crown', 
+	x = 0.496,
+	y = 0.429,
+	z = 800,
+	name = 'Crown',
 }
 
 PVP.ayleidWellsCoords = {
 
-	{x = 0.36087, y = 0.36112, z = 154.49}, 
-	{x = 0.46138, y = 0.23957, z = 262.23}, 
-	{x = 0.43849, y = 0.21113, z = 313.75}, 
-	{x = 0.18537, y = 0.40744, z = 272.57}, 
-	{x = 0.38327, y = 0.53015, z = 248.24}, 
-	{x = 0.26134, y = 0.67056, z = 294.75}, 
-	{x = 0.33254, y = 0.72857, z = 237.63}, 
-	{x = 0.39217, y = 0.69155, z = 222.15}, 
-	{x = 0.46606, y = 0.76441, z = 163.39}, 
-	{x = 0.50522, y = 0.76108, z = 202.23}, 
-	{x = 0.62154, y = 0.79278, z = 128.56}, 
-	{x = 0.62518, y = 0.50758, z = 201.05}, 
+	{x = 0.36087, y = 0.36112, z = 154.49},
+	{x = 0.46138, y = 0.23957, z = 262.23},
+	{x = 0.43849, y = 0.21113, z = 313.75},
+	{x = 0.18537, y = 0.40744, z = 272.57},
+	{x = 0.38327, y = 0.53015, z = 248.24},
+	{x = 0.26134, y = 0.67056, z = 294.75},
+	{x = 0.33254, y = 0.72857, z = 237.63},
+	{x = 0.39217, y = 0.69155, z = 222.15},
+	{x = 0.46606, y = 0.76441, z = 163.39},
+	{x = 0.50522, y = 0.76108, z = 202.23},
+	{x = 0.62154, y = 0.79278, z = 128.56},
+	{x = 0.62518, y = 0.50758, z = 201.05},
 	{x = 0.62801, y = 0.44472, z = 195.16},
-	{x = 0.70646, y = 0.58114, z = 233.89}, 
-	{x = 0.63834, y = 0.65077, z = 123.80}, 
-	{x = 0.65840, y = 0.69458, z = 136.87}, 
+	{x = 0.70646, y = 0.58114, z = 233.89},
+	{x = 0.63834, y = 0.65077, z = 123.80},
+	{x = 0.65840, y = 0.69458, z = 136.87},
 
 }
 
 PVP.killLocationPintypeToName = {
-	[183] = "|cEFD13C3-|r|c80AFFFway|r |cFF7161fight!|r",	
-	[184] = "|cEFD13C3-|r|c80AFFFway|r |cFF7161fight!|r",	
-	[185] = "|cEFD13C3-|r|c80AFFFway|r |cFF7161fight!|r",	
-	[186] = "|cEFD13CAD|r vs |cFF7161EP|r fight!",	 
-	[187] = "|cEFD13CAD|r vs |cFF7161EP|r fight!",	 
-	[188] = "|cEFD13CAD|r vs |cFF7161EP|r fight!",	 
-	[189] = "|cEFD13CAD|r vs |c80AFFFDC|r fight!",	 
-	[190] = "|cEFD13CAD|r vs |c80AFFFDC|r fight!",	 
-	[191] = "|cEFD13CAD|r vs |c80AFFFDC|r fight!",	 
-	[192] = "|cFF7161EP|r vs |c80AFFFDC|r fight!",	 
-	[193] = "|cFF7161EP|r vs |c80AFFFDC|r fight!",	 
-	[194] = "|cFF7161EP|r vs |c80AFFFDC|r fight!",	 
-}
-
-PVP.icEntranceCoords = {
-	-- {x = 0.55724, y = 0.33651, z = 109.21}, -- Chal
-	-- {x = 0.51513, y = 0.54320, z = 102.57}, -- Alessia
-	-- {x = 0.39790, y = 0.41671, z = 123.50}, -- Ash
+	[183] = "|cEFD13C3-|r|c80AFFFway|r |cFF7161fight!|r",
+	[184] = "|cEFD13C3-|r|c80AFFFway|r |cFF7161fight!|r",
+	[185] = "|cEFD13C3-|r|c80AFFFway|r |cFF7161fight!|r",
+	[186] = "|cEFD13CAD|r vs |cFF7161EP|r fight!",
+	[187] = "|cEFD13CAD|r vs |cFF7161EP|r fight!",
+	[188] = "|cEFD13CAD|r vs |cFF7161EP|r fight!",
+	[189] = "|cEFD13CAD|r vs |c80AFFFDC|r fight!",
+	[190] = "|cEFD13CAD|r vs |c80AFFFDC|r fight!",
+	[191] = "|cEFD13CAD|r vs |c80AFFFDC|r fight!",
+	[192] = "|cFF7161EP|r vs |c80AFFFDC|r fight!",
+	[193] = "|cFF7161EP|r vs |c80AFFFDC|r fight!",
+	[194] = "|cFF7161EP|r vs |c80AFFFDC|r fight!",
 }
 
 PVP.pingsColors = {
@@ -3028,29 +3022,29 @@ PVP.pingsColors = {
 	{0,159,140},
 	{255,149,157},
 	{1,213,243},
-	
+
 	{137,59,33},
 	{1,115,236},
 	{117,221,81},
 	{164,33,171},
-	
+
 	{221,99,232},
 	{132,163,0},
 	{250,133,255},
 	{172,144,0},
-	
+
 	{255,159,26},
-	
-	
-	
+
+
+
 	{255,61,169},
 	{121,70,21},
 	{210,188,251},
-	
+
 	{112,62,136},
 	{219,149,137},
 	{164,16,57},
-	
+
 	{140,49,94},
 	{130,70,59},
 }
@@ -3059,12 +3053,12 @@ PVP.midpointKeepIds = {
 	[3] = true, -- Warden
 	[4] = true, -- Rayles
 	[5] = true, -- Glademist
-	
+
 	[10] = true, -- Arrius
 	[11] = true, -- Kingscrest
 	[12] = true, -- Farragut
 
-	
+
 	[16] = true, -- Faregyl
 	[19] = true, -- Black Boot
 	[20] = true, -- Bloodmayne
@@ -3081,46 +3075,46 @@ PVP.objectiveIcons = {
 	[KEEPTYPE_OUTPOST] =				"/esoui/art/compass/ava_outpost_neutral.dds",
 	[KEEPTYPE_TOWN] =					"/esoui/art/compass/ava_town_neutral.dds",
 	[KEEPTYPE_IMPERIAL_CITY_DISTRICT] = "/esoui/art/compass/ava_imperialdistrict_neutral.dds",
-	
+
 	[RESOURCETYPE_FOOD] =				"/esoui/art/compass/ava_farm_neutral.dds",
 	[RESOURCETYPE_ORE] =				"/esoui/art/compass/ava_mine_neutral.dds",
 	[RESOURCETYPE_WOOD] =				"/esoui/art/compass/ava_lumbermill_neutral.dds",
-	
+
 	[KEEPTYPE_ARTIFACT_GATE] =	{
 		[MAP_PIN_TYPE_ARTIFACT_GATE_CLOSED_ALDMERI_DOMINION]		=	"/esoui/art/compass/ava_artifactgate_aldmeri_closed.dds",
 		[MAP_PIN_TYPE_ARTIFACT_GATE_CLOSED_DAGGERFALL_COVENANT]		=	"/esoui/art/compass/ava_artifactgate_daggerfall_closed.dds",
 		[MAP_PIN_TYPE_ARTIFACT_GATE_CLOSED_EBONHEART_PACT]			=	"/esoui/art/compass/ava_artifactgate_ebonheart_closed.dds",
 		[MAP_PIN_TYPE_ARTIFACT_GATE_OPEN_ALDMERI_DOMINION]		=	"/esoui/art/compass/ava_artifactgate_aldmeri_open.dds",
 		[MAP_PIN_TYPE_ARTIFACT_GATE_OPEN_DAGGERFALL_COVENANT]	=	"/esoui/art/compass/ava_artifactgate_daggerfall_open.dds",
-		[MAP_PIN_TYPE_ARTIFACT_GATE_OPEN_EBONHEART_PACT]			=	"/esoui/art/compass/ava_artifactgate_ebonheart_open.dds",			
+		[MAP_PIN_TYPE_ARTIFACT_GATE_OPEN_EBONHEART_PACT]			=	"/esoui/art/compass/ava_artifactgate_ebonheart_open.dds",
 	},
-	
+
 	[PVP_KEEPTYPE_ARTIFACT_KEEP] =	{
 		[ALLIANCE_ALDMERI_DOMINION]	=	"/esoui/art/compass/ava_artifacttemple_aldmeri.dds",
 		[ALLIANCE_DAGGERFALL_COVENANT]	=	"/esoui/art/compass/ava_artifacttemple_daggerfall.dds",
-		[ALLIANCE_EBONHEART_PACT]		=	"/esoui/art/compass/ava_artifacttemple_ebonheart.dds",	
+		[ALLIANCE_EBONHEART_PACT]		=	"/esoui/art/compass/ava_artifacttemple_ebonheart.dds",
 	},
-	
+
 	[PVP_KEEPTYPE_BORDER_KEEP] =	{
 		[ALLIANCE_ALDMERI_DOMINION]	=	"/esoui/art/compass/ava_borderkeep_pin_aldmeri.dds",
 		[ALLIANCE_DAGGERFALL_COVENANT]	=	"/esoui/art/compass/ava_borderkeep_pin_daggerfall.dds",
-		[ALLIANCE_EBONHEART_PACT]		=	"/esoui/art/compass/ava_borderkeep_pin_ebonheart.dds",	
-	},	
-	
+		[ALLIANCE_EBONHEART_PACT]		=	"/esoui/art/compass/ava_borderkeep_pin_ebonheart.dds",
+	},
+
 	-- [PVP_KEEPTYPE_BORDER_KEEP] =		{
 		-- [ALLIANCE_ALDMERI_DOMINION]	=	"esoui/art/guild/banner_aldmeri.dds",
 		-- [ALLIANCE_DAGGERFALL_COVENANT]	=	"esoui/art/guild/banner_daggerfall.dds",
-		-- [ALLIANCE_EBONHEART_PACT]		=	"esoui/art/guild/banner_ebonheart.dds",	
+		-- [ALLIANCE_EBONHEART_PACT]		=	"esoui/art/guild/banner_ebonheart.dds",
 	-- },
-		
+
 	[FLAGTYPE_OTHER] =					"/esoui/art/compass/ava_flagneutral.dds",
 	[FLAGTYPE_NAVE] =					"/esoui/art/compass/ava_flagcarrier_neutral.dds",
-	[FLAGTYPE_APSE] =					"/esoui/art/compass/ava_flagbase_neutral.dds",	
-	
+	[FLAGTYPE_APSE] =					"/esoui/art/compass/ava_flagbase_neutral.dds",
+
 	[PVP_ALLIANCE_BASE_IC] = {
 		[ALLIANCE_ALDMERI_DOMINION]	=	"/esoui/art/campaign/overview_allianceicon_aldmeri.dds",
 		[ALLIANCE_DAGGERFALL_COVENANT]	=	"/esoui/art/campaign/overview_allianceicon_daggefall.dds",
-		[ALLIANCE_EBONHEART_PACT]		=	"/esoui/art/campaign/overview_allianceicon_ebonheart.dds",	
+		[ALLIANCE_EBONHEART_PACT]		=	"/esoui/art/campaign/overview_allianceicon_ebonheart.dds",
 	},
 }
 

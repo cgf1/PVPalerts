@@ -92,35 +92,35 @@ function PVP.KOS_Control_Movement()
 	local button = PVP_KOS_ControlFrame_Button
 	local centerNewX, centerNewY = button:GetCenter()
 	local offsetXMove=centerNewX-PVP.moveInfo.centerX
-	
+
 	PVP.moveInfo.offsetX=PVP.moveInfo.offsetX+offsetXMove
-	
+
 	local width = PVP.moveInfo.effectiveWidth
-	
+
 	if PVP.moveInfo.offsetX<zo_round(-width/2) then PVP.moveInfo.offsetX=zo_round(-width/2)
 	elseif PVP.moveInfo.offsetX>zo_round(width/2) then PVP.moveInfo.offsetX=zo_round(width/2) end
-	
-	
-	if PVP.moveInfo.offsetX<=zo_round(-width/3) then 
-		button:SetText("All") 
+
+
+	if PVP.moveInfo.offsetX<=zo_round(-width/3) then
+		button:SetText("All")
 		PVP.SV.KOSmode=1
-	elseif PVP.moveInfo.offsetX<=0 then 
-		button:SetText("Allies") 
+	elseif PVP.moveInfo.offsetX<=0 then
+		button:SetText("Allies")
 		PVP.SV.KOSmode=2
-	elseif PVP.moveInfo.offsetX<=zo_round(width/3) then 
-		button:SetText("Enemies") 
+	elseif PVP.moveInfo.offsetX<=zo_round(width/3) then
+		button:SetText("Enemies")
 		PVP.SV.KOSmode=3
-	else 
-		button:SetText("Setup") 
-		PVP.SV.KOSmode=4 
+	else
+		button:SetText("Setup")
+		PVP.SV.KOSmode=4
 	end
-	
+
 	local currentTime = GetFrameTimeMilliseconds()
-	if currentTime-PVP.moveInfo.timeStamp>=100 then 
-		PVP:PopulateKOSBuffer() 
-		PVP.moveInfo.timeStamp = currentTime 
+	if currentTime-PVP.moveInfo.timeStamp>=100 then
+		PVP:PopulateKOSBuffer()
+		PVP.moveInfo.timeStamp = currentTime
 	end
-	
+
 	button:ClearAnchors()
 	button:SetAnchor(PVP.moveInfo.point, PVP.moveInfo.relativeTo, PVP.moveInfo.relativePoint, PVP.moveInfo.offsetX, PVP.moveInfo.offsetY)
 	PVP.moveInfo.centerX=button:GetCenter()
@@ -134,42 +134,42 @@ function PVP_KOS_Control_MoveStart(self)
 	local offsetXleft, offsetXright = (control:GetLeft()-self:GetLeft()+5)+offsetX, (control:GetRight()-self:GetRight()-5)+offsetX
 	if offsetX>offsetXright then offsetX=offsetXright end
 	if offsetX<offsetXleft then offsetX=offsetXleft end
-	
+
 	local controlWidth = control:GetWidth()-10
 	local selfWidth = self:GetWidth()
 	local effectiveWidth = controlWidth-selfWidth
-	
+
 	local currentTime = GetFrameTimeMilliseconds()
-	
+
 	PVP.moveInfo={point=point, relativeTo=relativeTo, relativePoint=relativePoint, offsetX=offsetX, offsetY=offsetY, centerX=centerX, centerY=centerY, effectiveWidth=effectiveWidth, timeStamp=currentTime}
 	self:SetHandler("OnUpdate", PVP.KOS_Control_Movement)
 end
 
 function PVP_KOS_Control_MoveStop(self)
 	self:SetHandler("OnUpdate", nil)
-	
+
 	local width = PVP.moveInfo.effectiveWidth
-	
-	if PVP.moveInfo.offsetX<=zo_round(-width/3) then 
-		PVP.moveInfo.offsetX=zo_round(-width/2) 
-		self:SetText("All") 
+
+	if PVP.moveInfo.offsetX<=zo_round(-width/3) then
+		PVP.moveInfo.offsetX=zo_round(-width/2)
+		self:SetText("All")
 		PVP.SV.KOSmode=1
-	elseif PVP.moveInfo.offsetX<=0 then 
-		PVP.moveInfo.offsetX=zo_round(-width/6) 
-		self:SetText("Allies") 
+	elseif PVP.moveInfo.offsetX<=0 then
+		PVP.moveInfo.offsetX=zo_round(-width/6)
+		self:SetText("Allies")
 		PVP.SV.KOSmode=2
-	elseif PVP.moveInfo.offsetX<=zo_round(width/3) then 
-		PVP.moveInfo.offsetX=zo_round(width/6) 
-		self:SetText("Enemies") 
+	elseif PVP.moveInfo.offsetX<=zo_round(width/3) then
+		PVP.moveInfo.offsetX=zo_round(width/6)
+		self:SetText("Enemies")
 		PVP.SV.KOSmode=3
-	else 
-		PVP.moveInfo.offsetX=zo_round(width/2) 
-		self:SetText("Setup") 
-		PVP.SV.KOSmode=4 
+	else
+		PVP.moveInfo.offsetX=zo_round(width/2)
+		self:SetText("Setup")
+		PVP.SV.KOSmode=4
 	end
-	
+
 	PVP:PopulateKOSBuffer()
-	
+
 	self:ClearAnchors()
 	self:SetAnchor(PVP.moveInfo.point, PVP.moveInfo.relativeTo, PVP.moveInfo.relativePoint, PVP.moveInfo.offsetX, PVP.moveInfo.offsetY)
 end

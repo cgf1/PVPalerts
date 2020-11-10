@@ -12,7 +12,7 @@ function PVP:InitializeAddonMenu()
 		slashCommand = "/pvpmenu",
 		registerForRefresh = true,
 		registerForDefaults = false,
-		resetFunc = function()	
+		resetFunc = function()
 			self.SV.offsetX=0
 			self.SV.offsetY=0
 			self.SV.counterOffsetX=0
@@ -31,18 +31,18 @@ function PVP:InitializeAddonMenu()
 			self.SV.newAttackerOffsetY=0
 			self.SV.medalsOffsetX=0
 			self.SV.medalsOffsetY=0
-			
-			
-			self:FullReset() 
+
+
+			self:FullReset()
 			self:InitControls()
 		end
 	}
-	
+
 	local optionsPanel = LAM2:RegisterAddonPanel("Pvp_Alerts", panelData)
-		
+
 	local optionsData = {}
-	
-	
+
+
 	table.insert(optionsData, {
 		type = "header",
 		name = "Frames positions LOCK/UNLOCK",
@@ -75,10 +75,10 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showAttacks,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showAttacks end,
-		setFunc = function(newValue) self.SV.showAttacks = newValue 
+		setFunc = function(newValue) self.SV.showAttacks = newValue
 			self:InitControls()
 		end,
-	})	
+	})
 	table.insert(optionsData, {
 		type = "checkbox",
 		name = "Enable players counter feature",
@@ -86,8 +86,8 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showCounterFrame,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showCounterFrame end,
-		setFunc = function(newValue) 
-			self.SV.showCounterFrame = newValue 
+		setFunc = function(newValue)
+			self.SV.showCounterFrame = newValue
 			self:InitControls()
 	end,
 	})
@@ -98,7 +98,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showKillFeedFrame,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showKillFeedFrame end,
-		setFunc = function(newValue) 
+		setFunc = function(newValue)
 			self.SV.showKillFeedFrame = newValue
 			if not newValue then self:KillFeedRatio_Reset() end
 			self:InitControls()
@@ -111,7 +111,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showNamesFrame,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showNamesFrame end,
-		setFunc = function(newValue) 
+		setFunc = function(newValue)
 			self.SV.showNamesFrame = newValue
 			if not newValue then self.namesToDisplay={} PVP_Names_Text:Clear() end
 			self:InitControls()
@@ -125,7 +125,7 @@ function PVP:InitializeAddonMenu()
 		-- disabled = function() return not self.SV.enabled or not self.SV.showNamesFrame end,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showNewAttackerFrame end,
-		setFunc = function(newValue) 
+		setFunc = function(newValue)
 			self.SV.showNewAttackerFrame = newValue
 			self:InitControls()
 	end,
@@ -137,8 +137,8 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showKOSFrame,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showKOSFrame end,
-		setFunc = function(newValue) 
-			self.SV.showKOSFrame = newValue 
+		setFunc = function(newValue)
+			self.SV.showKOSFrame = newValue
 			self:InitControls()
 	end,
 	})
@@ -149,8 +149,8 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showCampFrame,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showCampFrame end,
-		setFunc = function(newValue) 
-			self.SV.showCampFrame = newValue 
+		setFunc = function(newValue)
+			self.SV.showCampFrame = newValue
 			self:InitControls()
 	end,
 	})
@@ -161,8 +161,8 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showCaptureFrame,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showCaptureFrame end,
-		setFunc = function(newValue) 
-			self.SV.showCaptureFrame = newValue 
+		setFunc = function(newValue)
+			self.SV.showCaptureFrame = newValue
 			self:InitControls()
 	end,
 	})
@@ -173,8 +173,8 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showTargetNameFrame,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showTargetNameFrame end,
-		setFunc = function(newValue) 
-			self.SV.showTargetNameFrame = newValue 
+		setFunc = function(newValue)
+			self.SV.showTargetNameFrame = newValue
 			self:InitControls()
 	end,
 	})
@@ -185,11 +185,11 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showTargetIcon,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showTargetIcon end,
-		setFunc = function(newValue) 
-			self.SV.showTargetIcon = newValue 
+		setFunc = function(newValue)
+			self.SV.showTargetIcon = newValue
 			self:InitControls()
 	end,
-	})	
+	})
 	table.insert(optionsData, {
 		type = "checkbox",
 		name = "Enable 3D icons system",
@@ -197,7 +197,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.show3DIcons,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.show3DIcons end,
-		setFunc = function(newValue) 
+		setFunc = function(newValue)
 			self.SV.show3DIcons = newValue
 			self:FullReset3DIcons()
 			self:InitControls()
@@ -226,7 +226,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showImportant,
 		disabled = function() return not self.SV.enabled or not self.SV.showAttacks end,
 		getFunc = function() return self.SV.showImportant end,
-		setFunc = function(newValue) self.SV.showImportant = newValue 
+		setFunc = function(newValue) self.SV.showImportant = newValue
 			self:InitControls()
 		end,
 	})
@@ -237,7 +237,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showSnipes,
 		disabled = function() return not self.SV.enabled or not self.SV.showAttacks end,
 		getFunc = function() return self.SV.showSnipes end,
-		setFunc = function(newValue) self.SV.showSnipes = newValue 
+		setFunc = function(newValue) self.SV.showSnipes = newValue
 			self:InitControls()
 		end,
 	})
@@ -248,7 +248,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showHeavyAttacks,
 		disabled = function() return not self.SV.enabled or not self.SV.showAttacks end,
 		getFunc = function() return self.SV.showHeavyAttacks end,
-		setFunc = function(newValue) self.SV.showHeavyAttacks = newValue 
+		setFunc = function(newValue) self.SV.showHeavyAttacks = newValue
 			self:InitControls()
 		end,
 	})
@@ -273,17 +273,17 @@ function PVP:InitializeAddonMenu()
 		name = "Choose Kill Feed Text Alignment:",
 		tooltip = 'Default is "Center"',
 		choices = {"Center", "Left", "Right"},
-		getFunc = function() 
-			if self.SV.feedTextAlign==TEXT_ALIGN_CENTER then 
+		getFunc = function()
+			if self.SV.feedTextAlign==TEXT_ALIGN_CENTER then
 				return "Center"
 			elseif self.SV.feedTextAlign==TEXT_ALIGN_LEFT then
-				return "Left"				
+				return "Left"
 			elseif self.SV.feedTextAlign==TEXT_ALIGN_RIGHT then
 				return "Right"
 			end
 		end,
 		setFunc = function(newValue)
-			if newValue=="Center" then 
+			if newValue=="Center" then
 				self.SV.feedTextAlign=TEXT_ALIGN_CENTER
 			elseif newValue=="Left" then
 				self.SV.feedTextAlign=TEXT_ALIGN_LEFT
@@ -294,7 +294,7 @@ function PVP:InitializeAddonMenu()
 		end,
 		default = "Center",
 		disabled = function() return not self.SV.enabled or not self.SV.showKillFeedFrame end,
-	})	
+	})
 	table.insert(optionsData, {
 		type = "checkbox",
 		name = "Enable Kill Feed chat tab",
@@ -302,9 +302,9 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showKillFeedChat,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showKillFeedChat end,
-		setFunc = function(newValue) 
+		setFunc = function(newValue)
 			self.SV.showKillFeedChat = newValue
-			if newValue then 
+			if newValue then
 				self:InitializeChat()
 			else
 				local _, _, windowIndex = PVP:GetKillFeed()
@@ -312,7 +312,7 @@ function PVP:InitializeAddonMenu()
 			end
 			self:InitControls()
 	end,
-	})	
+	})
 	table.insert(optionsData, {
 		type = "checkbox",
 		name = "Show Kill Feed in general chat tab",
@@ -320,11 +320,11 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showKillFeedInMainChat,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showKillFeedInMainChat end,
-		setFunc = function(newValue) 
+		setFunc = function(newValue)
 			self.SV.showKillFeedInMainChat = newValue
 			self:InitControls()
 	end,
-	})		
+	})
 	table.insert(optionsData, {
 		type = "checkbox",
 		name = "Show Kill Feed only for killing blows",
@@ -332,11 +332,11 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showOnlyOwnKillingBlows,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showOnlyOwnKillingBlows end,
-		setFunc = function(newValue) 
+		setFunc = function(newValue)
 			self.SV.showOnlyOwnKillingBlows = newValue
 			self:InitControls()
 	end,
-	})		
+	})
 	table.insert(optionsData, {
 		type = "checkbox",
 		name = "Play AP ticks sound",
@@ -344,7 +344,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.playBattleReportSound,
 		disabled = function() return not self.SV.enabled or not self.SV.showKillFeedFrame end,
 		getFunc = function() return self.SV.playBattleReportSound end,
-		setFunc = function(newValue) self.SV.playBattleReportSound = newValue 
+		setFunc = function(newValue) self.SV.playBattleReportSound = newValue
 			self:InitControls()
 		end,
 	})
@@ -364,7 +364,7 @@ function PVP:InitializeAddonMenu()
 	step	= 1,
 		getFunc = function() return tonumber(string.format("%.0f", 100*self.SV.namesControlScale)) end,
 		setFunc = function(newValue) self.SV.namesControlScale = newValue/100 self:InitControls() end,
-	})	
+	})
 	table.insert(optionsData, {
 		type = "checkbox",
 		name = "Play new attacker sound",
@@ -372,7 +372,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.playNewAttackerSound,
 		disabled = function() return not self.SV.enabled or not self.SV.showNamesFrame end,
 		getFunc = function() return self.SV.playNewAttackerSound end,
-		setFunc = function(newValue) self.SV.playNewAttackerSound = newValue 
+		setFunc = function(newValue) self.SV.playNewAttackerSound = newValue
 			self:InitControls()
 		end,
 	})
@@ -401,7 +401,7 @@ function PVP:InitializeAddonMenu()
 	step	= 1,
 		getFunc = function() return tonumber(string.format("%.0f", 100*self.SV.newAttackerFrameAlpha)) end,
 		setFunc = function(newValue) self.SV.newAttackerFrameAlpha = newValue/100 self:InitControls() end,
-	})	
+	})
 	table.insert(optionsData, {
 		type = "slider",
 		name = "Set New Attacker Frame delay before fadeout (ms)",
@@ -413,7 +413,7 @@ function PVP:InitializeAddonMenu()
 	step	= 1,
 		getFunc = function() return self.SV.newAttackerFrameDelayBeforeFadeout end,
 		setFunc = function(newValue) self.SV.newAttackerFrameDelayBeforeFadeout = newValue self:InitControls() end,
-	})	
+	})
 	table.insert(optionsData, {
 		type = "header",
 		name = "KOS Frame options",
@@ -437,7 +437,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.playKOSSound,
 		disabled = function() return not self.SV.enabled or not self.SV.showKOSFrame end,
 		getFunc = function() return self.SV.playKOSSound end,
-		setFunc = function(newValue) self.SV.playKOSSound = newValue 
+		setFunc = function(newValue) self.SV.playKOSSound = newValue
 			self:InitControls()
 		end,
 	})
@@ -448,7 +448,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.outputNewKos,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.outputNewKos end,
-		setFunc = function(newValue) self.SV.outputNewKos = newValue 
+		setFunc = function(newValue) self.SV.outputNewKos = newValue
 			self:InitControls()
 		end,
 	})
@@ -463,7 +463,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.playCampSound,
 		disabled = function() return not self.SV.enabled or not self.SV.showCampFrame end,
 		getFunc = function() return self.SV.playCampSound end,
-		setFunc = function(newValue) self.SV.playCampSound = newValue 
+		setFunc = function(newValue) self.SV.playCampSound = newValue
 			self:InitControls()
 		end,
 	})
@@ -474,7 +474,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.playBuffsSound,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.playBuffsSound end,
-		setFunc = function(newValue) self.SV.playBuffsSound = newValue 
+		setFunc = function(newValue) self.SV.playBuffsSound = newValue
 			self:InitControls()
 		end,
 	})
@@ -489,8 +489,8 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showNeighbourCaptureFrame,
 		disabled = function() return not self.SV.enabled or not self.SV.showCaptureFrame end,
 		getFunc = function() return self.SV.showNeighbourCaptureFrame end,
-		setFunc = function(newValue) 
-			self.SV.showNeighbourCaptureFrame = newValue 
+		setFunc = function(newValue)
+			self.SV.showNeighbourCaptureFrame = newValue
 			self:InitControls()
 	end,
 	})
@@ -516,17 +516,17 @@ function PVP:InitializeAddonMenu()
 		name = "Choose Target Name Text Alignment:",
 		tooltip = 'Default is "Center"',
 		choices = {"Center", "Left", "Right"},
-		getFunc = function() 
-			if self.SV.targetTextAlign==TEXT_ALIGN_CENTER then 
+		getFunc = function()
+			if self.SV.targetTextAlign==TEXT_ALIGN_CENTER then
 				return "Center"
 			elseif self.SV.targetTextAlign==TEXT_ALIGN_LEFT then
-				return "Left"				
+				return "Left"
 			elseif self.SV.targetTextAlign==TEXT_ALIGN_RIGHT then
 				return "Right"
 			end
 		end,
 		setFunc = function(newValue)
-			if newValue=="Center" then 
+			if newValue=="Center" then
 				self.SV.targetTextAlign=TEXT_ALIGN_CENTER
 			elseif newValue=="Left" then
 				self.SV.targetTextAlign=TEXT_ALIGN_LEFT
@@ -537,7 +537,7 @@ function PVP:InitializeAddonMenu()
 		end,
 		default = "Center",
 		disabled = function() return not self.SV.enabled or not self.SV.showTargetNameFrame end,
-	})	
+	})
 	table.insert(optionsData, {
 		type = "slider",
 		name = "Set Target Name Frame Alpha (%)",
@@ -561,7 +561,7 @@ function PVP:InitializeAddonMenu()
 	step	= 1,
 		getFunc = function() return self.SV.targetNameFrameFadeoutTime end,
 		setFunc = function(newValue) self.SV.targetNameFrameFadeoutTime = newValue self:InitControls() end,
-	})			
+	})
 	table.insert(optionsData, {
 		type = "slider",
 		name = "Set Target Name Frame delay before fadeout (ms)",
@@ -573,7 +573,7 @@ function PVP:InitializeAddonMenu()
 	step	= 1,
 		getFunc = function() return self.SV.targetNameFrameDelayBeforeFadeout end,
 		setFunc = function(newValue) self.SV.targetNameFrameDelayBeforeFadeout = newValue self:InitControls() end,
-	})		
+	})
 	table.insert(optionsData, {
 		type = "header",
 		name = "3D Icons options",
@@ -585,8 +585,8 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showOnScreen,
 		disabled = function() return not self.SV.enabled or not self.SV.show3DIcons end,
 		getFunc = function() return self.SV.showOnScreen end,
-		setFunc = function(newValue) 
-			self.SV.showOnScreen = newValue 
+		setFunc = function(newValue)
+			self.SV.showOnScreen = newValue
 			self:InitControls()
 		end,
 	})
@@ -597,8 +597,8 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.onScreenReplace,
 		disabled = function() return not self.SV.enabled or not self.SV.show3DIcons or not self.SV.showOnScreen end,
 		getFunc = function() return self.SV.onScreenReplace end,
-		setFunc = function(newValue) 
-			self.SV.onScreenReplace = newValue 
+		setFunc = function(newValue)
+			self.SV.onScreenReplace = newValue
 			self:InitControls()
 		end,
 	})
@@ -613,7 +613,7 @@ function PVP:InitializeAddonMenu()
 	step	= 1,
 		getFunc = function() return tonumber(string.format("%.0f", 100*self.SV.onScreenScale)) end,
 		setFunc = function(newValue) self.SV.onScreenScale = newValue/100 self:InitControls() end,
-	})	
+	})
 	table.insert(optionsData, {
 		type = "checkbox",
 		name = "Show group members icons",
@@ -621,8 +621,8 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.group3d,
 		disabled = function() return not self.SV.enabled or not self.SV.show3DIcons end,
 		getFunc = function() return self.SV.group3d end,
-		setFunc = function(newValue) 
-			self.SV.group3d = newValue 
+		setFunc = function(newValue)
+			self.SV.group3d = newValue
 			self:InitControls()
 		end,
 	})
@@ -633,8 +633,8 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.onlyGroupLeader3d,
 		disabled = function() return not self.SV.enabled or not self.SV.show3DIcons end,
 		getFunc = function() return self.SV.onlyGroupLeader3d end,
-		setFunc = function(newValue) 
-			self.SV.onlyGroupLeader3d = newValue 
+		setFunc = function(newValue)
+			self.SV.onlyGroupLeader3d = newValue
 			self:InitControls()
 		end,
 	})
@@ -645,8 +645,8 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.groupleader3d,
 		disabled = function() return not self.SV.enabled or not self.SV.show3DIcons or not self.SV.group3d or self.SV.allgroup3d end,
 		getFunc = function() return self.SV.groupleader3d end,
-		setFunc = function(newValue) 
-			self.SV.groupleader3d = newValue 
+		setFunc = function(newValue)
+			self.SV.groupleader3d = newValue
 			self:InitControls()
 		end,
 	})
@@ -657,8 +657,8 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.allgroup3d,
 		disabled = function() return not self.SV.enabled or not self.SV.show3DIcons or not self.SV.group3d or self.SV.onlyGroupLeader3d end,
 		getFunc = function() return self.SV.allgroup3d end,
-		setFunc = function(newValue) 
-			self.SV.allgroup3d = newValue 
+		setFunc = function(newValue)
+			self.SV.allgroup3d = newValue
 			self:InitControls()
 		end,
 	})
@@ -693,8 +693,8 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.shadowImage3d,
 		disabled = function() return not self.SV.enabled or not self.SV.show3DIcons or GetUnitClassId('player') ~= 3 end,
 		getFunc = function() return self.SV.shadowImage3d end,
-		setFunc = function(newValue) 
-			self.SV.shadowImage3d = newValue 
+		setFunc = function(newValue)
+			self.SV.shadowImage3d = newValue
 			if not newValue then self.shadowInfo = nil end
 			self:InitControls()
 		end,
@@ -706,8 +706,8 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.pingWaypoint,
 		disabled = function() return not self.SV.enabled or not self.SV.show3DIcons end,
 		getFunc = function() return self.SV.pingWaypoint end,
-		setFunc = function(newValue) 
-			self.SV.pingWaypoint = newValue 
+		setFunc = function(newValue)
+			self.SV.pingWaypoint = newValue
 			self:InitControls()
 		end,
 	})
@@ -795,11 +795,11 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showCompass3d,
 		disabled = function() return not self.SV.enabled or not self.SV.show3DIcons end,
 		getFunc = function() return self.SV.showCompass3d end,
-		setFunc = function(newValue) 
-			self.SV.showCompass3d = newValue 
+		setFunc = function(newValue)
+			self.SV.showCompass3d = newValue
 			self:InitControls()
 		end,
-	})	
+	})
 	table.insert(optionsData, {
 		type = "slider",
 		name = "Height of compass letters",
@@ -834,7 +834,7 @@ function PVP:InitializeAddonMenu()
 		setFunc = function(r,g,b,a)
 	    self.SV.compass3dColor = {r,g,b,a}
 	end,
-	})	
+	})
 	table.insert(optionsData, {
 		type = "colorpicker",
 		name = "Pick color for North compass 3d letter",
@@ -853,11 +853,11 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.useDepthBufferCompass,
 		disabled = function() return not self.SV.enabled or not self.SV.show3DIcons or not self.SV.showCompass3d end,
 		getFunc = function() return self.SV.useDepthBufferCompass end,
-		setFunc = function(newValue) 
-			self.SV.useDepthBufferCompass = newValue 
+		setFunc = function(newValue)
+			self.SV.useDepthBufferCompass = newValue
 			self:InitControls()
 		end,
-	})	
+	})
 
 	table.insert(optionsData, {
 		type = "header",
@@ -870,7 +870,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.playKillingBlowSound,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.playKillingBlowSound end,
-		setFunc = function(newValue) self.SV.playKillingBlowSound = newValue 
+		setFunc = function(newValue) self.SV.playKillingBlowSound = newValue
 			self:InitControls()
 		end,
 	})
@@ -881,7 +881,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showNewTargetInfo,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showNewTargetInfo end,
-		setFunc = function(newValue) self.SV.showNewTargetInfo = newValue 
+		setFunc = function(newValue) self.SV.showNewTargetInfo = newValue
 			self:InitControls()
 		end,
 	})
@@ -892,7 +892,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showMaxTargetCP,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showMaxTargetCP end,
-		setFunc = function(newValue) self.SV.showMaxTargetCP = newValue 
+		setFunc = function(newValue) self.SV.showMaxTargetCP = newValue
 			self:InitControls()
 		end,
 	})
@@ -903,7 +903,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showHybridJustification,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showHybridJustification end,
-		setFunc = function(newValue) self.SV.showHybridJustification = newValue 
+		setFunc = function(newValue) self.SV.showHybridJustification = newValue
 			self:InitControls()
 		end,
 	})
@@ -926,7 +926,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showMedalsFrame,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showMedalsFrame end,
-		setFunc = function(newValue) self.SV.showMedalsFrame = newValue 
+		setFunc = function(newValue) self.SV.showMedalsFrame = newValue
 			self:InitControls()
 		end,
 	})
@@ -937,10 +937,10 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.bgToggle,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.bgToggle end,
-		setFunc = function(newValue) self.SV.bgToggle = newValue 
+		setFunc = function(newValue) self.SV.bgToggle = newValue
 			self:InitControls()
 		end,
-	})			
+	})
 	table.insert(optionsData, {
 		type = "checkbox",
 		name = "Show joined/left players in battelgrounds",
@@ -948,7 +948,7 @@ function PVP:InitializeAddonMenu()
 		default = self.defaults.showJoinedPlayers,
 		disabled = function() return not self.SV.enabled end,
 		getFunc = function() return self.SV.showJoinedPlayers end,
-		setFunc = function(newValue) self.SV.showJoinedPlayers = newValue 
+		setFunc = function(newValue) self.SV.showJoinedPlayers = newValue
 			self:InitControls()
 		end,
 	})
@@ -975,6 +975,6 @@ function PVP:InitializeAddonMenu()
 		setFunc = function(newValue) self.SV.showPerformance = newValue
 			self:InitControls()
 		end,
-	})		
-	LAM2:RegisterOptionControls("Pvp_Alerts", optionsData)	
+	})
+	LAM2:RegisterOptionControls("Pvp_Alerts", optionsData)
 end

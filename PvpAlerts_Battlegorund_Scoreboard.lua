@@ -20,7 +20,7 @@ local PVP_GOLD_COLOR = ZO_ColorDef:New("CCCC00")
 local PVP_SILVER_COLOR = ZO_ColorDef:New("C0C0C0")
 local PVP_BRONZE_COLOR = ZO_ColorDef:New("d7995b")
 
-local PVP_PLAYER_COLOR_GREEEN = ZO_ColorDef:New(0,1,0,1)		
+local PVP_PLAYER_COLOR_GREEEN = ZO_ColorDef:New(0,1,0,1)
 local PVP_PLAYER_COLOR_YELLOW = ZO_ColorDef:New(1,1,0,1)
 local PVP_PLAYER_COLOR_RED = ZO_ColorDef:New(1,0,0,1)
 
@@ -33,17 +33,17 @@ function PVP_InitScoreboard()
 	PVP.bgScoreboard.list = ScoreboardList:New(PVP_ScoreboardList1)
 end
 function PVP:ScoreboardToggle(isKeyDown)
-	if not IsActiveWorldBattleground() then 
+	if not IsActiveWorldBattleground() then
 		ClearTooltip(PVPScoreboardTooltip)
 		PVPScoreboardTooltip:SetHidden(true)
 		SCENE_MANAGER:Hide("PVPScoreboardScene")
-		return 
+		return
 	end
-	
+
 	if not PVP.bgScoreboard.list then
 		PVP.bgScoreboard.list = ScoreboardList:New(PVP_ScoreboardList1)
 	end
-	
+
 	if PVP.SV.bgToggle then
 		if isKeyDown then
 			if (PVP_Scoreboard:IsControlHidden()) then
@@ -72,29 +72,29 @@ end
 function ScoreboardList:New( control )
 	local list = ZO_SortFilterList.New(self, control)
 	list.frame = control:GetParent()
-	
+
 	local function MedalsPoolCustomFactory(control)
 		control:SetHidden(false)
 	end
-	
+
 	local function PlayerMedalsPoolCustomFactory(control)
 		local score = control:GetNamedChild('Score')
 		local icon = control:GetNamedChild('Icon')
 		icon:SetDimensions(75,75)
 		control:SetHidden(false)
 	end
-	
+
 	local function MedalsPoolCustomReset(control)
 		control:SetHidden(true)
 	end
-	
+
 	list.medalsPool = ZO_ControlPool:New("PVP_Scoreboard_Tooltip_Medal_Template")
 	list.playerMedalsPool = ZO_ControlPool:New("PVP_Medals_OnScreen_Template")
-	
+
 	list.medalsPool:SetCustomFactoryBehavior(MedalsPoolCustomFactory)
 	list.medalsPool:SetCustomResetBehavior(MedalsPoolCustomReset)
 	list.playerMedalsPool:SetCustomFactoryBehavior(PlayerMedalsPoolCustomFactory)
-	list.playerMedalsPool:SetCustomResetBehavior(MedalsPoolCustomReset)	
+	list.playerMedalsPool:SetCustomResetBehavior(MedalsPoolCustomReset)
 	list:Setup()
 	return list
 end
@@ -125,7 +125,7 @@ function ScoreboardList:Setup( )
 	self.sortHeaderGroup:SelectAndResetSortForKey(self.currentSortKey)
 	self.sortFunction = function( listEntry1, listEntry2 )
 		if self.currentSortKey == "name" then
-			if listEntry1.data.alliance == listEntry2.data.alliance then 
+			if listEntry1.data.alliance == listEntry2.data.alliance then
 				if self.currentSortOrder == ZO_SORT_ORDER_UP then
 					return listEntry1.data.name<listEntry2.data.name
 				else
@@ -139,14 +139,14 @@ function ScoreboardList:Setup( )
 				end
 			end
 		else
-			return ZO_TableOrderingFunction(listEntry1.data, listEntry2.data, self.currentSortKey, sortKeys, self.currentSortOrder)	
+			return ZO_TableOrderingFunction(listEntry1.data, listEntry2.data, self.currentSortKey, sortKeys, self.currentSortOrder)
 		end
 	end
 
 	PVP.bgScoreboard.scene = ZO_Scene:New("PVPScoreboardScene", SCENE_MANAGER);
 	PVP_SCOREBOARD_FRAGMENT = ZO_FadeSceneFragment:New(PVP_Scoreboard, nil, 0)
 	PVP.bgScoreboard.scene:AddFragment(PVP_SCOREBOARD_FRAGMENT)
-	
+
 	PVP.bgScoreboard.scene:AddFragment(UNIT_FRAMES_FRAGMENT)
 	PVP.bgScoreboard.scene:AddFragment(UI_COMBAT_OVERLAY_FRAGMENT)
 	PVP.bgScoreboard.scene:AddFragment(MOUSE_UI_MODE_FRAGMENT)
@@ -202,7 +202,7 @@ PVP.sampleSBdata = {
 		{medalId = 11, medalCount = 3},
 		{medalId = 12, medalCount = 2},
 		{medalId = 13, medalCount = 1},
-	
+
 	}},
 	{class = 1, name = "Khajiits Against Humanity^Fx" , kills = 30, deaths = 20, assists = 100, damage = 10000000, healing = 3000000, points = 500, alliance = 2, rank = 4, specials=0, medals={
 		{medalId = 2, medalCount = 5},
@@ -210,7 +210,7 @@ PVP.sampleSBdata = {
 		{medalId = 4, medalCount = 1},
 		{medalId = 5, medalCount = 3},
 		{medalId = 6, medalCount = 1},
-		{medalId = 7, medalCount = 4},	
+		{medalId = 7, medalCount = 4},
 	}},
 	{class = 1, name = "Bob^Mx" , kills = 30, deaths = 20, assists = 100, damage = 10000000, healing = 3000000, points = 400, alliance = 2, rank = 7, specials=0, medals={
 		{medalId = 4, medalCount = 1},
@@ -243,7 +243,7 @@ PVP.sampleSBdata = {
 		{medalId = 17, medalCount = 1},
 		{medalId = 18, medalCount = 1},
 		{medalId = 19, medalCount = 1},
-		{medalId = 20, medalCount = 1},	
+		{medalId = 20, medalCount = 1},
 	}},
 	{class = 3, name = "Bobception^Fx" , kills = 30, deaths = 20, assists = 100, damage = 10000000, healing = 3000000, points = 1200, alliance = 3, rank = 9999, specials=0, medals={
 		{medalId = 4, medalCount = 1},
@@ -260,7 +260,7 @@ PVP.sampleSBdata = {
 		{medalId = 15, medalCount = 1},
 		{medalId = 16, medalCount = 1},
 		{medalId = 17, medalCount = 1},
-		{medalId = 18, medalCount = 1},	
+		{medalId = 18, medalCount = 1},
 	}},
 }
 
@@ -272,32 +272,32 @@ function ScoreboardList:BuildMasterList( )
 	local function sortDamageFn(entry1, entry2)
 		return entry1.damage>entry2.damage
 	end
-	
+
 	local function sortHealingFn(entry1, entry2)
 		return entry1.healing>entry2.healing
 	end
-	
+
 	local function sortAssistFn(entry1, entry2)
 		return entry1.assists>entry2.assists
 	end
-	
+
 	local function sortKillsFn(entry1, entry2)
 		return entry1.kills>entry2.kills
 	end
-	
+
 	local function sortDeathsFn(entry1, entry2)
 		return entry1.deaths<entry2.deaths
 	end
-	
+
 	local function sortPointsFn(entry1, entry2)
 		return entry1.points>entry2.points
 	end
-	
+
 	local function FindPlayerRank(scoreboardTable, sortingFunction, sortingType, onlyTopThree)
 		local rank
 		local uniqueTable = {}
 		local uniqueCount = 0
-	
+
 		table.sort (scoreboardTable, sortingFunction)
 
 		for i = 1, #scoreboardTable do
@@ -306,42 +306,42 @@ function ScoreboardList:BuildMasterList( )
 				uniqueTable[currentSortingParameter] = true
 				uniqueCount = uniqueCount + 1
 			end
-		
+
 			if scoreboardTable[i].name == (PVP.playerName or GetRawUnitName('player')) then
-				if currentSortingParameter ~= 0 then 
+				if currentSortingParameter ~= 0 then
 					rank = uniqueCount
 				end
 				break
 			end
 		end
-	
+
 		if onlyTopThree then
-			if rank and rank<=3 then 
-				return rank 
-			else 
-				return nil 
+			if rank and rank<=3 then
+				return rank
+			else
+				return nil
 			end
 		else
 			return rank
 		end
 	end
-	
+
 	local function FindPlayerTopRanks(scoreboardTable, onlyTopThree)
 		local damageRank, healingRank, assistsRank, killsRank, deathsRank, pointsRank
-		
+
 		damageRank = FindPlayerRank(scoreboardTable, sortDamageFn, "damage", onlyTopThree)
 		healingRank = FindPlayerRank(scoreboardTable, sortHealingFn, "healing", onlyTopThree)
 		assistsRank = FindPlayerRank(scoreboardTable, sortAssistFn, "assists", onlyTopThree)
 		killsRank = FindPlayerRank(scoreboardTable, sortKillsFn, "kills", onlyTopThree)
 		deathsRank = FindPlayerRank(scoreboardTable, sortDeathsFn, "deaths", onlyTopThree)
 		pointsRank = FindPlayerRank(scoreboardTable, sortPointsFn, "points", onlyTopThree)
-			
+
 		return damageRank, healingRank, assistsRank, killsRank, deathsRank, pointsRank
 	end
-	
+
 	local function ProcessScoreboard(scoreboardTable)
 		local allianceCount1, allianceCount2, allianceCount3 = 0, 0, 0
-	
+
 		for i = 1, #scoreboardTable do
 			local entry = scoreboardTable[i]
 			table.insert(self.masterList, PVP:CreateEntryFromRaw(entry))
@@ -353,14 +353,14 @@ function ScoreboardList:BuildMasterList( )
 				allianceCount3 = allianceCount3 + 1
 			end
 		end
-		
+
 		PVP.bgScoreboard.allianceCounts = {allianceCount1, allianceCount2, allianceCount3}
-		
+
 		local damageRank, healingRank, assistsRank, killsRank, deathsRank, pointsRank = FindPlayerTopRanks(scoreboardTable, true)
 		PVP.bgScoreboard.playerCurrentRank = {damage = damageRank, healing = healingRank, assists = assistsRank, kills = killsRank, deaths = deathsRank, points = pointsRank}
 	end
-	
-	
+
+
 	if PVP.scoreboardListData then
 		ProcessScoreboard(PVP.scoreboardListData)
 	else
@@ -371,39 +371,39 @@ end
 function ScoreboardList:FilterScrollList( )
 	local scrollData = ZO_ScrollList_GetDataList(self.list)
 	ZO_ClearNumericallyIndexedTable(scrollData)
-	
+
 	local bgState = GetCurrentBattlegroundState()
 	local isPostGame = bgState == BATTLEGROUND_STATE_POSTGAME
 	local postGameMVP
-	
+
 	local function GetTeamScoreInfo(alliance, score, position, isPlayer)
 		isPregame = bgState == BATTLEGROUND_STATE_PREGAME
-	
+
 		local control = PVP_ScoreboardScore:GetNamedChild('Team'..tostring(position))
 		local formattedScore, formattedName
-		
+
 		if isPlayer then
 			formattedScore = PVP:ColorizeToBgTeamColor(alliance, score)
 		else
 			formattedScore = ZO_NORMAL_TEXT:Colorize(score)
 		end
-		
-		
+
+
 		formattedName = GetColoredBattlegroundAllianceName(alliance)
-		
+
 		control:GetNamedChild("Score"):SetText(formattedScore)
 		control:GetNamedChild("Name"):SetText(formattedName:upper())
-		
+
 		control:GetNamedChild("BG"):SetTexture(BATTLEGROUND_ALLIANCE_TO_BG_TEXTURE[alliance])
 	end
-	
+
 	local function GenerateMVPText(postGameMVP, specialsIcon)
-		
+
 		local formattedIcon = zo_iconFormatInheritColor('esoui/art/tutorial/ava_rankicon64_grandoverlord.dds', 40, 40)
 		formattedIcon = PLAYER_HIGHLIGHT_SCOREBOARD_COLOR:Colorize(formattedIcon)
 		local formattedName = zo_iconFormatInheritColor(PVP.classIcons[postGameMVP.class], 28, 28)..zo_strformat(SI_UNIT_NAME, postGameMVP.name)
 		formattedName = PVP:ColorizeToBgTeamColor(postGameMVP.alliance, formattedName)
-		
+
 
 		local formattedKills
 		if postGameMVP.kills>0 then
@@ -411,7 +411,7 @@ function ScoreboardList:FilterScrollList( )
 		else
 			formattedKills = ""
 		end
-		
+
 		local formattedAssists
 		if postGameMVP.assists>0 then
 			formattedAssists = PLAYER_HIGHLIGHT_SCOREBOARD_COLOR:Colorize(postGameMVP.assists).." assists"
@@ -421,7 +421,7 @@ function ScoreboardList:FilterScrollList( )
 
 		local formattedSpecials
 		if postGameMVP.specials>0 then
-			
+
 			local specialsName = ""
 			if specialsIcon == PVP_SPECIALS_ICON_CTF then
 				specialsName = " flag captures"
@@ -431,24 +431,24 @@ function ScoreboardList:FilterScrollList( )
 			elseif specialsIcon == PVP_SPECIALS_ICON_DOM then
 				specialsName = " nodes captures"
 			end
-			
+
 			formattedSpecials = PLAYER_HIGHLIGHT_SCOREBOARD_COLOR:Colorize(postGameMVP.specials)
-			
+
 			formattedSpecials = formattedSpecials..specialsName.."!"
 		else
 			formattedSpecials = ""
 		end
-		
+
 		local withSeparator
 		if postGameMVP.kills == 0 and postGameMVP.assists == 0 and postGameMVP.specials == 0 then
 			withSeparator = "!"
 		else
 			withSeparator = " with "
 		end
-		
+
 		if postGameMVP.kills ~= 0 then
 			if postGameMVP.assists ~= 0 then
-				
+
 				if postGameMVP.specials ~= 0 then
 					formattedKills = formattedKills..", "
 					formattedAssists = formattedAssists.." and "
@@ -472,18 +472,18 @@ function ScoreboardList:FilterScrollList( )
 				end
 			end
 		end
-		
+
 		return formattedIcon.." MATCH MVP: "..formattedName..withSeparator..formattedKills..formattedAssists..formattedSpecials..' '..formattedIcon
 	end
 
 	for i = 1, #self.masterList do
 		local data = self.masterList[i]
-		
+
 		table.insert(scrollData, ZO_ScrollList_CreateDataEntry(69, data))
-		
+
 		if isPostGame or not IsActiveWorldBattleground() then
-			if not postGameMVP then 
-				postGameMVP = data 
+			if not postGameMVP then
+				postGameMVP = data
 			elseif postGameMVP.points<data.points then
 				postGameMVP = data
 			elseif postGameMVP.points == data.points then
@@ -492,9 +492,9 @@ function ScoreboardList:FilterScrollList( )
 				end
 			end
 		end
-		
+
 	end
-	
+
 	if PVP.bgScoreboard.allianceCounts then
 		local totalPlayers = PVP.bgScoreboard.allianceCounts[1] + PVP.bgScoreboard.allianceCounts[2] + PVP.bgScoreboard.allianceCounts[3]
 		local totalPlayersText = "Players - "..tostring(totalPlayers)
@@ -509,15 +509,15 @@ function ScoreboardList:FilterScrollList( )
 	local team1Control = PVP_ScoreboardScoreTeam1
 	local team2Control = PVP_ScoreboardScoreTeam2
 	local team3Control = PVP_ScoreboardScoreTeam3
-	
+
 	if PVP.scoreboardListData and IsActiveWorldBattleground() then
-		
+
 		local battlegroundId = GetCurrentBattlegroundId()
 		local battlegroundGameType = GetBattlegroundGameType(battlegroundId)
-		
+
 		local playerAlliance = GetUnitBattlegroundAlliance('player')
-		
-		
+
+
 		local specialsControl1 = PVP_ScoreboardList1HeadersSpecialsName
 
 		if battlegroundGameType == BATTLEGROUND_GAME_TYPE_CAPTURE_THE_FLAG then
@@ -535,19 +535,19 @@ function ScoreboardList:FilterScrollList( )
 		end
 
 		PVP_ScoreboardInfo:SetText(GetPlayerLocationName().." - "..PVP:GetBattlegroundTypeText(battlegroundGameType))
-		
+
 		local function ReturnBattlegroundScoresInAscendingOrder()
 			local scores = {}
 			for i = 1,3 do
 				table.insert (scores, {GetCurrentBattlegroundScore(i), i})
 			end
-								
+
 			local function sortingFn(score1, score2)
 				return score1[1]>score2[1]
 			end
-								
+
 			table.sort(scores, sortingFn)
-			
+
 			for i=1, 3 do
 				local color
 
@@ -555,18 +555,18 @@ function ScoreboardList:FilterScrollList( )
 
 				scores[i][3] = tostring(scores[i][1])
 			end
-			
+
 
 			return scores, scores[1][2]
 		end
-		
+
 		local teamScores, winningTeamAlliance = ReturnBattlegroundScoresInAscendingOrder()
 		-- local timeLeft = tostring(zo_round(GetCurrentBattlegroundStateTimeRemaining()/1000))
 		local battlegroundRemainingTime = GetCurrentBattlegroundStateTimeRemaining()
 		local timeLeft = tostring(ZO_FormatTimeMilliseconds(battlegroundRemainingTime, TIME_FORMAT_STYLE_COLONS, TIME_FORMAT_PRECISION_SECONDS))
-		
-		
-		
+
+
+
 		if bgState == BATTLEGROUND_STATE_RUNNING then
 			-- self.frame:GetNamedChild("Title"):SetText("MATCH IS RUNNING! TIME LEFT: "..timeLeft)
 			self.frame:GetNamedChild("State"):SetText("MATCH IS RUNNING!")
@@ -575,30 +575,30 @@ function ScoreboardList:FilterScrollList( )
 		elseif bgState == BATTLEGROUND_STATE_STARTING then
 			self.frame:GetNamedChild("State"):SetText("MATCH IS STARTING!")
 		elseif isPostGame then
-			
+
 			local winningTeamName
-			
+
 			winningTeamName = GetBattlegroundAllianceName(winningTeamAlliance):upper()
-			
+
 			local winnerTitleString
-			
+
 			winnerTitleString = PVP:ColorizeToBgTeamColor(winningTeamAlliance, PVP:GetBattlegroundTeamBadgeTextFormattedIcon(winningTeamAlliance, 48, 48))..GetColoredBattlegroundAllianceName(winningTeamAlliance)
 
-			self.frame:GetNamedChild("Title"):SetText(winnerTitleString.." HAVE WON!")	
-			self.frame:GetNamedChild("State"):SetText("MATCH ENDED!")	
-			
+			self.frame:GetNamedChild("Title"):SetText(winnerTitleString.." HAVE WON!")
+			self.frame:GetNamedChild("State"):SetText("MATCH ENDED!")
+
 			if playerAlliance == winningTeamAlliance then
-				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop1"):SetTexture("EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_green.dds")	
-				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop2"):SetTexture("EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_green.dds")	
-				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop1"):SetColor(0,1,0)	
-				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop2"):SetColor(0,1,0)	
+				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop1"):SetTexture("EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_green.dds")
+				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop2"):SetTexture("EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_green.dds")
+				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop1"):SetColor(0,1,0)
+				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop2"):SetColor(0,1,0)
 			else
-				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop1"):SetTexture("EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_orange.dds")	
-				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop2"):SetTexture("EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_orange.dds")	
-				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop1"):SetColor(1,0,0)	
-				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop2"):SetColor(1,0,0)	
+				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop1"):SetTexture("EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_orange.dds")
+				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop2"):SetTexture("EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_orange.dds")
+				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop1"):SetColor(1,0,0)
+				self.frame:GetNamedChild("Title"):GetNamedChild("Backdrop2"):SetColor(1,0,0)
 			end
-			
+
 			if postGameMVP and postGameMVP.name then
 				local mvpText = GenerateMVPText(postGameMVP, specialsIcon)
 				self.frame:GetNamedChild("MVP"):SetText(mvpText)
@@ -606,21 +606,21 @@ function ScoreboardList:FilterScrollList( )
 					self.frame:GetNamedChild("MVP").nameLink = PVP:GetFormattedCharNameLink(postGameMVP.name)
 				end
 			end
-			
+
 		end
-		
+
 		self.frame:GetNamedChild("Title"):SetHidden(bgState ~= BATTLEGROUND_STATE_POSTGAME)
 		self.frame:GetNamedChild("MVP"):SetHidden(bgState ~= BATTLEGROUND_STATE_POSTGAME)
-		
+
 		self.frame:GetNamedChild("TimerContainer"):GetNamedChild("Label"):SetText(timeLeft)
-		
+
 		GetTeamScoreInfo(teamScores[1][2], teamScores[1][1], 1, playerAlliance == teamScores[1][2])
 		GetTeamScoreInfo(teamScores[2][2], teamScores[2][1], 2, playerAlliance == teamScores[2][2])
 		GetTeamScoreInfo(teamScores[3][2], teamScores[3][1], 3, playerAlliance == teamScores[3][2])
-		
-		
+
+
 		local newControl
-		
+
 		if playerAlliance == teamScores[1][2] then
 			newControl = team1Control
 		elseif playerAlliance == teamScores[2][2] then
@@ -628,14 +628,14 @@ function ScoreboardList:FilterScrollList( )
 		elseif playerAlliance == teamScores[3][2] then
 			newControl = team3Control
 		end
-		
+
 		PVP_ScoreboardPlayerIcon:ClearAnchors()
 		PVP_ScoreboardPlayerIcon:SetAnchor(BOTTOM, newControl, TOP, 0, 7)
 
 
 	else
 		self.frame:GetNamedChild("Title"):SetText(PVP:ColorizeToBgTeamColor(3, PVP:GetBattlegroundTeamBadgeTextFormattedIcon(3, 48, 48).."STORM LORDS").." HAVE WON!")
-	
+
 		GetTeamScoreInfo(3, 500, 1)
 		GetTeamScoreInfo(1, 45, 2, true)
 		GetTeamScoreInfo(2, 8, 3)
@@ -667,13 +667,13 @@ function ScoreboardList:SetupPlayerRow( control, data )
 	local bg1 = ZO_ColorDef:New(GetBattlegroundAllianceColor(1))
 	local bg2 = ZO_ColorDef:New(GetBattlegroundAllianceColor(2))
 	local bg3 = ZO_ColorDef:New(GetBattlegroundAllianceColor(3))
-	
+
 	control.data = data
-	
+
 	local function GetPlayerRankIcon(rank, isPoints)
 		if not rank or rank == 0 then return "" end
-		
-		
+
+
 		if rank == 1 then
 			-- return PVP:Colorize(zo_iconFormatInheritColor("esoui/art/tutorial/ava_rankicon64_general.dds", 30, 30), "CCCC00")
 			return PVP_GOLD_COLOR:Colorize(zo_iconFormatInheritColor("esoui/art/tutorial/ava_rankicon64_general.dds", 30, 30))
@@ -686,20 +686,20 @@ function ScoreboardList:SetupPlayerRow( control, data )
 
 	control:GetNamedChild("Name"):SetText(zo_iconFormatInheritColor(PVP.classIcons[data.class], 28, 28)..zo_strformat(SI_UNIT_NAME, data.name))
 
-	
+
 	if data.name and not isPlayer then
 		control.nameLink = PVP:GetFormattedCharNameLink(data.name)
 	end
-	
+
 	if data.rank ~= 9999 then
 		control:GetNamedChild("Rank"):SetText(data.rank)
 	else
 		control:GetNamedChild("Rank"):SetText("~")
 	end
-	
-	
+
+
 	local kills, deaths, assists, damage, healing, points = "", "", "", "", "", ""
-	
+
 	if isPlayer and PVP.bgScoreboard.playerCurrentRank and (not IsActiveWorldBattleground() or GetCurrentBattlegroundState() == BATTLEGROUND_STATE_POSTGAME) then
 		kills = GetPlayerRankIcon(PVP.bgScoreboard.playerCurrentRank.kills)
 		-- deaths = GetPlayerRankIcon(PVP.bgScoreboard.playerCurrentRank.deaths)
@@ -708,44 +708,44 @@ function ScoreboardList:SetupPlayerRow( control, data )
 		healing = GetPlayerRankIcon(PVP.bgScoreboard.playerCurrentRank.healing)
 		points = GetPlayerRankIcon(PVP.bgScoreboard.playerCurrentRank.points, true)
 	end
-	
+
 	control:GetNamedChild("Kills"):SetText(kills..tostring(data.kills))
-	
-	
+
+
 	control:GetNamedChild("Deaths"):SetText(deaths..tostring(data.deaths))
 
-	
+
 	control:GetNamedChild("Assists"):SetText(assists..tostring(data.assists))
-	
-	
+
+
 	control:GetNamedChild("Damage"):SetText(damage..tostring(data.damage))
-	
-	
+
+
 	control:GetNamedChild("Healing"):SetText(healing..tostring(data.healing))
-	
-	
+
+
 	control:GetNamedChild("Points"):SetText(points..tostring(data.points))
-	
+
 	local numMedals = #data.medals
 	local medalsText = ""
-	
+
 	local function sortTotalMedalPointsFn(entry1, entry2)
 		if not entry1.medalPoints then
 			_,_,_, entry1.medalPoints = GetMedalInfo(entry1.medalId)
 		end
-		
+
 		if not entry2.medalPoints then
 			_,_,_, entry2.medalPoints = GetMedalInfo(entry2.medalId)
 		end
-		
+
 		return (entry1.medalCount * entry1.medalPoints)>(entry2.medalCount * entry2.medalPoints)
 	end
-	
+
 	table.sort(data.medals, sortTotalMedalPointsFn)
-	
+
 	-- if isPlayer then PVP.bgScoreboard.list.playerMedalsPool:ReleaseAllObjects() end
 	if isPlayer then self.playerMedalsPool:ReleaseAllObjects() end
-	
+
 	if numMedals > 0 then
 		for i=1, numMedals do
 			local name, medalTexture, description, points = GetMedalInfo(data.medals[i].medalId)
@@ -755,9 +755,9 @@ function ScoreboardList:SetupPlayerRow( control, data )
 				control:GetNamedChild('Icon'):SetTexture(medalTexture)
 				control:GetNamedChild('Name'):SetText('')
 				local numActive = self.playerMedalsPool:GetActiveObjectCount()
-				
+
 				control:ClearAnchors()
-				
+
 				if numActive == 1 then
 					control:SetAnchor(LEFT, PVP_ScoreboardPlayerMedals, LEFT, 0, 0)
 					control:SetParent(PVP_ScoreboardPlayerMedals)
@@ -778,24 +778,24 @@ function ScoreboardList:SetupPlayerRow( control, data )
 				else
 					control:GetNamedChild('Score'):SetText("")
 				end
-				
+
 				control.medalId = data.medals[i].medalId
 				control.medalCount = data.medals[i].medalCount
 				self.lastActiveMedal = control
-	
+
 			end
 		end
 	end
-	
+
 	if isPlayer then
 		PVP_ScoreboardPlayerMedals:ClearAnchors()
 		PVP_ScoreboardPlayerMedals:SetAnchor(BOTTOM, PVP_Scoreboard, BOTTOM, 0, 85)
 		PVP_ScoreboardPlayerMedalsBottom:ClearAnchors()
 		PVP_ScoreboardPlayerMedalsBottom:SetAnchor(TOP, PVP_ScoreboardPlayerMedals, BOTTOM, 0, 20)
 	end
-	
+
 	local currentBg
-	
+
 	if data.alliance == 1 then
 		control:GetNamedChild("BG"):SetTexture("EsoUI/Art/Battlegrounds/battlegrounds_scoreboard_highlightStrip_orange.dds")
 		currentBg = bg1
@@ -806,12 +806,12 @@ function ScoreboardList:SetupPlayerRow( control, data )
 		control:GetNamedChild("BG"):SetTexture("EsoUI/Art/Battlegrounds/battlegrounds_scoreboard_highlightStrip_purple.dds")
 		currentBg = bg3
 	end
-	
+
 	control:GetNamedChild("Name"):SetColor(PVP:HtmlToColor(currentBg:ToHex(), nil, true))
-	
+
 	if data.specials and data.specials > 0 then
 		local output
-		
+
 		if specialsIcon == PVP_SPECIALS_ICON_CTF and data.specials>=100 then
 			output = zo_round(data.specials/100)
 		elseif specialsIcon == PVP_SPECIALS_ICON_DM then
@@ -820,15 +820,15 @@ function ScoreboardList:SetupPlayerRow( control, data )
 			output = data.specials
 		end
 		local brightColor = ZO_ColorDef:New(PVP:HtmlToColor(currentBg:ToHex(), nil, true))
-		control:GetNamedChild("Specials"):SetText(brightColor:Colorize(zo_iconFormatInheritColor(specialsIcon, 34, 34))..output)		
+		control:GetNamedChild("Specials"):SetText(brightColor:Colorize(zo_iconFormatInheritColor(specialsIcon, 34, 34))..output)
 		-- local normalColor = ZO_ColorDef:New(GetInterfaceColor(INTERFACE_COLOR_TYPE_TEXT_COLORS, INTERFACE_TEXT_COLOR_NORMAL))
 		-- control:GetNamedChild("Specials"):SetText(normalColor:Colorize(zo_iconFormatInheritColor(specialsIcon, 32, 32))..output)
 	else
 		control:GetNamedChild("Specials"):SetText("")
 	end
-	
-	
-	if isPlayer then 
+
+
+	if isPlayer then
 		control:GetNamedChild("Name"):SetColor(textColorBright:UnpackRGBA())
 		control:GetNamedChild("Rank"):SetColor(textColorBright:UnpackRGBA())
 		control:GetNamedChild("Kills"):SetColor(textColorBright:UnpackRGBA())
@@ -848,7 +848,7 @@ function ScoreboardList:SetupPlayerRow( control, data )
 		control:GetNamedChild("Specials"):SetColor(GetInterfaceColor(INTERFACE_COLOR_TYPE_TEXT_COLORS, INTERFACE_TEXT_COLOR_NORMAL))
 		control:GetNamedChild("Points"):SetColor(GetInterfaceColor(INTERFACE_COLOR_TYPE_TEXT_COLORS, INTERFACE_TEXT_COLOR_NORMAL))
 	end
-	
+
 	ZO_SortFilterList.SetupRow(self, control, data);
 end
 
@@ -859,7 +859,7 @@ function PVP_ScoreboardRow_OnMouseEnter( control )
 	InitializeTooltip(PVPScoreboardTooltip, PVP_Scoreboard, BOTTOMLEFT, -100, -72, BOTTOMRIGHT)
 
 	local teamColor = ZO_ColorDef:New(PVP:HtmlToColor(ZO_ColorDef:New(GetBattlegroundAllianceColor(control.data.alliance)):ToHex(), nil, true))
-	
+
 	PVPScoreboardTooltipBG:SetEdgeColor(teamColor:UnpackRGBA())
 	PVPScoreboardTooltipIcon:SetTexture(PVP:GetBattlegroundTeamBadgeIcon(control.data.alliance))
 	PVPScoreboardTooltipIcon:SetColor(teamColor:UnpackRGBA())
@@ -870,26 +870,26 @@ function PVP_ScoreboardRow_OnMouseEnter( control )
 	PVPScoreboardTooltip:AddLine(formattedName, "ZoFontWinH2", 1, 1, 1, LEFT, MODIFY_TEXT_TYPE_NONE, TEXT_ALIGN_LEFT, true)
 
 	local formattedClass = GetClassName(0, control.data.class)
-	
+
 	-- formattedClass = ZO_NORMAL_TEXT:Colorize("Class: "..formattedClass)
-	
+
 	local formattedRace
 	if PVP.SV.playersDB[control.data.name] then
 		formattedRace = GetRaceName(0, PVP.SV.playersDB[control.data.name].unitRace)
 		-- formattedRace = ZO_NORMAL_TEXT:Colorize("Race: "..formattedRace)
 	end
-	
+
 	local formattedClassRace = formattedClass
-	
+
 	if formattedRace then
 		formattedClassRace = formattedRace..' '..formattedClassRace
 	end
-	
+
 	formattedClassRace = ZO_NORMAL_TEXT:Colorize(formattedClassRace)
-	
+
 	-- PVPScoreboardTooltip:AddLine(formattedClass, "ZoFontWinH2", 1, 1, 1, LEFT, MODIFY_TEXT_TYPE_NONE, TEXT_ALIGN_LEFT, true)
 	PVPScoreboardTooltip:AddLine(formattedClassRace, "ZoFontWinH2", 1, 1, 1, LEFT, MODIFY_TEXT_TYPE_NONE, TEXT_ALIGN_LEFT, true)
-	
+
 	-- if formattedRace then
 		-- PVPScoreboardTooltip:AddLine(formattedRace, "ZoFontWinH2", 1, 1, 1, LEFT, MODIFY_TEXT_TYPE_NONE, TEXT_ALIGN_LEFT, true)
 	-- end
@@ -907,7 +907,7 @@ function PVP_ScoreboardRow_OnMouseEnter( control )
 		local totalPoints = control.data.medals[i].medalCount * points
 		medalControl:GetNamedChild('Icon'):SetTexture(textureName)
 		medalControl:GetNamedChild('Name'):SetText(name)
-		
+
 		if control.data.medals[i].medalCount>1 then
 			medalControl:GetNamedChild('Score'):SetText("x"..control.data.medals[i].medalCount)
 		else
@@ -936,9 +936,9 @@ function PVP_Medal_OnMouseEnter( control )
 	if not IsActiveWorldBattleground() then return end
 	local name, medalTexture, description, points = GetMedalInfo(control.medalId)
 
-	
+
 	local totalPoints = control.medalCount * points
-	
+
 	InitializeTooltip(InformationTooltip, control, TOPLEFT, 0, 0, BOTTOMRIGHT)
 	InformationTooltip:AddLine(name, "ZoFontWinH2", 0.667,0.667,0, LEFT, MODIFY_TEXT_TYPE_UPPERCASE, TEXT_ALIGN_CENTER)
 	ZO_Tooltip_AddDivider(InformationTooltip)
@@ -962,8 +962,8 @@ function PVP_CreateSparkleAnimation(control)
     local sparkle = control:GetNamedChild("Sparkle")
     local sparkleCCW = sparkle:GetNamedChild("CCW")
 
-    local animData = 
-    { 
+    local animData =
+    {
 	sparkle = sparkle,
 	sparkleTimeLine = ANIMATION_MANAGER:CreateTimelineFromVirtual("SparkleStarburstAnim", sparkle),
     }

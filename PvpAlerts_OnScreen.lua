@@ -24,7 +24,7 @@ function PVP:SetupOnScreen()
 	control.neighbor2 = control.neighbors:GetNamedChild('Neighbor2')
 	control.neighbor3 = control.neighbors:GetNamedChild('Neighbor3')
 	control.ping = control:GetNamedChild('Ping')
-	
+
 	control.locked:SetHidden(true)
 	control.icon:SetHidden(not PVP.SV.unlocked)
 	control.iconUA:SetHidden(true)
@@ -43,11 +43,11 @@ function PVP:SetupOnScreen()
 	control.neighbor2:SetHidden(false)
 	control.neighbor3:SetHidden(false)
 	control.ping:SetHidden(true)
-	
+
 	control.neighbor1:GetNamedChild('Icon'):SetTexture("/esoui/art/compass/ava_farm_neutral.dds")
 	control.neighbor2:GetNamedChild('Icon'):SetTexture("/esoui/art/compass/ava_mine_neutral.dds")
 	control.neighbor3:GetNamedChild('Icon'):SetTexture("/esoui/art/compass/ava_lumbermill_neutral.dds")
-	
+
 	-- control.locked:SetAnchor(CENTER, control, CENTER, -1, 0)
 	-- control.icon:SetAnchor(CENTER, control, CENTER, 0, 0)
 	-- control.iconUA:SetAnchor(CENTER, control, CENTER, -1, 0)
@@ -61,49 +61,49 @@ function PVP:SetupOnScreen()
 	-- control.nave:SetAnchor(CENTER, control, CENTER, 0, 0)
 	-- control.other:SetAnchor(CENTER, control, CENTER, 0, 0)
 	-- control.middle:SetAnchor(CENTER, control, CENTER, 0, 0)
-	
-	
+
+
 	-- control:SetDrawLayer(0)
 	-- control:SetDrawLevel(0)
-	
+
 	-- control.locked:SetColor(1, 0, 0)
 	-- control.iconUA:SetColor(1, 1, 1)
 	-- control.bg:SetColor(1, 1, 1)
-	
+
 	control:SetMovable(self.SV.unlocked)
-	control:SetMouseEnabled(self.SV.unlocked) 
-	
+	control:SetMouseEnabled(self.SV.unlocked)
+
 	if PVP.SV.unlocked then
 		control.neighbors:ClearAnchors()
 		control.neighbors:SetAnchor(TOP, control.siege, BOTTOM, 0, 20)
 	end
-	
+
 	control:SetScale(PVP.SV.onScreenScale)
 	control.neighbors:SetScale(PVP.SV.onScreenScale/2.5)
-	
+
 	local namesFontSize = 18 + math.min(math.ceil((PVP.SV.onScreenScale - 0.5) * 8), 8)
 	local siegeFontSize = 16 + math.min(math.ceil((PVP.SV.onScreenScale - 0.5) * 6), 6)
-	
+
 	control.name:SetFont("$(BOLD_FONT)|$(KB_"..tostring(namesFontSize)..")|thick-outline")
 	control.siege:SetFont("$(BOLD_FONT)|$(KB_"..tostring(siegeFontSize)..")|thick-outline")
-	
+
 	control:ClearAnchors()
 	control:SetAnchor(CENTER, GuiRoot, CENTER, PVP.SV.onScreenOffsetX, PVP.SV.onScreenOffsetY)
-	
+
 	control.name:SetText(PVP.SV.unlocked and "OnScreen Objective Frame" or "")
 	control.siege:SetText(PVP.SV.unlocked and "Number of Sieges" or "")
-	
+
 	if PVP.SV.unlocked then PVP_OnScreen.currentKeepId = nil end
-	
+
 	PVP_OnScreenBackdrop:SetHidden(not PVP.SV.unlocked)
-	
+
 	control:SetHidden(not (PVP.SV.unlocked and PVP.SV.showOnScreen))
 end
 
 
 function PVP:ManageOnScreen(iconTexture, scrollTexture, captureTexture, naveFlag, apseFlag, otherFlag, naveAlliance, apseAlliance, otherAlliance, siegeTexture, shouldHideUA, shouldHideLock, shouldHideScroll, shouldHideCapture, shouldHideFlags, shouldHideSieges, siegesAD, siegesDC, siegesEP, keepName, keepId, control, isMisc)
 	local isMainControl = not control or control == 'main'
-	if isMainControl then 
+	if isMainControl then
 		control = PVP_OnScreen
 		control.name:SetText(keepName)
 		local shouldMoveResources
@@ -116,7 +116,7 @@ function PVP:ManageOnScreen(iconTexture, scrollTexture, captureTexture, naveFlag
 			control.siege:SetText('')
 			shouldMoveResources = true
 		end
-		
+
 		control.neighbors:SetHidden(not (keepId and (GetKeepResourceType(keepId) ~= 0 or GetKeepType(keepId) == KEEPTYPE_KEEP)))
 		control.neighbors:ClearAnchors()
 		if shouldMoveResources then
@@ -150,7 +150,7 @@ function PVP:ManageOnScreen(iconTexture, scrollTexture, captureTexture, naveFlag
 		control.name = control:GetNamedChild('Name')
 		control.siege = control:GetNamedChild('Siege')
 	end
-	
+
 	if keepId then
 		if isMisc then
 			if PVP:IsMiscPassable(keepId) then
@@ -161,7 +161,7 @@ function PVP:ManageOnScreen(iconTexture, scrollTexture, captureTexture, naveFlag
 		else
 			control.icon:SetColor(1,1,1)
 		end
-		if isMainControl then 
+		if isMainControl then
 			if isMisc then
 				if PVP:IsMiscPassable(keepId) then
 					control.name:SetColor(0,1,0)
@@ -210,7 +210,7 @@ function PVP:ManageOnScreen(iconTexture, scrollTexture, captureTexture, naveFlag
 		control.icon:SetDimensions(75, 75)
 		control.iconUA:SetDimensions(100, 100)
 	end
-	
+
 	control.locked:SetHidden(shouldHideLock)
 	control.icon:SetHidden(false)
 	control.iconUA:SetHidden(shouldHideUA)
@@ -231,7 +231,7 @@ function PVP:ManageOnScreen(iconTexture, scrollTexture, captureTexture, naveFlag
 		control.captureBar:SetTexture(captureTexture)
 	end
 	control.bg:SetTexture(siegeTexture)
-	
+
 	if not shouldHideFlags then
 		control.nave:SetTexture(naveFlag)
 		control.apse:SetTexture(apseFlag)
@@ -247,9 +247,9 @@ function PVP:ManageOnScreen(iconTexture, scrollTexture, captureTexture, naveFlag
 			control.middle:SetTexture('PvpAlerts/textures/2barsMiddleLineLarge.dds')
 		end
 	end
-	
 
-	
-	
+
+
+
 	PVP_OnScreen:SetHidden(not (SCENE_MANAGER:GetCurrentScene() == HUD_SCENE or SCENE_MANAGER:GetCurrentScene() == LOOT_SCENE or SCENE_MANAGER:GetCurrentScene() == HUD_UI_SCENE))
 end

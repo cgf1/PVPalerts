@@ -10,16 +10,16 @@ local GetGameTimeMilliseconds = GetGameTimeMilliseconds
 
 function PVP:FindNearbyKeepToRespawn(anyKeep)
 	local foundKeepId, minDistance = 0
-	local selfX, selfY = GetMapPlayerPosition('player') 
+	local selfX, selfY = GetMapPlayerPosition('player')
 	for i = 1, GetNumKeeps() do
 		local keepId = GetKeepKeysByIndex(i)
-		
+
 		if anyKeep or (CanRespawnAtKeep(keepId) and not (IsInImperialCity() and GetKeepType(keepId) ~= KEEPTYPE_IMPERIAL_CITY_DISTRICT)) then
 			local _, targetX, targetY = GetKeepPinInfo(keepId,1)
-			
+
 			if targetX~=0 and targetY~=0 then
 				local distance = math.sqrt(((targetX-selfX)*(targetX-selfX))+((targetY-selfY)*(targetY-selfY)))
-				if not minDistance then 
+				if not minDistance then
 					minDistance = distance
 					foundKeepId = keepId
 				elseif distance<minDistance then
@@ -29,7 +29,7 @@ function PVP:FindNearbyKeepToRespawn(anyKeep)
 			end
 		end
 	end
-	
+
 	if foundKeepId ~= 0 then return foundKeepId else return false end
 end
 
@@ -60,7 +60,7 @@ function PVP:ManageCampFrame()
 			control:SetAlpha(1)
 		end
 	end
-	
+
 	if self.SV.unlocked then
 		PVP_ForwardCamp_Icon:SetColor(1,1,1)
 		PVP_ForwardCamp_IconContinuous:SetColor(1,1,1)
@@ -73,19 +73,19 @@ function PVP:ManageCampFrame()
 	end
 
 	local currentTimeSec = GetFrameTimeSeconds()
-	
+
 	local continuous, ayleid, blessing
-	
+
 	-- local debuffs = {}
-	
+
 	-- local buffsStart = GetGameTimeMilliseconds()
 	for i=1,GetNumBuffs('player') do
 		local  buffName, timeStarted, timeEnding, _, _, _, _, _, _, _, abilityId, _, castByPlayer = GetUnitBuffInfo('player',i)
-		
+
 		local duration = timeEnding - timeStarted
 		local timeLeft = timeEnding - currentTimeSec
 		local currentRatio = (currentTimeSec-timeStarted)/duration
-		
+
 		if (abilityId == PVP_CONTINUOUS_ATTACK_ID_1) or (abilityId == PVP_CONTINUOUS_ATTACK_ID_2) then
 			ColorBuffIcon(PVP_ForwardCamp_IconContinuous, currentRatio)
 			continuous = timeLeft
@@ -97,9 +97,9 @@ function PVP:ManageCampFrame()
 			blessing = timeLeft
 		end
 	end
-	
+
 	local SecondsToClock = PVP.SecondsToClock
-	
+
 	-- local buffsEnd = GetGameTimeMilliseconds()
 	-- d('Buff proc: '..tostring(buffsEnd - buffsStart))
 
@@ -112,7 +112,7 @@ function PVP:ManageCampFrame()
 		ColorBuffIcon(PVP_ForwardCamp_IconContinuous, 5)
 		PVP.ReleaseToolTip(PVP_ForwardCamp_IconContinuous)
 	end
-	
+
 	if ayleid then
 		local timeString = PVP:SecondsToClock(floor(ayleid))
 		PVP_ForwardCamp_IconAyleid.timeLeft = {"Ayleid Well", "Time left: "..timeString}
@@ -120,9 +120,9 @@ function PVP:ManageCampFrame()
 	else
 		PVP_ForwardCamp_IconAyleid.timeLeft = false
 		ColorBuffIcon(PVP_ForwardCamp_IconAyleid, 5)
-		PVP.ReleaseToolTip(PVP_ForwardCamp_IconAyleid)		
+		PVP.ReleaseToolTip(PVP_ForwardCamp_IconAyleid)
 	end
-	
+
 	if blessing then
 		local timeString = PVP:SecondsToClock(floor(blessing))
 		PVP_ForwardCamp_IconBlessing.timeLeft = {"Blessing of War", "Time left: "..timeString}
@@ -130,7 +130,7 @@ function PVP:ManageCampFrame()
 	else
 		PVP_ForwardCamp_IconBlessing.timeLeft = false
 		ColorBuffIcon(PVP_ForwardCamp_IconBlessing, 5)
-		PVP.ReleaseToolTip(PVP_ForwardCamp_IconBlessing)		
+		PVP.ReleaseToolTip(PVP_ForwardCamp_IconBlessing)
 	end
 	-- local iconsEnd = GetGameTimeMilliseconds()
 	-- d('Icons proc: '..tostring(iconsEnd - buffsEnd))
@@ -148,7 +148,7 @@ function PVP:ManageCampFrame()
 			self.IsCampActive = true
 			PVP.SetToolTip(PVP_ForwardCamp_Icon, 200, false, "Forward Camp in range!")
 		end
-	elseif not campState then 
+	elseif not campState then
 		if self.SV.playCampSound and currentTimeSec-self.lastCampTime>=5 then
 			PVP:PlayLoudSound('JUSTICE_GOLD_REMOVED')
 			self.lastCampTime = currentTimeSec
@@ -164,17 +164,17 @@ end
 
 function PVP:FindNearbyCampToRespawn(onUpdate)
 	if not PVP:IsInPVPZone() then return false end
-	
-	if GetNumForwardCamps(1) == 0 then 
+
+	if GetNumForwardCamps(1) == 0 then
 		if not onUpdate then
 			d('No camps found!')
 		end
 		PVP_ForwardCamp_Icon:SetColor(0.1,0.1,0.1)
 		PVP_ForwardCamp_Icon:SetAlpha(0.5)
-		return false 
+		return false
 	end
 	local campIndex, count, minDistance, isUsable, campRadius = 0, 0
-	local selfX, selfY = GetMapPlayerPosition('player') 
+	local selfX, selfY = GetMapPlayerPosition('player')
 	for i = 1, GetNumForwardCamps(1) do
 		local _, targetX, targetY, radius, usable = GetForwardCampPinInfo(1,i)
 
@@ -183,7 +183,7 @@ function PVP:FindNearbyCampToRespawn(onUpdate)
 
 			if distance/radius<1 then count = count + 1 end
 
-			if not minDistance then 
+			if not minDistance then
 				minDistance = distance
 				campIndex = i
 				campRadius = radius

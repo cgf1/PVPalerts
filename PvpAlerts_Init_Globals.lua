@@ -9,7 +9,7 @@ PVP.globalConstants = {
 	['PVP_DIMMED_AD_COLOR']="7B714A",
 	['PVP_DIMMED_EP_COLOR']="85514D",
 	['PVP_DIMMED_DC_COLOR']="566674",
-	
+
 	['PVP_STAMINA_COLOR'] = "00CC00",
 	['PVP_MAGICKA_COLOR'] = "AAAAFF",
 	['PVP_HYBRID_COLOR'] = "FF4444",
@@ -24,9 +24,9 @@ PVP.globalConstants = {
 	['PVP_STEALTH_ICON'] = "esoui/art/tutorial/stealth-seen.dds",
 	['PVP_EYE_ICON'] = "esoui/art/tutorial/poi_areaofinterest_complete.dds",
 	['PVP_COOL_ICON']="esoui/art/cadwell/check.dds",
-	
+
 	['PVP_ICON_MISSING']="icon_missing",
-	
+
 	['PVP_FIGHT']="esoui/art/icons/servicetooltipicons/gamepad/gp_servicetooltipicon_swords.dds",
 
 	['PVP_FIGHT_ADEP']="/esoui/art/mappins/ava_aldmerivebonheart.dds",
@@ -46,7 +46,7 @@ PVP.globalConstants = {
 	['PVP_HACK_DENIED'] = "PvpAlerts/textures/hacking_denied.dds",
 	['PVP_POTATOE_ICON']="PvpAlerts/textures/grandpotatoe2.dds",
 	['PVP_6STAR']="PvpAlerts/textures/6star1.dds",
-	
+
 	['PVP_AP']="esoui/art/currency/alliancepoints_32.dds",
 
 	['PVP_NAME_FONT'] = "$(BOLD_FONT)|29|thick-outline",
@@ -57,7 +57,7 @@ PVP.globalConstants = {
 
 	['PVP_DEFAULT_ICON'] = "esoui/art/icons/ability_nightblade_008.dds",
 	['PVP_DEFAULT_HEAVY_ATTACK_ICON'] = "PvpAlerts/textures/staff_3.dds",
-	
+
 	['PVP_CONTINUOUS_ATTACK_ID_1'] = 39249,
 	['PVP_CONTINUOUS_ATTACK_ID_2'] = 45617,
 	-- ['PVP_AYLEID_WELL_ID'] = 21263,
@@ -65,12 +65,12 @@ PVP.globalConstants = {
 	['PVP_BLESSING_OF_WAR_ID'] = 66282,
 	['PVP_KEEPTYPE_ARTIFACT_KEEP'] = 10,
 	['PVP_KEEPTYPE_BORDER_KEEP'] = 11,
-	
+
 	['PVP_ALLIANCE_BASE_IC'] = 66,
-	
+
 	['PVP_PINTYPE_AYLEIDWELL'] = 6661,
 	['PVP_PINTYPE_DELVE'] = 6662,
-	['PVP_PINTYPE_IC_ENTRANCE'] = 6663,
+	['PVP_PINTYPE_GROUP'] = 6663,
 	['PVP_PINTYPE_IC_ALLIANCE_BASE'] = 6664,
 	['PVP_PINTYPE_IC_DOOR'] = 6665,
 	['PVP_PINTYPE_IC_VAULT'] = 6666,
@@ -82,13 +82,13 @@ PVP.globalConstants = {
 	['PVP_PINTYPE_SEWERS_SIGN'] = 6672,
 	['PVP_PINTYPE_SHADOWIMAGE'] = 6673,
 	['PVP_PINTYPE_BRIDGE'] = 6674,
-	
+
 	['PVP_TEXTURES_PATH'] = "PvpAlerts/textures/",
-	
+
 	['FLAGTYPE_OTHER'] = 1001,
 	['FLAGTYPE_NAVE'] = 1002,
 	['FLAGTYPE_APSE'] = 1003,
-	
+
 	['PVP_POTATOE_RANK'] = 51,
 }
 
