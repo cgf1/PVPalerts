@@ -838,10 +838,6 @@ local function IsCloseToObjectiveOrPlayer(control, selfX, selfY, playerX, player
 			FindMin(targetX, targetY, PVP.ayleidWellsCoords[i].z)
 		end
 
-		for i=1, #PVP.icEntranceCoords do --
-			local targetX, targetY = PVP.icEntranceCoords[i].x, PVP.icEntranceCoords[i].y
-			FindMin(targetX, targetY, PVP.icEntranceCoords[i].z)
-		end
 	end
 
 	if foundHeight then
@@ -3744,17 +3740,6 @@ local function FindNearbyPOIs()
 						if distance<=adjusted_POI_MAX_DISTANCE then
 							table.insert(foundPOI, {pinType = pinType, targetX = targetX, targetY = targetY, targetZ = targetZ, distance = distance, name = name, alliance = alliance, keepId = keepId, objectiveId = objectiveId})
 						end
-					end
-				end
-			end
-
-			for i = 1, #PVP.icEntranceCoords do
-				local pinType, targetX, targetY, targetZ = PVP_PINTYPE_IC_ENTRANCE, PVP.icEntranceCoords[i].x, PVP.icEntranceCoords[i].y, PVP.icEntranceCoords[i].z
-
-				if targetX~=0 and targetY~=0 then
-					local distance = PVP:GetCoordsDistance2D(selfX, selfY, targetX, targetY)
-					if distance<=adjusted_POI_MAX_DISTANCE then
-						table.insert(foundPOI, {pinType = pinType, targetX = targetX, targetY = targetY, targetZ = targetZ, distance = distance, name = 'Imperial City Entrance'})
 					end
 				end
 			end
