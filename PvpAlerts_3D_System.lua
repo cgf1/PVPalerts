@@ -75,7 +75,7 @@ local PVP_POI_MIN_DISTANCE = 0.01
 
 local PVP_PINTYPE_AYLEIDWELL = PVP:GetGlobal('PVP_PINTYPE_AYLEIDWELL')
 local PVP_PINTYPE_DELVE = PVP:GetGlobal('PVP_PINTYPE_DELVE')
-local PVP_PINTYPE_IC_ENTRANCE = PVP:GetGlobal('PVP_PINTYPE_IC_ENTRANCE')
+local PVP_PINTYPE_GROUP = PVP:GetGlobal('PVP_PINTYPE_GROUP')
 local PVP_PINTYPE_IC_ALLIANCE_BASE = PVP:GetGlobal('PVP_PINTYPE_IC_ALLIANCE_BASE')
 local PVP_PINTYPE_IC_DOOR = PVP:GetGlobal('PVP_PINTYPE_IC_DOOR')
 local PVP_PINTYPE_IC_VAULT = PVP:GetGlobal('PVP_PINTYPE_IC_VAULT')
@@ -89,7 +89,6 @@ local PVP_PINTYPE_SHADOWIMAGE = PVP:GetGlobal('PVP_PINTYPE_SHADOWIMAGE')
 local PVP_MONKEY = PVP:GetGlobal('PVP_MONKEY')
 local PVP_BUNNY = PVP:GetGlobal('PVP_BUNNY')
 
-local PVP_PINTYPE_GROUP = 6670
 -- local PVP_PINTYPE_SHADOWIMAGE = 9999
 
 local PVP_PINTYPE_POWERUP = PVP:GetGlobal('PVP_PINTYPE_POWERUP')
@@ -930,8 +929,6 @@ local function GetControlType(control, data, iconType)
 			type = 'AYLEID_WELL'
 		elseif pinType == PVP_PINTYPE_DELVE then
 			type = 'DELVE'
-		elseif pinType == PVP_PINTYPE_IC_ENTRANCE then
-			type = 'IC_ENTRANCE'
 		elseif pinType == PVP_PINTYPE_MILEGATE then
 			type = 'MILEGATE'
 		elseif pinType == PVP_PINTYPE_BRIDGE then
@@ -994,7 +991,6 @@ local function GetControlTexture(control, data, iconType)
 		['AYLEID_WELL'] = PVP_TEXTURES_PATH..'Ayleid_Well_2.dds',
 		['DELVE'] = 'esoui/art/icons/mapkey/mapkey_delve.dds',
 		['IC_GRATE'] = "/esoui/art/icons/poi/poi_sewer_complete.dds",
-		['IC_ENTRANCE'] = 'esoui/art/tutorial/ava_impcity_open.dds',
 		-- ['MILEGATE'] = 'esoui/art/icons/mapkey/mapkey_artifactgate_open.dds',
 		['MILEGATE'] = 'EsoUI/Art/MapPins/AvA_milegate_passable.dds',
 		['BRIDGE'] = 'EsoUI/Art/MapPins/AvA_bridge_passable.dds',
@@ -1073,7 +1069,6 @@ local function GetControlColor(control, data, iconType)
 		['AYLEID_WELL'] = {0.9,0.9,0.9,1},
 		['DELVE'] = {0,1,0,1},
 		['IC_GRATE'] = {1,1,1,1},
-		['IC_ENTRANCE'] = {0.9,0.9,0.9,1},
 		['WAYPOINT'] = {1,1,1,1},
 		['RALLY'] = {1,1,1,1},
 		['BG_POWERUP'] = {1,0.3,0.3,1},
@@ -1144,7 +1139,6 @@ local function GetControlSize(control, data, iconType)
 		['AYLEID_WELL'] = -8,
 		['DELVE'] = -8,
 		['IC_GRATE'] = -13,
-		['IC_ENTRANCE'] = -8,
 		['MILEGATE'] = 0	,
 		['BRIDGE'] = 0,
 		['BG_POWERUP'] = -13,
@@ -1222,7 +1216,6 @@ local function GetControlHeight(control, data, iconType, dynamicZ)
 		['AYLEID_WELL'] = 15,
 		['DELVE'] = 35,
 		['IC_GRATE'] = 7,
-		['IC_ENTRANCE'] = 15,
 		['MILEGATE'] = 38,
 		['BRIDGE'] = 38,
 		['BG_POWERUP'] = 12,
@@ -3158,7 +3151,6 @@ local function SetupNew3DPOIMarker(i, isActivated, isNewObjective)
 		['AYLEID_WELL'] = true,
 		['DELVE'] = true,
 		['IC_BASE'] = true,
-		['IC_ENTRANCE'] = true,
 		['MILEGATE'] = true,
 		['BRIDGE'] = true,
 		['BG_BASE'] = true,
@@ -3479,6 +3471,7 @@ function PVP_SetMapPingOnMouseOver()
 				PVP.LMP:SetMapPing(MAP_PIN_TYPE_RALLY_POINT, MAP_TYPE_LOCATION_CENTERED, PVP.currentTooltip.params.X, PVP.currentTooltip.params.Y)
 			end
 		else
+d("XXXX PVP_SetMapPingOnMouseOver")
 			if PVP.currentTooltip.params.hasWaypoint or type == 'WAYPOINT' then
 				PVP.LMP:RemoveMapPing(MAP_PIN_TYPE_PLAYER_WAYPOINT)
 			else
