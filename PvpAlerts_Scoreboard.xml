@@ -7,7 +7,6 @@
 				self.nonRecolorable = true
 			</OnInitialized>
 		</Label>
-		
 		<Control name="PVP_ScoreboardRow" mouseEnabled="true" linkEnabled="true" virtual="true">
 			<Dimensions x="898" y="28" />
 			<OnMouseEnter>
@@ -18,7 +17,7 @@
 			</OnMouseExit>
 			 <OnMouseUp>
 				PVP_ScoreboardName_OnMouseUp(button, self)
-             </OnMouseUp> 
+	     </OnMouseUp>
 			<Controls>
 				<Texture name="$(parent)BG" textureFile="esoui/art/miscellaneous/listitem_selectedhighlight.dds" color="FFFFFF" alpha="0.85" level="1" >
 					<AnchorFill />
@@ -46,15 +45,15 @@
 				<Label name="$(parent)Assists" inherits="PVP_ScoreboardRowLabel">
 					<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="$(parent)Deaths" />
 					<Dimensions x="80" y="28" />
-				</Label>				
+				</Label>
 				<Label name="$(parent)Damage" inherits="PVP_ScoreboardRowLabel">
 					<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="$(parent)Assists" />
 					<Dimensions x="100" y="28" />
-				</Label>				
+				</Label>
 				<Label name="$(parent)Healing" inherits="PVP_ScoreboardRowLabel">
 					<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="$(parent)Damage" />
 					<Dimensions x="100" y="28" />
-				</Label>				
+				</Label>
 				<Label name="$(parent)Points" inherits="PVP_ScoreboardRowLabel">
 					<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="$(parent)Healing" />
 					<Dimensions x="85" y="28" />
@@ -65,7 +64,6 @@
 				</Label>
 			</Controls>
 		</Control>
-		
 		<Control name="PVP_List" virtual="true">
 			<Dimensions x="920" y="371" />
 			<Controls>
@@ -108,14 +106,14 @@
 							</OnInitialized>
 							<Anchor point="TOPLEFT" relativePoint="TOPRIGHT" relativeTo="$(parent)Deaths" />
 							<Dimensions x="80" y="30" />
-						</Control>			
+						</Control>
 						<Control name="$(parent)Damage" inherits="ZO_SortHeader">
 							<OnInitialized>
 								ZO_SortHeader_Initialize(self, "Damage", "damage", ZO_SORT_ORDER_DOWN, TEXT_ALIGN_CENTER, "ZoFontGame")
 							</OnInitialized>
 							<Anchor point="TOPLEFT" relativePoint="TOPRIGHT" relativeTo="$(parent)Assists" />
 							<Dimensions x="100" y="30" />
-						</Control>	
+						</Control>
 						<Control name="$(parent)Healing" inherits="ZO_SortHeader">
 							<OnInitialized>
 								ZO_SortHeader_Initialize(self, "Healing", "healing", ZO_SORT_ORDER_DOWN, TEXT_ALIGN_CENTER, "ZoFontGame")
@@ -145,10 +143,10 @@
 					<!-- <Anchor point="BOTTOMRIGHT" offsetX="0" offsetY="-32" /> -->
 					<Dimensions x="920" y="336" />
 				</Control>
-				
+
 			</Controls>
 		</Control>
-		
+
 		<Control name="PVP_TeamInfo" virtual="true">
 			<Dimensions x="150" y="205" />
 			<Controls>
@@ -158,7 +156,7 @@
 						self.nonRecolorable = true
 					</OnInitialized>
 				</Label>
-						
+
 				<Label name="$(parent)Score" text="500" font="$(BOLD_FONT)|$(KB_40)|thick-outline" horizontalAlignment="CENTER" color="FFFFFF" scale="2">
 					<Anchor point="BOTTOM" relativePoint="TOP" relativeTo="$(parent)Name" offsetY="10" />
 					<OnInitialized>
@@ -175,13 +173,13 @@
 
 		<TopLevelControl name="PVP_Scoreboard" hidden="true">
 		    <Dimensions x="1305" y="630" />
-            <Anchor point="CENTER" offsetY="75" />
+	    <Anchor point="CENTER" offsetY="75" />
 			<OnInitialized>
 				PVP_InitScoreboard()
 			</OnInitialized>
 			<Controls>
-				
-		
+
+
 				<Label name="$(parent)Title" font="$(BOLD_FONT)|$(KB_28)|thick-outline" horizontalAlignment="CENTER" color="INTERFACE_COLOR_TYPE_TEXT_COLORS:INTERFACE_TEXT_COLOR_NORMAL" scale="1.2">
 					<Anchor point="TOP" relativeTo="$(parent)" offsetY="-195" />
 					<Controls>
@@ -202,19 +200,19 @@
 						</Texture>
 					</Controls>
 				</Label>
-				
-				
+
+
 				<Label name="$(parent)State" text="MATCH ENDED" font="$(BOLD_FONT)|$(KB_28)|soft-shadow-thick" horizontalAlignment="CENTER" color="INTERFACE_COLOR_TYPE_TEXT_COLORS:INTERFACE_TEXT_COLOR_NORMAL">
 						<Anchor point="TOP" relativeTo="$(parent)" offsetY="130" />
 						<Dimensions x="600" y="90"/>
 				</Label>
-				
+
 				<Label name="$(parent)Players" text="TOTAL PLAYERS - 12 : |c794993zo_iconFormatInheritColor('EsoUI/Art/Stats/battleground_alliance_badge_Fire_Drakes.dds', 32, 32) - 4|r  |CC1572DFIRE DRAKES - 4|R  |c589726PIT DAEMONS - 4|r" font="$(BOLD_FONT)|$(KB_22)|soft-shadow-thick" horizontalAlignment="CENTER" color="INTERFACE_COLOR_TYPE_TEXT_COLORS:INTERFACE_TEXT_COLOR_NORMAL">
 					<Anchor point="BOTTOM" relativeTo="$(parent)" relativePoint="BOTTOM" offsetY="-30" />
 					<Controls>
 					</Controls>
 				</Label>
-				
+
 				<Control name="$(parent)TimerContainer">
 					<Anchor point="TOP" relativeTo="$(parent)" offsetX="360" offsetY="129" />
 					<Controls>
@@ -227,12 +225,12 @@
 						</Label>
 					</Controls>
 				</Control>
-				
-				
+
+
 				<Label name="$(parent)Info" text="Ullara - Deathmatch" font="$(BOLD_FONT)|$(KB_24)|soft-shadow-thick" horizontalAlignment="LEFT" color="INTERFACE_COLOR_TYPE_TEXT_COLORS:INTERFACE_TEXT_COLOR_NORMAL">
 					<Anchor point="TOP" relativeTo="$(parent)" offsetX="-350" offsetY="132" />
 				</Label>
-		
+
 				<!-- <Texture name="$(parent)TestOrange" textureFile="EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_orange.dds" level="2" alpha="1" color="FFFFFF"> --> -->
 					<!-- <Dimensions x="160" y="210"/> --> -->
 					<!-- <Anchor point="CENTER" relativeTo="$(parent)" relativePoint="CENTER" offsetX="0" offsetY="-250"/> --> -->
@@ -248,23 +246,23 @@
 					<!-- <Anchor point="CENTER" relativeTo="$(parent)" relativePoint="CENTER" offsetX="160" offsetY="-250"/> --> -->
 					<!-- <TextureCoords top="0" bottom="1" left="0.018" right="0.86"/> -->
 				<!-- </Texture> -->						 -->
-				
+
 
 				<Texture name="$(parent)DivierTop1" textureFile="esoui/art/miscellaneous/horizontaldivider.dds" alpha="1" hidden="false" level="1">
 					<Anchor point="TOP" offsetX="0" offsetY="120" />
 					<Dimensions x="1320" y="8" />
-                </Texture>		
+		</Texture>
 
 				<Texture name="$(parent)DivierTop2" textureFile="esoui/art/miscellaneous/horizontaldivider.dds" alpha="1" hidden="false" level="1">
 					<Anchor point="TOP" offsetX="0" offsetY="170" />
 					<Dimensions x="1320" y="8" />
-                </Texture>	
-				
+		</Texture>
+
 				<Texture name="$(parent)DividerBottom" textureFile="esoui/art/miscellaneous/horizontaldivider.dds" alpha="1" hidden="false" level="1">
 					<Anchor point="BOTTOM" offsetX="0" offsetY="-70" />
 					<Dimensions x="1320" y="8" />
-                </Texture>
-				
+		</Texture>
+
 				<Control name="$(parent)Score">
 					<Anchor point="TOP" relativePoint="TOP" relativeTo="$(parent)" offsetY="-120" offsetX="0" />
 					<Dimensions x="470" y="205" />
@@ -272,19 +270,19 @@
 						<Control name="$(parent)Team1" inherits="PVP_TeamInfo">
 							<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMPLEFT" relativeTo="$(parent)" offsetY="0" offsetX="0" />
 						</Control>
-						
+
 						<Control name="$(parent)Team2" inherits="PVP_TeamInfo">
 							<Anchor point="BOTTOM" relativePoint="BOTTOM" relativeTo="$(parent)" offsetY="0" offsetX="0" />
 						</Control>
-						
+
 						<Control name="$(parent)Team3" inherits="PVP_TeamInfo">
 							<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="$(parent)" offsetY="0" offsetX="0" />
 						</Control>
 					</Controls>
 				</Control>
-				
+
 				<Control name="$(parent)PlayerIcon" hidden="false" tier="1" level="1" layer="2">
-					<Anchor point="BOTTOM" relativePoint="TOP" relativeTo="$(parent)ScoreTeam2" offsetY="7" /> 
+					<Anchor point="BOTTOM" relativePoint="TOP" relativeTo="$(parent)ScoreTeam2" offsetY="7" />
 					<Controls>
 						<Texture name="$(parent)Icon" textureFile="esoui/art/currency/currency_crown.dds" color="CCCC00" hidden="true"> -->
 							<Anchor point="TOP" relativePoint="TOP" relativeTo="$(parent)" offsetY="0" /> -->
@@ -299,13 +297,13 @@
 						</Texture>
 					</Controls>
 				</Control>
-				
-				
+
+
 				<Label name="$(parent)MVP" text="" font="$(BOLD_FONT)|$(KB_24)|thick-outline" mouseEnabled="true" linkEnabled="true" horizontalAlignment="CENTER" color="INTERFACE_COLOR_TYPE_TEXT_COLORS:INTERFACE_TEXT_COLOR_NORMAL" hidden="false">
 					<Anchor point="TOP" relativePoint="TOP" relativeTo="$(parent)" offsetY="-270" />
 					<OnMouseUp>
 						PVP_ScoreboardName_OnMouseUp(button, self)
-					</OnMouseUp> 
+					</OnMouseUp>
 					<Controls>
 						<Texture name="$(parent)Backdrop" textureFile="EsoUI/Art/Performance/StatusMeterMunge.dds" level="2" alpha="1" color="FFFFFF">
 							<Dimensions x="1900" y="280"/>
@@ -313,37 +311,37 @@
 						</Texture>
 					</Controls>
 				</Label>
-				
-				
+
+
 				<Texture name="$(parent)BackdropTexture" textureFile="EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_left.dds" alpha="1" hidden="false">
 					<Anchor point="TOP" offsetX="-10" offsetY="-160" />
 					<Dimensions x="1050" y="905" />
-                </Texture>				
+		</Texture>
 				<Texture name="$(parent)BackdropTextureRight" textureFile="EsoUI/Art/Battlegrounds/battlegrounds_scoreboardBG_right.dds" alpha="1" hidden="false">
-                   	<Anchor point="TOPLEFT" relativeTo="$(parent)BackdropTexture" relativePoint="TOPRIGHT" offsetX="0" offsetY="0" />
+			<Anchor point="TOPLEFT" relativeTo="$(parent)BackdropTexture" relativePoint="TOPRIGHT" offsetX="0" offsetY="0" />
 					<Dimensions x="64" y="905" />
-                </Texture>
-				
+		</Texture>
+
 				<Control name="$(parent)List1" inherits="PVP_List">
 					<Anchor point="TOP" offsetX="0" offsetY="180" />
 				</Control>
-				
-				
+
+
 				<Control name="$(parent)PlayerMedals" resizeToFitDescendents="true">
 					<Anchor point="BOTTOM" offsetX="0" offsetY="85" />
 				</Control>
 				<Control name="$(parent)PlayerMedalsBottom" resizeToFitDescendents="true">
 					<Anchor point="TOP" relativeTo="$(parent)PlayerMedals" relativePoint="BOTTOM" offsetX="0" offsetY="20" />
 				</Control>
-				
+
 
 			</Controls>
 		</TopLevelControl>
-		
+
 		<TopLevelControl name="PVP_Scoreboard_Tooltip_Medal_Template" mouseEnabled="false" movable="false" clampedToScreen="true" hidden="false" virtual="true" resizeToFitDescendents="false">
-            <Dimensions x="500" y="75" />
+	    <Dimensions x="500" y="75" />
 			<Anchor point="CENTER" offsetY="450"/>
-            <Controls>
+	    <Controls>
 				<Texture name="$(parent)Icon" textureFile="/esoui/art/icons/battleground_medal_flagcapture_002.dds" level="2">
 					<Dimensions x="70" y="70"/>
 					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="0" offsetY="0"/>
@@ -361,15 +359,15 @@
 					<Anchor point="TOPLEFT" relativeTo="$(parent)Name" relativePoint="BOTTOMLEFT" offsetX="1" offsetY="2"/>
 				</Label>
 			</Controls>
-        </TopLevelControl>
-		
-			
-		
+	</TopLevelControl>
+
+
+
 		<TopLevelControl name="PVP_Scoreboard_TooltipTopLevel" inherits="TooltipTopLevel">
 			<Controls>
 				<Tooltip name="PVPScoreboardTooltip" inherits="ZO_BaseTooltip">
 					<ResizeToFitPadding width="32" height="57"/>
-					<DimensionConstraints minX="416" maxX="416" />				
+					<DimensionConstraints minX="416" maxX="416" />
 					<Controls>
 						<Texture name="$(parent)FadeLeft" textureFile="EsoUI/Art/ItemToolTip/iconStrip.dds" excludeFromResizeToFitExtents="true">
 							<Dimensions x="100" y="4" />

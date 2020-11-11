@@ -53,8 +53,7 @@ function PVP:InitializeAddonMenu()
 	    if panel == optionsPanel then
 		this.noInitControls = false
 		if this.delayedInitControls then
-		    this.delayedInitControls = false
-		    zo_callLater(function() PVP:InitControls() end, 250)
+		    PVP:InitControls()
 		end
 	    end
 	end)

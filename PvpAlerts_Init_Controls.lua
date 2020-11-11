@@ -13,6 +13,11 @@ function PVP:InitControls()
 	    self.delayedInitControls = true
 	    return
 	end
+	if self.delayedInitControls then
+	    self.delayedInitControls = false
+	    zo_callLater(function() self:InitControls() end, 250)
+	    return
+	end
 	PVP:SetupOnScreen()
 	PVP_Main:ClearAnchors()
 	PVP_Main:SetAnchor(CENTER, GuiRoot, CENTER, self.SV.offsetX, self.SV.offsetY)
