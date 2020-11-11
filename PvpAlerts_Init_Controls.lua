@@ -8,8 +8,11 @@ local PVP_LARGE_NUMBER_FONT = PVP:GetGlobal('PVP_LARGE_NUMBER_FONT')
 local PVP_DEFAULT_ICON = PVP:GetGlobal('PVP_DEFAULT_ICON')
 local PVP_DEFAULT_HEAVY_ATTACK_ICON = PVP:GetGlobal('PVP_DEFAULT_HEAVY_ATTACK_ICON')
 
-
 function PVP:InitControls()
+	if self.noInitControls then
+	    self.delayedInitControls = true
+	    return
+	end
 	PVP:SetupOnScreen()
 	PVP_Main:ClearAnchors()
 	PVP_Main:SetAnchor(CENTER, GuiRoot, CENTER, self.SV.offsetX, self.SV.offsetY)
@@ -32,22 +35,18 @@ function PVP:InitControls()
 	PVP_Counter:SetAnchor(CENTER, GuiRoot, CENTER, self.SV.counterOffsetX, self.SV.counterOffsetY)
 	PVP_Counter:SetScale(1)
 
-
 	PVP_KillFeed:SetScale(self.SV.feedControlScale)
 	PVP_KillFeed_Text:SetHorizontalAlignment(self.SV.feedTextAlign)
 	PVP_KillFeed:ClearAnchors()
 	PVP_KillFeed:SetAnchor(CENTER, GuiRoot, CENTER, self.SV.feedOffsetX, self.SV.feedOffsetY)
 
-
 	self:ScaleControls(PVP_KillFeed, PVP_KillFeed_Text, 19, self.SV.feedControlScale)
-
 
 	PVP_Names:SetScale(self.SV.namesControlScale)
 	PVP_Names:ClearAnchors()
 	PVP_Names:SetAnchor(CENTER, GuiRoot, CENTER, self.SV.namesOffsetX, self.SV.namesOffsetY)
 
 	self:ScaleControls(PVP_Names, PVP_Names_Text, 18, self.SV.namesControlScale)
-
 
 	PVP_KOS:SetScale(self.SV.KOSControlScale)
 	PVP_KOS:ClearAnchors()
@@ -72,8 +71,6 @@ function PVP:InitControls()
 	PVP_TargetNameLabel:SetHorizontalAlignment(self.SV.targetTextAlign)
 
 	PVP_WorldTooltipLabel:SetFont("$(BOLD_FONT)|$(KB_20)|thick-outline")
-
-
 
 	PVP_NewAttacker:ClearAnchors()
 	PVP_NewAttacker:SetAnchor(CENTER, GuiRoot, CENTER, self.SV.newAttackerOffsetX, self.SV.newAttackerOffsetY)
@@ -239,10 +236,6 @@ function PVP:InitControls()
 	PVP_Counter_CountContainer_CountDC:SetMouseEnabled(true)
 	PVP_Counter_CountContainer_CountEP:SetMouseEnabled(true)
 
-
-
-
-
 	if IsActiveWorldBattleground() then
 		PVP_Counter_CountContainer_CountAD:SetColor(GetBattlegroundAllianceColor(1):UnpackRGBA())
 		PVP_Counter_CountContainer_CountDC:SetColor(GetBattlegroundAllianceColor(3):UnpackRGBA())
@@ -252,7 +245,6 @@ function PVP:InitControls()
 		PVP_Counter_CountContainer_CountDC:SetColor(0.407,0.556,0.694)
 		PVP_Counter_CountContainer_CountEP:SetColor(0.87,0.36,0.309)
 	end
-
 
 	PVP_Main:SetMouseEnabled(self.SV.unlocked)
 	PVP_Main:SetMovable(self.SV.unlocked)
@@ -480,4 +472,3 @@ function PVP:ManageFragments(fragment)
 		GAME_MENU_SCENE:RegisterCallback("StateChange", FrameMenuFix)
 	end
 end
-

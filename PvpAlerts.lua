@@ -2144,7 +2144,7 @@ function PVP:FullReset()
 	self.totalPlayers={}
 	self.npcExclude={}
 	self.playerSpec = {}
-    self.miscAbilities = {}
+	self.miscAbilities = {}
 	self.playerNames = {}
 	self.idToName={}
 	self.playerAlliance={}
@@ -2993,7 +2993,6 @@ local function DeathScreenOnLoadFix()
 end
 
 function PVP:InitEnabledAddon()
-	-- d("HERE")
 	if PVP.addonEnabled then
 		EVENT_MANAGER:UnregisterForUpdate(self.name)
 		EVENT_MANAGER:RegisterForUpdate(self.name, 250, PVP.OnUpdate)
