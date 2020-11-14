@@ -1021,19 +1021,13 @@ local function GetControlTexture(control, data, iconType)
 		elseif type == 'SCROLL' then
 			texture = data.isBgFlag and ZO_MapPin.PIN_DATA[data.pinType].texture or string.gsub(ZO_MapPin.PIN_DATA[data.pinType].texture, 'MapPins', 'compass')
 		elseif type == 'GROUP' then
-			if PVP:IsMiz(data.name) then
-				texture = PVP_MONKEY
-			elseif PVP:IsZav(data.name) then
-				texture = PVP_BUNNY
+			if control.params.isGroupLeader then
+				texture = 'esoui/art/icons/mapkey/mapkey_groupleader.dds'
 			else
-				if control.params.isGroupLeader then
-					texture = 'esoui/art/icons/mapkey/mapkey_groupleader.dds'
+				if data.unitClass then
+					texture = PVP.classIconsLarge[data.unitClass]
 				else
-					if data.unitClass then
-						texture = PVP.classIconsLarge[data.unitClass]
-					else
-						texture = 'esoui/art/icons/mapkey/mapkey_groupmember.dds'
-					end
+					texture = 'esoui/art/icons/mapkey/mapkey_groupmember.dds'
 				end
 			end
 		elseif type == 'SHADOW_IMAGE' then
@@ -1083,9 +1077,7 @@ local function GetControlColor(control, data, iconType)
 	local type = control.params.type
 
 	if type == 'GROUP' then
-		if PVP:IsMiz(data.name) or PVP:IsZav(data.name) then
-			colorR, colorG, colorB, alpha = 1, 1, 1, 1
-		elseif data.isUnitDead then
+		if data.isUnitDead then
 			colorR, colorG, colorB, alpha = 0.4, 0.4, 0.4, 1
 		elseif control.params.isGroupLeader then
 			colorR, colorG, colorB, alpha = 1, 0, 1, 1

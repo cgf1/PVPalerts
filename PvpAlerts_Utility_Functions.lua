@@ -27,8 +27,6 @@ local PVP_MONKEY = PVP:GetGlobal('PVP_MONKEY')
 local PVP_BUNNY = PVP:GetGlobal('PVP_BUNNY')
 local PVP_HACK = PVP:GetGlobal('PVP_HACK')
 local PVP_HACK_DENIED = PVP:GetGlobal('PVP_HACK_DENIED')
-local PVP_POTATOE_ICON = PVP:GetGlobal('PVP_POTATOE_ICON')
-local PVP_POTATOE_RANK = PVP:GetGlobal('PVP_POTATOE_RANK')
 local PVP_6STAR = PVP:GetGlobal('PVP_6STAR')
 
 local PVP_FIGHT_ADEP = PVP:GetGlobal('PVP_FIGHT_ADEP')
@@ -209,8 +207,6 @@ end
 
 function PVP:GetFormattedClassIcon(playerName, dimension, allianceColor, isDeadorResurrect, isTargetFrame, isTargetNameFrame, unitClass)
 
-	local mizIcon = self:IsMiz(playerName) and self:GetMonkeyIcon() or ""
-	local zavIcon = self:IsZav(playerName) and self:GetBunnyIcon() or ""
 	local isPlayer = playerName==self.playerName
 
 	if not self.SV.playersDB[playerName] and not isPlayer and not unitClass then return "" end
@@ -261,15 +257,7 @@ function PVP:GetFormattedClassIcon(playerName, dimension, allianceColor, isDeado
 		end
 	end
 
-	local classIcon
-
-	if mizIcon ~= "" then
-		classIcon = mizIcon
-	elseif zavIcon ~= "" then
-		classIcon = zavIcon
-	else
-		classIcon = self:Colorize(zo_iconFormatInheritColor(self.classIcons[unitClass], dimension, dimension), color)
-	end
+	local classIcon = self:Colorize(zo_iconFormatInheritColor(self.classIcons[unitClass], dimension, dimension), color)
 
 	return startSpacer..classIcon..endSpacer
 end
@@ -783,87 +771,23 @@ function PVP:GetDMPowerups(battlegroundId)
 	end
 end
 
-function PVP:IsMiz(playerName)
-	if playerName and PVP.SV.playersDB[playerName] and PVP.SV.playersDB[playerName].unitAccName == '@Kikazaru' then
-		return true
-	else
-		return false
-	end
-end
-
-function PVP:IsZav(playerName)
-	if playerName and PVP.SV.playersDB[playerName] and PVP.SV.playersDB[playerName].unitAccName == '@FakeZavos' then
-		return true
-	else
-		return false
-	end
-end
-
-function PVP:IsEnz(unitTag)
-	if unitTag and GetUnitDisplayName(unitTag) == '@enzoisadog' then
-		return true
-	else
-		return false
-	end
-end
-
-function PVP:IsNai(unitTag)
-	if unitTag and GetUnitDisplayName(unitTag) == '@Crown77' then
-		return true
-	else
-		return false
-	end
-end
-
-function PVP:IsZel(playerName)
-	local zelAcc = '@Zelos'
-	-- local zelAcc = '@dorrino'
-	if playerName then
-		if PVP.SV.playersDB[playerName] and PVP.SV.playersDB[playerName].unitAccName == zelAcc then
-		-- if true then
-			return true
-		else
-			return false
-		end
-	else
-		local playerAccName = ZO_ShouldPreferUserId() and ZO_GetPrimaryPlayerNameFromUnitTag('player') or ZO_GetSecondaryPlayerNameFromUnitTag('player')
-		if playerAccName == zelAcc then
-		-- if true then
-			return true
-		else
-			return false
-		end
-	end
-end
-
 function PVP:AvAHax()
 	local GetUnitAvARank_original = GetUnitAvARank
 	GetUnitAvARank = function(unitTag)
 		local avaRankOriginal = GetUnitAvARank_original(unitTag)
-		-- if PVP:IsEnz(unitTag) and avaRankOriginal == 50 then
-		if PVP:IsEnz(unitTag) then
-			return PVP_POTATOE_RANK
-		else
-			return avaRankOriginal
-		end
+		return avaRankOriginal
 	end
 
 
 	local GetAvARankName_original = GetAvARankName
 	GetAvARankName = function(gender, rank)
-		if rank == PVP_POTATOE_RANK then
-			return 'Grand Potato'
-		else
-			return GetAvARankName_original(gender, rank)
-		end
+		return GetAvARankName_original(gender, rank)
 	end
 
 	local GetAvARankIcon_original = GetAvARankIcon
 	GetAvARankIcon = function(rank)
 		if rank == 50 and self.SV.show6star then
 			return PVP_6STAR
-		elseif rank == PVP_POTATOE_RANK then
-			return PVP_POTATOE_ICON
 		else
 			return GetAvARankIcon_original(rank)
 		end
@@ -873,8 +797,6 @@ function PVP:AvAHax()
 	GetLargeAvARankIcon = function(rank)
 		if rank == 50 and self.SV.show6star then
 			return PVP_6STAR
-		elseif rank == PVP_POTATOE_RANK then
-			return PVP_POTATOE_ICON
 		else
 			return GetLargeAvARankIcon_original(rank)
 		end
@@ -882,10 +804,6 @@ function PVP:AvAHax()
 
 	local GetNumPointsNeededForAvARank_original = GetNumPointsNeededForAvARank
 	GetNumPointsNeededForAvARank = function(rank)
-		if rank == PVP_POTATOE_RANK then
-			rank = 50
-		end
-
 		return GetNumPointsNeededForAvARank_original(rank)
 	end
 

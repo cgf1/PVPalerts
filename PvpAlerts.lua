@@ -1091,16 +1091,8 @@ function PVP:OnCombat(eventCode, result, isError, abilityName, abilityGraphic, a
 				local kbIconToken = zo_iconFormat(PVP_KILLING_BLOW, 38, 38)
 				local abilityToken = GetFormattedAbilityName(abilityId, messageColor)
 
-				if self:IsZel() then
-					actionToken = "HACKED"
-					bracketsToken = self:GetHackIcon(nil, nil, false)
-				elseif self:IsZel(targetNameFromId) then
-					actionToken = "OUTHACKED"
-					bracketsToken = self:GetHackIcon(nil, nil, false)
-				else
-					actionToken = "killed"
-					bracketsToken = "***"
-				end
+				actionToken = "killed"
+				bracketsToken = "***"
 
 				playerToken = GetColoredMessage(playerToken, messageColor)
 				actionToken = GetColoredMessage(actionToken, messageColor)
@@ -1122,13 +1114,8 @@ function PVP:OnCombat(eventCode, result, isError, abilityName, abilityGraphic, a
 				local messageColor = "AF7500"
 				local abilityToken = GetFormattedAbilityName(abilityId, 'CCCCCC')
 
-				if self:IsZel(targetNameFromId) then
-					actionToken = PVP:Colorize("got OUTHACKED with", messageColor)
-					abilityToken = self:GetHackIcon(nil, "CC0000", true)
-				else
-					actionToken = PVP:Colorize("died from", messageColor)
-					abilityToken = GetFormattedAbilityName(abilityId, 'CCCCCC')
-				end
+				actionToken = PVP:Colorize("died from", messageColor)
+				abilityToken = GetFormattedAbilityName(abilityId, 'CCCCCC')
 
 				suffixToken = PVP:Colorize(suffixToken, messageColor)
 
@@ -1153,19 +1140,9 @@ function PVP:OnCombat(eventCode, result, isError, abilityName, abilityGraphic, a
 
 				suffixToken = PVP:Colorize(suffixToken, messageColor)
 
-				if self:IsZel() then
-					actionToken = PVP:Colorize("got OUTHACKED with", messageColor)
-					killedByToken = "Now the best hacker is"
-					abilityToken = self:GetHackIcon(nil, "CC0000", true)..suffixToken
-				elseif self:IsZel(sourceName) then
-					actionToken = PVP:Colorize("got HACKED with", messageColor)
-					killedByToken = "by"
-					abilityToken = self:GetHackIcon(nil, "CC0000", true)
-				else
-					actionToken = PVP:Colorize("died from", messageColor)
-					killedByToken = "Killed by"
-					abilityToken = GetFormattedAbilityName(abilityId, 'CCCCCC')..suffixToken
-				end
+				actionToken = PVP:Colorize("died from", messageColor)
+				killedByToken = "Killed by"
+				abilityToken = GetFormattedAbilityName(abilityId, 'CCCCCC')..suffixToken
 
 				playerToken = PVP:Colorize(playerToken, messageColor)
 
