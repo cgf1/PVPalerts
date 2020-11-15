@@ -1023,12 +1023,10 @@ local function GetControlTexture(control, data, iconType)
 		elseif type == 'GROUP' then
 			if control.params.isGroupLeader then
 				texture = 'esoui/art/icons/mapkey/mapkey_groupleader.dds'
+			elseif data.unitClass then
+				texture = PVP.classIconsLarge[data.unitClass]
 			else
-				if data.unitClass then
-					texture = PVP.classIconsLarge[data.unitClass]
-				else
-					texture = 'esoui/art/icons/mapkey/mapkey_groupmember.dds'
-				end
+				texture = 'esoui/art/icons/mapkey/mapkey_groupmember.dds'
 			end
 		elseif type == 'SHADOW_IMAGE' then
 			local iconBG = control:GetNamedChild('BG')

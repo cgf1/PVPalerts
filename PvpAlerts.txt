@@ -4,8 +4,8 @@
 ## AddonVersion 03074
 ## SavedVariables: PvpAlertsSettings
 ## OptionalDependsOn: LibAddonMenu-2.0
-## DependsOn: LibAddonMenu-2.0 LibGPS LibMapPing LibDebugLogger LibChatMessage
-## OptionalDependsOn: LibSlashCommander pChat tom LuiExtended
+## DependsOn: LibAddonMenu-2.0 LibGPS LibMapPing
+## OptionalDependsOn: pChat tom
 
 PvpAlerts_Init_Globals.lua
 PvpAlerts.lua
