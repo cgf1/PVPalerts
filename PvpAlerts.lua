@@ -3,8 +3,11 @@
 local PVP = PVP_Alerts_Main_Table
 
 PVP.version=1.01
-PVP.textVersion="3.74"
+PVP.textVersion="3.75"
 PVP.name = "PvpAlerts"
+
+local LCM = LibChatMessage
+local chat = LCM.Create('PvpAlerts', 'PVP')
 
 -- // initialization of global variables for this file //
 
@@ -116,84 +119,85 @@ function PVP.OnUpdate() -- // main loop of the addon, is called each 250ms //
 	PVP:UpdateNearbyKeepsAndPOIs() -- // 3d icons main loop //
 	local end_all = GetGameTimeMilliseconds()
 	if PVP.SV.showPerformance then
-		d('----------------------------')
-		d('Main loop time = '..tostring(start3d - start_main)..'ms')
-		d('Main refresh = '..tostring(end_refresh - start_refresh)..'ms')
-		d('Main Camp = '..tostring(PVP.endCamp - PVP.endN)..'ms')
-		d('Main Counter = '..tostring(PVP.endCounter - PVP.endCamp)..'ms')
-		d('Main Counter Func = '..tostring(PVP.afterC - PVP.beforeC)..'ms')
-		d('Main KOS = '..tostring(PVP.endKos - PVP.endCounter)..'ms')
-		d('3d loop time = '..tostring(end_all - start3d)..'ms')
+		chat:Print('----------------------------')
+		chat:Printf('Main loop time = %dms', start3d - start_main)
+		chat:Printf('Main refresh = %dms', end_refresh - start_refresh)
+		chat:Printf('Main Camp = %dms', PVP.endCamp - PVP.endN)
+		chat:Printf('Main Counter = %dms', PVP.endCounter - PVP.endCamp)
+		chat:Printf('Main Counter Func = %dms', PVP.afterC - PVP.beforeC)
+		chat:Printf('Main KOS = %dms', PVP.endKos - PVP.endCounter)
+		chat:Printf('3d loop time = %dms', end_all - start3d)
 
-		d('New Marker time = '..tostring(PVP.afterMarker - PVP.beforeMarker)..'ms')
+		chat:Printf('New Marker time = %dms', PVP.afterMarker - PVP.beforeMarker)
 		if PVP.afterPoi and PVP.beforePoi then
-			d('New Poi time = '..tostring(PVP.afterPoi - PVP.beforePoi)..'ms')
+			chat:Printf('New Poi time = %dms', PVP.afterPoi - PVP.beforePoi)
 		end
 		local c = 0
 		for k,v in pairs (PVP.currentNearbyKeepIds) do
 			c = c + 1
 		end
-		d('#currentNearbyKeepIds = '..tostring(c))
+		chat:Print('#currentNearbyKeepIds = %dms', c)
 		c = 0
 		for k,v in pairs (PVP.currentNearbyPOIIds) do
 			c = c + 1
 		end
-		d('#currentNearbyPOIIds = '..tostring(c))
+		chat:Printf('#currentNearbyPOIIds = %dms', c)
 		c = 0
 		for k,v in pairs (PVP.currentObjectivesIds) do
 			c = c + 1
 		end
-		d('#currentObjectivesIds = '..tostring(c))
+		chat:Printf('#currentObjectivesIds = %dms', c)
 		c = 0
 		if PVP.currentMapPings then
 			for k,v in pairs (PVP.currentMapPings) do
 				c = c + 1
 			end
-			d('#currentMapPings = '..tostring(c))
+			chat:Printf('#currentMapPings = %dms', c)
 		end
 
-		d('Cycles = '..tostring(PVP.cc))
-		-- d('M21 = '..tostring(PVP.m2 - PVP.m1)..'ms')
-		-- d('M32 = '..tostring(PVP.m3 - PVP.m2)..'ms')
-		-- d('M43 = '..tostring(PVP.m4 - PVP.m3)..'ms')
-		-- d('M54 = '..tostring(PVP.m5 - PVP.m4)..'ms')
-		-- d('M65 = '..tostring(PVP.m6 - PVP.m5)..'ms')
-		-- d('M76 = '..tostring(PVP.m7 - PVP.m6)..'ms')
-		-- d('M87 = '..tostring(PVP.m8 - PVP.m7)..'ms')
-		-- d('M81 = '..tostring(PVP.m8 - PVP.m1)..'ms')
+		chat:Printf('Cycles = %d', PVP.cc)
+		-- chat:Printf('M21 = '..tostring(PVP.m2 - PVP.m1))
+		-- chat:Printf('M32 = '..tostring(PVP.m3 - PVP.m2))
+		-- chat:Printf('M43 = '..tostring(PVP.m4 - PVP.m3))
+		-- chat:Printf('M54 = '..tostring(PVP.m5 - PVP.m4))
+		-- chat:Printf('M65 = '..tostring(PVP.m6 - PVP.m5))
+		-- chat:Printf('M76 = '..tostring(PVP.m7 - PVP.m6))
+		-- chat:Printf('M87 = '..tostring(PVP.m8 - PVP.m7))
+		-- chat:Printf('M81 = '..tostring(PVP.m8 - PVP.m1))
 
-		-- d('PVP.afterKeeps3d = '..tostring(PVP.afterKeeps3d - PVP.afterInit3d)..'ms')
-		-- d('PVP.afterPoi3d = '..tostring(PVP.afterPoi3d - PVP.afterKeeps3d)..'ms')
-		-- d('PVP.afterKeepsProc3d = '..tostring(PVP.afterKeepsProc3d - PVP.afterPoi3d)..'ms')
-		-- d('PVP.afterPoiProc3d = '..tostring(PVP.afterPoiProc3d - PVP.afterKeepsProc3d)..'ms')
+		-- chat:Printf('PVP.afterKeeps3d = '..tostring(PVP.afterKeeps3d - PVP.afterInit3d))
+		-- chat:Printf('PVP.afterPoi3d = '..tostring(PVP.afterPoi3d - PVP.afterKeeps3d))
+		-- chat:Printf('PVP.afterKeepsProc3d = '..tostring(PVP.afterKeepsProc3d - PVP.afterPoi3d))
+		-- chat:Printf('PVP.afterPoiProc3d = '..tostring(PVP.afterPoiProc3d - PVP.afterKeepsProc3d))
 		if (end_all - start_main) > PVP.addonPerformance.maxProcessingTime then PVP.addonPerformance.maxProcessingTime = (end_all - start_main) end
 		-- if (end_all - start_main) > PVP.addonPerformance.maxMinute then PVP.addonPerformance.maxMinute = (end_all - start_main) end
-		d('Max processing time = '..tostring(PVP.addonPerformance.maxProcessingTime)..'ms')
+		chat:Printf('Max processing time = %dms', PVP.addonPerformance.maxProcessingTime)
 		-- PVP.addonPerformance.averageCounts = PVP.addonPerformance.averageCounts + 1
 		-- PVP.addonPerformance.averageSum = PVP.addonPerformance.averageSum + (end_all - start_main)
 
 		-- if PVP.addonPerformance.averageCounts >= 240 then
-			-- d('Average in last minute processing time = '..tostring(math.ceil(PVP.addonPerformance.averageSum/PVP.addonPerformance.averageCounts))..'ms')
-			-- d('Max in last minute processing time = '..tostring(PVP.addonPerformance.maxMinute)..'ms')
+			-- chat:Printf('Average in last minute processing time = '..tostring(math.ceil(PVP.addonPerformance.averageSum/PVP.addonPerformance.averageCounts)))
+			-- chat:Printf('Max in last minute processing time = '..tostring(PVP.addonPerformance.maxMinute))
 		local avg, maxMin = PVP.addonPerformance.sma(end_all - start_main)
-		d('Last 30 sec average processing time = '..tostring(math.ceil(avg))..'ms')
-		d('Last 30 sec max processing time = '..tostring(maxMin)..'ms')
+		chat:Printf('Last 30 sec average processing time = %dms', math.ceil(avg))
+		chat:Printf('Last 30 sec max processing time = %dms', maxMin)
 			-- PVP.addonPerformance.averageCounts = 0
 			-- PVP.addonPerformance.maxMinute = 0
 		-- end
 
 		if PVP.controls3DPool then
-			d('3d Objects Count = '..tostring(PVP.controls3DPool:GetActiveObjectCount()))
+			chat:Printf('3d Objects Count = ', PVP.controls3DPool:GetActiveObjectCount())
 			-- if PVP.currentCameraInfo and PVP.currentCameraInfo.performance then
-				-- d('Measuring time = '..tostring(PVP.currentCameraInfo.performance))
+				-- chat:Printf('Measuring time = '..tostring(PVP.currentCameraInfo.performance))
 			-- end
 		end
-		d('Performance loss = '..tostring(((end_all - start_main)/2.5))..'%')
-		d('----------------------------')
+		chat:Printf('Performance loss = %.3f%', (end_all - start_main)/2.5)
+		chat:Print('----------------------------')
 	end
 	-- PVP:TestThisScale()
 end
 
+local lastcount, lastcountAcc
 function PVP:RefreshStoredNumbers(currentTime) -- // output of the number of stored accounts/players //
 	PVP.reportTimer=currentTime
 
@@ -204,10 +208,14 @@ function PVP:RefreshStoredNumbers(currentTime) -- // output of the number of sto
 		if not accountsDB[v.unitAccName] then accountsDB[v.unitAccName]=true countAcc=countAcc+1 end
 		count=count+1
 	end
-	d('**********************')
-	d('Stored players: '..tostring(count))
-	d('Stored accounts: '..tostring(countAcc))
-	d('**********************')
+	if count ~= lastcount or countAcc ~= lastcountAcc then
+	    chat:Print('**********************')
+	    chat:Printf('Stored players: %d',count)
+	    chat:Printf('Stored accounts: %d',countAcc)
+	    chat:Print('**********************')
+	    lastcount = count
+	    lastcountAcc = lastcountAcc
+	end
 end
 
 function PVP_test_SV()
@@ -862,7 +870,7 @@ function PVP:BattleReport()
 		end
 
 		if self.SV.showKillFeedInMainChat then
-			d(finalReport)
+			chat:Print(finalReport)
 		end
 
 	end
@@ -1221,7 +1229,7 @@ function PVP:OnCombat(eventCode, result, isError, abilityName, abilityGraphic, a
 				end
 
 				if self.SV.showKillFeedInMainChat then
-					d(outputText)
+					chat:Print(outputText)
 				end
 			end
 		end
@@ -1938,7 +1946,7 @@ function PVP:ProcessKeepTicks(difference, isOffensiveTick)
 	end
 
 	if self.SV.showKillFeedInMainChat then
-		d(self:Colorize("["..GetTimeString().."]", "A0A0A0")..text)
+		chat:Print(self:Colorize("["..GetTimeString().."]", "A0A0A0")..text)
 	end
 
 	if self.SV.playBattleReportSound then
@@ -2277,7 +2285,7 @@ function PVP:GetAllianceCountPlayers()
 			if not PVP.bgScoreBoardData[playerName] then
 				PVP.bgScoreBoardData[playerName] = formattedName
 				if PVP.bgScoreBoardFirstRunDone and PVP.SV.showJoinedPlayers then
-					d(PVP.bgScoreBoardData[playerName]..' joined battleground!')
+					chat:Printf('%s joined battleground!', PVP.bgScoreBoardData[playerName])
 				end
 			end
 
@@ -2370,7 +2378,7 @@ function PVP:GetAllianceCountPlayers()
 		for k,v in pairs (PVP.bgScoreBoardData) do
 			if not currentBgPlayers[k] then
 				if PVP.SV.showJoinedPlayers then
-					d(PVP.bgScoreBoardData[k]..' left battleground!')
+					chat:Printf('%s left battleground!', PVP.bgScoreBoardData[k])
 				end
 				PVP.bgScoreBoardData[k] = nil
 			end
@@ -3027,7 +3035,7 @@ function PVP.Activated()
 				if raceId then v.unitRace = raceId end
 			end
 		end
-		d('Race/Class names to Ids conversion done')
+		chat:Print('Race/Class names to Ids conversion done')
 		PVP.SV.raceClassConversionDone = true
 	end
 
@@ -3046,7 +3054,7 @@ function PVP.Activated()
 					counter = counter + 1
 				end
 			end
-			if counter>0 then d('Processed '..tostring(counter)..' previously recorded player specs!') end
+			if counter>0 then chat:Printf('Processed %d  previously recorded player specs!', counter) end
 			PVP.SV.rememberedSpecs = nil
 		end
 	end
@@ -3106,7 +3114,11 @@ CALLBACK_MANAGER:RegisterCallback(PVP.name.."_OnAddOnLoaded", function()
 						if PVP.SV.KOSList[i].unitAccName==PVP.SV.playersDB[rawName].unitAccName then index=i break end
 					end
 					if index then
-						AddMenuItem(GetString(SI_CHAT_PLAYER_CONTEXT_REMOVE_FROM_KOS), function() d("Removed from KOS: "..PVP:GetFormattedName(PVP.SV.KOSList[index].unitName)..PVP.SV.KOSList[index].unitAccName.."!") table.remove(PVP.SV.KOSList, index) PVP:PopulateKOSBuffer() end)
+						AddMenuItem(GetString(SI_CHAT_PLAYER_CONTEXT_REMOVE_FROM_KOS), function()
+						    chat:Printf("Removed from KOS: %s%s!", PVP:GetFormattedName(PVP.SV.KOSList[index].unitName),
+								PVP.SV.KOSList[index].unitAccName)
+						    table.remove(PVP.SV.KOSList, index) PVP:PopulateKOSBuffer()
+						end)
 						local cool = PVP:FindInCOOL(rawName)
 						if cool then
 							PVP.SV.coolList[cool] = nil
@@ -3115,9 +3127,9 @@ CALLBACK_MANAGER:RegisterCallback(PVP.name.."_OnAddOnLoaded", function()
 						end
 
 						AddMenuItem(GetString(SI_CHAT_PLAYER_CONTEXT_ADD_TO_COOL), function()
-							d("Removed from KOS: "..PVP:GetFormattedName(PVP.SV.KOSList[index].unitName)..PVP.SV.KOSList[index].unitAccName.."!")
+							chat:Printf("Removed from KOS: %s%s!", PVP:GetFormattedName(PVP.SV.KOSList[index].unitName), PVP.SV.KOSList[index].unitAccName)
 							table.remove(PVP.SV.KOSList, index)
-							d("Added to COOL: "..PVP:GetFormattedName(PVP.SV.playersDB[rawName].unitName)..PVP.SV.playersDB[rawName].unitAccName.."!")
+							chat:Printf("Added to COOL: %s%s!", PVP:GetFormattedName(PVP.SV.playersDB[rawName].unitName), PVP.SV.playersDB[rawName].unitAccName)
 							local cool = PVP:FindInCOOL(rawName)
 							if not cool then PVP.SV.coolList[rawName] = PVP.SV.playersDB[rawName].unitAccName end
 							PVP:PopulateKOSBuffer()
@@ -3136,11 +3148,11 @@ CALLBACK_MANAGER:RegisterCallback(PVP.name.."_OnAddOnLoaded", function()
 						AddMenuItem(GetString(SI_CHAT_PLAYER_CONTEXT_ADD_TO_KOS), function()
 								local cool = PVP:FindInCOOL(rawName)
 								if cool then
-									d("Removed from COOL: "..PVP:GetFormattedName(PVP.SV.playersDB[rawName].unitName)..PVP.SV.playersDB[rawName].unitAccName.."!")
+									chat:printf("Removed from COOL: %s%s!", PVP:GetFormattedName(PVP.SV.playersDB[rawName].unitName), PVP.SV.playersDB[rawName].unitAccName)
 									PVP.SV.coolList[cool] = nil
 									PVP:PopulateReticleOverNamesBuffer()
 								end
-								d("Added to KOS: "..PVP:GetFormattedName(rawName)..PVP.SV.playersDB[rawName].unitAccName.."!") table.insert(PVP.SV.KOSList, {unitName=rawName, unitAccName=PVP.SV.playersDB[rawName].unitAccName, unitId=unitId})
+								chat:Printf("Added to KOS: %s%s!", PVP:GetFormattedName(rawName), PVP.SV.playersDB[rawName].unitAccName) table.insert(PVP.SV.KOSList, {unitName=rawName, unitAccName=PVP.SV.playersDB[rawName].unitAccName, unitId=unitId})
 
 								PVP:PopulateKOSBuffer()
 							end)
@@ -3148,14 +3160,14 @@ CALLBACK_MANAGER:RegisterCallback(PVP.name.."_OnAddOnLoaded", function()
 
 						if not cool then
 							AddMenuItem(GetString(SI_CHAT_PLAYER_CONTEXT_ADD_TO_COOL), function()
-								d("Added to COOL: "..PVP:GetFormattedName(PVP.SV.playersDB[rawName].unitName)..PVP.SV.playersDB[rawName].unitAccName.."!")
+								chat:Printf("Added to COOL: %s%s!", PVP:GetFormattedName(PVP.SV.playersDB[rawName].unitName), PVP.SV.playersDB[rawName].unitAccName)
 								PVP.SV.coolList[rawName] = PVP.SV.playersDB[rawName].unitAccName
 								PVP:PopulateKOSBuffer()
 								PVP:PopulateReticleOverNamesBuffer()
 							end)
 						else
 							AddMenuItem(GetString(SI_CHAT_PLAYER_CONTEXT_REMOVE_FROM_COOL), function()
-								d("Removed from COOL: "..PVP:GetFormattedName(PVP.SV.playersDB[rawName].unitName)..PVP.SV.playersDB[rawName].unitAccName.."!")
+								chat:Printf("Removed from COOL: %s%s!", PVP:GetFormattedName(PVP.SV.playersDB[rawName].unitName), PVP.SV.playersDB[rawName].unitAccName)
 								local cool = PVP:FindInCOOL(rawName)
 								if cool then
 									PVP.SV.coolList[cool] = nil
