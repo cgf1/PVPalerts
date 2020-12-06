@@ -3187,6 +3187,9 @@ end)
 
 function PVP:InitializeSV()
 	self.SV = ZO_SavedVars:NewAccountWide("PvpAlertsSettings", self.version, "Settings", self.defaults)
+	if self.SV.guild3d == nil then
+	    self.SV.guild3d = true
+	end
 	if not self.SV.coolList then self.SV.coolList = {} end
 	if not self.SV.CP then self.SV.CP = {} end
 	if self.SV.enabled then self:InitializeChat() end

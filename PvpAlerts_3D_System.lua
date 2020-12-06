@@ -16,7 +16,6 @@ local GetKeepKeysByIndex = GetKeepKeysByIndex
 local GetKeepPinInfo = GetKeepPinInfo
 local GetPlayerLocationName = GetPlayerLocationName
 
-
 local ceil = math.ceil
 local asin = math.asin
 local acos = math.cos
@@ -43,6 +42,8 @@ local playerHeight = 2
 local maxDistance = 0.0005
 local effectiveMaxDistance = 0.85*maxDistance
 local effectiveMaxDistanceFar = 1.15*maxDistance
+
+local mydname = GetUnitDisplayName("player")
 
 local PVP_MAPINDEX_CYRODIIL = 14
 local PVP_MAPINDEX_IC = 26
@@ -1023,10 +1024,12 @@ local function GetControlTexture(control, data, iconType)
 		elseif type == 'GROUP' then
 			if control.params.isGroupLeader then
 				texture = 'esoui/art/icons/mapkey/mapkey_groupleader.dds'
-			elseif data.unitClass then
-				texture = PVP.classIconsLarge[data.unitClass]
-			else
+			elseif not data.unitClass then
 				texture = 'esoui/art/icons/mapkey/mapkey_groupmember.dds'
+			elseif data.unitClass == 0 then
+				texture = PVP:GetGlobal('PVP_EYE_ICON')
+			else
+				texture = PVP.classIconsLarge[data.unitClass]
 			end
 		elseif type == 'SHADOW_IMAGE' then
 			local iconBG = control:GetNamedChild('BG')
@@ -3508,13 +3511,44 @@ local function FindNearbyKeeps()
 	if next(foundKeeps) ~= nil then return foundKeeps else return false end
 end
 
+local guildid = 674699
+local guildtrack = {"@Smilier", "@JamesHowser"}
+local function GetGuildPlayerPosition(name)
+	local mix = GetGuildMemberIndexFromDisplayName(guildid, name)
+	if not mix then
+	    return 0, 0
+	end
+	local n, note = GetGuildMemberInfo(guildid, mix)
+	local tbl = {}
+	for token in note:gmatch("[^%s]+") do
+	    tbl[#tbl + 1] = token
+	end
+-- df(">>***** %s/%s %d %f %f", name, n, mix, tonumber(tbl[2]), tonumber(tbl[3]))
+	return tonumber(tbl[2]), tonumber(tbl[3])
+end
+
+local adjusted_MAX_DISTANCE
+local function POIGroupInsert(foundPOI, groupTag, selfX, selfY, targetX, targetY, name, isGroupLeader, isUnitDead, unitClass, isInCombat, shouldShowGroupLeaderAtAnyDistance, showit)
+-- if groupTag == "group21" or groupTag == "group22" then df("****** HERE %s %s %s %s*******", groupTag, tostring(targetX), tostring(targetY), tostring(showit)) end
+	if targetX~=0 and targetY~=0 and showit then
+		local unitSpecColor = PVP:GetUnitSpecColor(name)
+		local distance = PVP:GetCoordsDistance2D(selfX, selfY, targetX, targetY)
+		if distance<=adjusted_MAX_DISTANCE and (PVP.SV.allgroup3d or shouldShowGroupLeaderAtAnyDistance or (distance>=0.05*adjusted_MAX_DISTANCE)) then
+		-- if distance<=adjusted_MAX_DISTANCE*2 and (distance>=0.1*adjusted_MAX_DISTANCE) then
+			table.insert(foundPOI, {pinType = PVP_PINTYPE_GROUP, targetX = targetX, targetY = targetY, distance = distance, name = name, isGroupLeader = isGroupLeader,
+				     isUnitDead = isUnitDead, unitClass = unitClass, unitSpecColor = unitSpecColor, isInCombat = isInCombat, groupTag = groupTag})
+		end
+	end
+end
+
 local function FindNearbyPOIs()
 	local scaleAdjustment = GetCurrentMapScaleAdjustment()
-	local adjusted_MAX_DISTANCE = scaleAdjustment*PVP_MAX_DISTANCE
 	local adjusted_POI_MAX_DISTANCE = scaleAdjustment*PVP.SV.max3DIconsPOIDistance
 	local currentMapIndex = GetCurrentMapIndex()
 	local foundPOI = {}
 	local selfX, selfY = GetMapPlayerPosition('player')
+
+	adjusted_MAX_DISTANCE = scaleAdjustment*PVP_MAX_DISTANCE
 
 	if IsActiveWorldBattleground() then
 		-- local bgId = GetCurrentBattlegroundId()
@@ -3576,7 +3610,6 @@ local function FindNearbyPOIs()
 		end
 
 	else
-
 		for i = 1, GetNumKillLocations() do
 			local pinType, targetX, targetY = GetKillLocationPinInfo(i)
 			if targetX~=0 and targetY~=0 then
@@ -3614,24 +3647,22 @@ local function FindNearbyPOIs()
 				for i = 1, groupZize do
 					local groupTag = GetGroupUnitTagByIndex(i)
 					if GetUnitZone(groupTag) == playerZone then
-						local targetX, targetY = GetMapPlayerPosition(groupTag)
-						local name = GetRawUnitName(groupTag)
-						local isGroupLeader = IsUnitGroupLeader(groupTag)
-						local isUnitDead = IsUnitDead(groupTag)
-						local unitClass = GetUnitClassId(groupTag)
-						local unitSpecColor = PVP:GetUnitSpecColor(name)
-						local isInCombat = IsUnitInCombat(groupTag)
-						local shouldShowGroupLeaderAtAnyDistance = PVP.SV.groupleader3d and isGroupLeader
-						if targetX~=0 and targetY~=0 and not (PVP.SV.onlyGroupLeader3d and not isGroupLeader) then
-							local distance = PVP:GetCoordsDistance2D(selfX, selfY, targetX, targetY)
-							if distance<=adjusted_MAX_DISTANCE and (PVP.SV.allgroup3d or shouldShowGroupLeaderAtAnyDistance or (distance>=0.05*adjusted_MAX_DISTANCE)) then
-							-- if distance<=adjusted_MAX_DISTANCE*2 and (distance>=0.1*adjusted_MAX_DISTANCE) then
-								table.insert(foundPOI, {pinType = PVP_PINTYPE_GROUP, targetX = targetX, targetY = targetY, distance = distance, name = name, isGroupLeader = isGroupLeader, isUnitDead = isUnitDead, unitClass = unitClass, unitSpecColor = unitSpecColor, isInCombat = isInCombat, groupTag = groupTag})
-							end
-						end
+						local x, y = GetMapPlayerPosition(groupTag)
+						POIGroupInsert(foundPOI, groupTag, selfX, selfY, x, y, GetRawUnitName(groupTag), IsUnitGroupLeader(groupTag), IsUnitDead(groupTag),
+							       GetUnitClassId(groupTag), IsUnitInCombat(groupTag), PVP.SV.groupleader3d and isGroupLeader,
+							       not (PVP.SV.onlyGroupLeader3d and not isGroupLeader))
 					end
 				end
 			end
+		end
+		if PVP.SV.guild3d then
+		    for i, n in ipairs(guildtrack) do
+			if n ~= mydname then
+			    local x, y = GetGuildPlayerPosition(n)
+			    local unitTag = string.format("group%d", 20 + i)
+			    POIGroupInsert(foundPOI, unitTag, selfX, selfY, x, y, n, false, false, 0, false, true, true, true)
+			end
+		    end
 		end
 
 		if PVP.shadowInfo then
