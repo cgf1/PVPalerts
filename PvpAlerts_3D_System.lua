@@ -3501,10 +3501,10 @@ local function FindNearbyKeeps()
 
 			-- if distance<=scaleAdjustment*PVP_MAX_DISTANCE then
 			local isDistrict = GetKeepType(keepId) == KEEPTYPE_IMPERIAL_CITY_DISTRICT
-			local showDistrict = isDistrict and not PVP:IsInSewers() and (IsInImperialCity() or (distance<=scaleAdjustment*0.12 and distance<=scaleAdjustment*PVP.SV.max3DIconsDistance))
+			local showDistrict = isDistrict and not PVP:IsInSewers() and IsInImperialCity()
 
 
-			if showDistrict or (not IsInImperialCity() and not isDistrict and (isKeep and distance<=scaleAdjustment*PVP.SV.max3DIconsDistance) or (not isKeep and distance<=scaleAdjustment*PVP.SV.maxResource3DIconsDistance)) then
+			if showDistrict then
 				foundKeeps[keepId] = distance
 			end
 		end
