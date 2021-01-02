@@ -3,6 +3,8 @@ local PVP = PVP_Alerts_Main_Table
 PVP.LMP = LibMapPing
 PVP.GPS = LibGPS2
 
+local chat = PVP.CHAT
+
 local Set3DRenderSpaceToCurrentCamera = Set3DRenderSpaceToCurrentCamera
 local GetPlayerCameraHeading = GetPlayerCameraHeading
 local GetCurrentMapIndex = GetCurrentMapIndex
@@ -3527,6 +3529,22 @@ local function GetGuildPlayerPosition(name)
 	return tonumber(tbl[2]), tonumber(tbl[3])
 end
 
+local last_update = 0
+local last_x, last_y
+local UPDATE_TIME = 10
+local function UpdateGuildPos()
+    local now = GetTimeStamp()
+    local x, y = GetMapPlayerPosition("player")
+    if (now - last_update) > UPDATE_TIME and (last_x ~= x or last_y ~= y) then
+	    local msg = string.format("POS %f %f", x, y)
+	    local mix = GetPlayerGuildMemberIndex(guildid)
+	    chat:Printf("XXX guildid %d gix %d msg %s", guildid, mix, msg)
+	    SetGuildMemberNote(guildid, mix, msg)
+	    last_update = now
+	    last_x = x last_y = y
+    end
+
+end
 local adjusted_MAX_DISTANCE
 local function POIGroupInsert(foundPOI, groupTag, selfX, selfY, targetX, targetY, name, isGroupLeader, isUnitDead, unitClass, isInCombat, shouldShowGroupLeaderAtAnyDistance, showit)
 -- if groupTag == "group21" or groupTag == "group22" then df("****** HERE %s %s %s %s*******", groupTag, tostring(targetX), tostring(targetY), tostring(showit)) end
@@ -3655,7 +3673,8 @@ local function FindNearbyPOIs()
 				end
 			end
 		end
-		if PVP.SV.guild3d then
+		if false and PVP.SV.guild3d then
+		    UpdateGuildPos()
 		    for i, n in ipairs(guildtrack) do
 			if n ~= mydname then
 			    local x, y = GetGuildPlayerPosition(n)

@@ -8,6 +8,7 @@ PVP.name = "PvpAlerts"
 
 local LCM = LibChatMessage
 local chat = LCM.Create('PvpAlerts', 'PVP')
+PVP.CHAT = chat
 
 -- // initialization of global variables for this file //
 
@@ -209,12 +210,20 @@ function PVP:RefreshStoredNumbers(currentTime) -- // output of the number of sto
 		count=count+1
 	end
 	if count ~= lastcount or countAcc ~= lastcountAcc then
-	    chat:Print('**********************')
-	    chat:Printf('Stored players: %d',count)
-	    chat:Printf('Stored accounts: %d',countAcc)
-	    chat:Print('**********************')
+	    local diff, diffAcc
+	    if lastcount == nil then
+		diff = 0
+		diffAcc = 0
+	    else
+		diff = count - lastcount
+		diffAcc = countAcc - lastcountAcc
+	    end
 	    lastcount = count
-	    lastcountAcc = lastcountAcc
+	    lastcountAcc = countAcc
+	    chat:Print('************************')
+	    chat:Printf('Stored players: %d (%d)',count, diff)
+	    chat:Printf('Stored accounts: %d (%d)',countAcc, diffAcc)
+	    chat:Print('************************')
 	end
 end
 
