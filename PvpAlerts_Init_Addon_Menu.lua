@@ -35,7 +35,7 @@ function PVP:InitializeAddonMenu()
 
 			self:FullReset()
 			self:InitControls()
-		end,
+		end
 	}
 
 	local optionsPanel = LAM2:RegisterAddonPanel("Pvp_Alerts", panelData)
