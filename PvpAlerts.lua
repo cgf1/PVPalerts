@@ -3,7 +3,7 @@
 local PVP = PVP_Alerts_Main_Table
 
 PVP.version=1.01
-PVP.textVersion="3.76"
+PVP.textVersion="3.77"
 PVP.name = "PvpAlerts"
 
 local LCM = LibChatMessage

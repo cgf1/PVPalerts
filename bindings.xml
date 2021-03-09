@@ -54,7 +54,7 @@
 			<Action name="PVP_ALERTS_RESPAWN_AT_CAMP" hideAction="true" inheritsBindFrom="UI_SHORTCUT_QUICK_SLOTS" rebindable="false">
 		<Down>PVP_Death_ButtonsButton1:OnClicked()</Down>
 	    </Action>
-			<Action name="PVP_ALERTS_RESPAWN_AT_KEEP" hideAction="true" inheritsBindFrom="UI_SHORTCUT_STACK_ALL" rebindable="false">
+			<Action name="PVP_ALERTS_RESPAWN_AT_KEEP" hideAction="true" inheritsBindFrom="UI_SHORTCUT_QUINARY" rebindable="false">
 		<Down>PVP_Death_ButtonsButton2:OnClicked()</Down>
 	    </Action>
 			<Action name="PVP_ALERTS_TOGGLE_BG_SCOREBOARD_HIDDEN" inheritsBindFrom="PVP_ALERTS_TOGGLE_BG_SCOREBOARD" hideAction="true">
