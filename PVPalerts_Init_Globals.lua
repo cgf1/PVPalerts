@@ -40,11 +40,11 @@ PVP.globalConstants = {
 
 	['PVP_ATTACKER']="/esoui/art/compass/ava_returnpoint_ebonheart.dds",
 	['PVP_RESURRECT']="/esoui/art/compass/ava_flagcarrier_neutral.dds",
-	['PVP_MONKEY'] = "PvpAlerts/textures/miz.dds",
-	['PVP_BUNNY'] = "PvpAlerts/textures/bunny.dds",
-	['PVP_HACK'] = "PvpAlerts/textures/hacking.dds",
-	['PVP_HACK_DENIED'] = "PvpAlerts/textures/hacking_denied.dds",
-	['PVP_6STAR']="PvpAlerts/textures/6star1.dds",
+	['PVP_MONKEY'] = "PVPalerts/textures/miz.dds",
+	['PVP_BUNNY'] = "PVPalerts/textures/bunny.dds",
+	['PVP_HACK'] = "PVPalerts/textures/hacking.dds",
+	['PVP_HACK_DENIED'] = "PVPalerts/textures/hacking_denied.dds",
+	['PVP_6STAR']="PVPalerts/textures/6star1.dds",
 
 	['PVP_AP']="esoui/art/currency/alliancepoints_32.dds",
 
@@ -55,7 +55,7 @@ PVP.globalConstants = {
 	['PVP_LARGE_NUMBER_FONT'] = "$(BOLD_FONT)|38|thick-outline",
 
 	['PVP_DEFAULT_ICON'] = "esoui/art/icons/ability_nightblade_008.dds",
-	['PVP_DEFAULT_HEAVY_ATTACK_ICON'] = "PvpAlerts/textures/staff_3.dds",
+	['PVP_DEFAULT_HEAVY_ATTACK_ICON'] = "PVPalerts/textures/staff_3.dds",
 
 	['PVP_CONTINUOUS_ATTACK_ID_1'] = 39249,
 	['PVP_CONTINUOUS_ATTACK_ID_2'] = 45617,
@@ -82,7 +82,7 @@ PVP.globalConstants = {
 	['PVP_PINTYPE_SHADOWIMAGE'] = 6673,
 	['PVP_PINTYPE_BRIDGE'] = 6674,
 
-	['PVP_TEXTURES_PATH'] = "PvpAlerts/textures/",
+	['PVP_TEXTURES_PATH'] = "PVPalerts/textures/",
 
 	['FLAGTYPE_OTHER'] = 1001,
 	['FLAGTYPE_NAVE'] = 1002,

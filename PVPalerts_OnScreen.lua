@@ -240,11 +240,11 @@ function PVP:ManageOnScreen(iconTexture, scrollTexture, captureTexture, naveFlag
 		if otherFlag then
 			control.other:SetColor(PVP:GetTrueAllianceColors(otherAlliance))
 			control.other:SetTexture(otherFlag)
-			control.flags:SetTexture('PvpAlerts/textures/3barsTemplateLargeFilled.dds')
-			control.middle:SetTexture('PvpAlerts/textures/3barsMiddleLineLarge.dds')
+			control.flags:SetTexture('PVPalerts/textures/3barsTemplateLargeFilled.dds')
+			control.middle:SetTexture('PVPalerts/textures/3barsMiddleLineLarge.dds')
 		else
-			control.flags:SetTexture('PvpAlerts/textures/2barsTemplateLargeFilled.dds')
-			control.middle:SetTexture('PvpAlerts/textures/2barsMiddleLineLarge.dds')
+			control.flags:SetTexture('PVPalerts/textures/2barsTemplateLargeFilled.dds')
+			control.middle:SetTexture('PVPalerts/textures/2barsMiddleLineLarge.dds')
 		end
 	end
 

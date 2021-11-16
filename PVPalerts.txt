@@ -1,29 +1,29 @@
 ## APIVersion: 100034 100035
-## Title: Miat's Pvp Alerts
-## Author: Dorrino, Valandil
+## Title: PVP Alerts
+## Author: Valandil
 ## AddonVersion: 30077
-## SavedVariables: PvpAlertsSettings
+## SavedVariables: PVPalerts_Settings
 ## OptionalDependsOn: LibAddonMenu-2.0
 ## DependsOn: LibAddonMenu-2.0 LibGPS LibMapPing LibChatMessage
 ## OptionalDependsOn: pChat tom
 
-PvpAlerts_Init_Globals.lua
-PvpAlerts.lua
+PVPalerts_Init_Globals.lua
+PVPalerts.lua
 
-PvpAlerts_Constants.lua
-PvpAlerts_Utility_Functions.lua
-PvpAlerts_Init_Controls.lua
-PvpAlerts_KOS_System.lua
-PvpAlerts_Capture_Frame.lua
-PvpAlerts_3D_System.lua
-PvpAlerts_Camp_Frame.lua
-PvpAlerts_Spec_Detection.lua
-PvpAlerts_Init_Addon_Menu.lua
-PvpAlerts_XML_Functions.lua
-PvpAlerts_Battlegorund_Scoreboard.lua
-PvpAlerts_Scoreboard.xml
-PvpAlerts_OnScreen.lua
-PvpAlerts.xml
+PVPalerts_Constants.lua
+PVPalerts_Utility_Functions.lua
+PVPalerts_Init_Controls.lua
+PVPalerts_KOS_System.lua
+PVPalerts_Capture_Frame.lua
+PVPalerts_3D_System.lua
+PVPalerts_Camp_Frame.lua
+PVPalerts_Spec_Detection.lua
+PVPalerts_Init_Addon_Menu.lua
+PVPalerts_XML_Functions.lua
+PVPalerts_Battlegorund_Scoreboard.lua
+PVPalerts_Scoreboard.xml
+PVPalerts_OnScreen.lua
+PVPalerts.xml
 bindings.xml
 textures/2barsMiddleLineLarge.dds
 textures/2barsTemplateLargeFilled.dds

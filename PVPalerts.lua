@@ -4,10 +4,10 @@ local PVP = PVP_Alerts_Main_Table
 
 PVP.version=1.01
 PVP.textVersion="3.77"
-PVP.name = "PvpAlerts"
+PVP.name = "PVPalerts"
 
 local LCM = LibChatMessage
-local chat = LCM.Create('PvpAlerts', 'PVP')
+local chat = LCM.Create('PVPalerts', 'PVP')
 PVP.CHAT = chat
 
 -- // initialization of global variables for this file //
@@ -64,29 +64,6 @@ end
 function PVP.OnUpdate() -- // main loop of the addon, is called each 250ms //
 	if not PVP.SV.enabled or not PVP:IsInPVPZone() then return end
 
-	local function sma(period)
-		local t = {}
-		function sum(a, ...)
-			if a then return a+sum(...) else return 0 end
-		end
-		function average(n)
-			if #t == period then table.remove(t, 1) end
-			t[#t + 1] = n
-			return sum(unpack(t)) / #t, math.max(unpack(t))
-		end
-		return average
-	end
-
-	local start_main = GetGameTimeMilliseconds()
-	if not PVP.addonPerformance then
-		PVP.addonPerformance = {}
-		PVP.addonPerformance.maxProcessingTime = 0
-		-- PVP.addonPerformance.averageCounts = 0
-		-- PVP.addonPerformance.averageSum = 0
-		-- PVP.addonPerformance.maxMinute = 0
-		PVP.addonPerformance.sma = sma(120)
-	end
-
 	if not PVP.playerName then PVP.playerName = GetRawUnitName('player') end
 
 	if PVP:IsMalformedName(PVP.playerName) and PVP.bgNames then  -- // band-aid attempt to work around zos glitch in bgs //
@@ -118,83 +95,6 @@ function PVP.OnUpdate() -- // main loop of the addon, is called each 250ms //
 	PVP:ProcessDistrictNamePrompt() -- // a tiny feature to check if you mousever a district ladder, while in an ic lobby //
 	local start3d = GetGameTimeMilliseconds()
 	PVP:UpdateNearbyKeepsAndPOIs() -- // 3d icons main loop //
-	local end_all = GetGameTimeMilliseconds()
-	if PVP.SV.showPerformance then
-		chat:Print('----------------------------')
-		chat:Printf('Main loop time = %dms', start3d - start_main)
-		chat:Printf('Main refresh = %dms', end_refresh - start_refresh)
-		chat:Printf('Main Camp = %dms', PVP.endCamp - PVP.endN)
-		chat:Printf('Main Counter = %dms', PVP.endCounter - PVP.endCamp)
-		chat:Printf('Main Counter Func = %dms', PVP.afterC - PVP.beforeC)
-		chat:Printf('Main KOS = %dms', PVP.endKos - PVP.endCounter)
-		chat:Printf('3d loop time = %dms', end_all - start3d)
-
-		chat:Printf('New Marker time = %dms', PVP.afterMarker - PVP.beforeMarker)
-		if PVP.afterPoi and PVP.beforePoi then
-			chat:Printf('New Poi time = %dms', PVP.afterPoi - PVP.beforePoi)
-		end
-		local c = 0
-		for k,v in pairs (PVP.currentNearbyKeepIds) do
-			c = c + 1
-		end
-		chat:Print('#currentNearbyKeepIds = %dms', c)
-		c = 0
-		for k,v in pairs (PVP.currentNearbyPOIIds) do
-			c = c + 1
-		end
-		chat:Printf('#currentNearbyPOIIds = %dms', c)
-		c = 0
-		for k,v in pairs (PVP.currentObjectivesIds) do
-			c = c + 1
-		end
-		chat:Printf('#currentObjectivesIds = %dms', c)
-		c = 0
-		if PVP.currentMapPings then
-			for k,v in pairs (PVP.currentMapPings) do
-				c = c + 1
-			end
-			chat:Printf('#currentMapPings = %dms', c)
-		end
-
-		chat:Printf('Cycles = %d', PVP.cc)
-		-- chat:Printf('M21 = '..tostring(PVP.m2 - PVP.m1))
-		-- chat:Printf('M32 = '..tostring(PVP.m3 - PVP.m2))
-		-- chat:Printf('M43 = '..tostring(PVP.m4 - PVP.m3))
-		-- chat:Printf('M54 = '..tostring(PVP.m5 - PVP.m4))
-		-- chat:Printf('M65 = '..tostring(PVP.m6 - PVP.m5))
-		-- chat:Printf('M76 = '..tostring(PVP.m7 - PVP.m6))
-		-- chat:Printf('M87 = '..tostring(PVP.m8 - PVP.m7))
-		-- chat:Printf('M81 = '..tostring(PVP.m8 - PVP.m1))
-
-		-- chat:Printf('PVP.afterKeeps3d = '..tostring(PVP.afterKeeps3d - PVP.afterInit3d))
-		-- chat:Printf('PVP.afterPoi3d = '..tostring(PVP.afterPoi3d - PVP.afterKeeps3d))
-		-- chat:Printf('PVP.afterKeepsProc3d = '..tostring(PVP.afterKeepsProc3d - PVP.afterPoi3d))
-		-- chat:Printf('PVP.afterPoiProc3d = '..tostring(PVP.afterPoiProc3d - PVP.afterKeepsProc3d))
-		if (end_all - start_main) > PVP.addonPerformance.maxProcessingTime then PVP.addonPerformance.maxProcessingTime = (end_all - start_main) end
-		-- if (end_all - start_main) > PVP.addonPerformance.maxMinute then PVP.addonPerformance.maxMinute = (end_all - start_main) end
-		chat:Printf('Max processing time = %dms', PVP.addonPerformance.maxProcessingTime)
-		-- PVP.addonPerformance.averageCounts = PVP.addonPerformance.averageCounts + 1
-		-- PVP.addonPerformance.averageSum = PVP.addonPerformance.averageSum + (end_all - start_main)
-
-		-- if PVP.addonPerformance.averageCounts >= 240 then
-			-- chat:Printf('Average in last minute processing time = '..tostring(math.ceil(PVP.addonPerformance.averageSum/PVP.addonPerformance.averageCounts)))
-			-- chat:Printf('Max in last minute processing time = '..tostring(PVP.addonPerformance.maxMinute))
-		local avg, maxMin = PVP.addonPerformance.sma(end_all - start_main)
-		chat:Printf('Last 30 sec average processing time = %dms', math.ceil(avg))
-		chat:Printf('Last 30 sec max processing time = %dms', maxMin)
-			-- PVP.addonPerformance.averageCounts = 0
-			-- PVP.addonPerformance.maxMinute = 0
-		-- end
-
-		if PVP.controls3DPool then
-			chat:Printf('3d Objects Count = ', PVP.controls3DPool:GetActiveObjectCount())
-			-- if PVP.currentCameraInfo and PVP.currentCameraInfo.performance then
-				-- chat:Printf('Measuring time = '..tostring(PVP.currentCameraInfo.performance))
-			-- end
-		end
-		chat:Printf('Performance loss = %.3f%', (end_all - start_main)/2.5)
-		chat:Print('----------------------------')
-	end
 	-- PVP:TestThisScale()
 end
 
@@ -1346,7 +1246,7 @@ function PVP:OnCombat(eventCode, result, isError, abilityName, abilityGraphic, a
 		end
 	end
 
-	local function ProcessPvpBuffs()
+	local function ProcessPVPBuffs()
 		if self:ShouldShowCampFrame() and targetName==self.playerName and result == ACTION_RESULT_EFFECT_GAINED_DURATION then
 			if abilityId == PVP_CONTINUOUS_ATTACK_ID_1 or abilityId == PVP_CONTINUOUS_ATTACK_ID_2 then
 				-- if PVP.keepTickPending then
@@ -1444,7 +1344,7 @@ function PVP:OnCombat(eventCode, result, isError, abilityName, abilityGraphic, a
 	ProcessAnonymousEvents()
 	ProcessSources()
 	ProcessTargets()
-	ProcessPvpBuffs()
+	ProcessPVPBuffs()
 
 	if self.SV.showAttacks and targetName==self.playerName and sourceName~=self.playerName then
 		ProcessImportantAttacks()
@@ -2085,7 +1985,7 @@ function PVP:OnOff()
 			EVENT_MANAGER:RegisterForEvent(self.name, EVENT_ALLIANCE_POINT_UPDATE, function(...) self:OnAlliancePointUpdate(...) end)
 			EVENT_MANAGER:RegisterForEvent(self.name, EVENT_ACTION_SLOT_ABILITY_USED, function(...) self:OnAbilityUsed(...) end)
 			EVENT_MANAGER:RegisterForEvent(self.name, EVENT_LEADER_UPDATE, function () PVP:InitControls() end)
-			EVENT_MANAGER:RegisterForUpdate(self.name, 250, PVP.OnUpdate)
+			EVENT_MANAGER:RegisterForUpdate(self.name, 1000, PVP.OnUpdate)
 			DEATH_FRAGMENT:RegisterCallback("StateChange", OnDeathFragmentStateChange)
 			PVP_SCOREBOARD_FRAGMENT:RegisterCallback("StateChange", ScoreboardFragmentCallback)
 			CALLBACK_MANAGER:RegisterCallback("OnWorldMapChanged", OnWorldMapChangedCallback)
@@ -2992,7 +2892,7 @@ end
 function PVP:InitEnabledAddon()
 	if PVP.addonEnabled then
 		EVENT_MANAGER:UnregisterForUpdate(self.name)
-		EVENT_MANAGER:RegisterForUpdate(self.name, 250, PVP.OnUpdate)
+		EVENT_MANAGER:RegisterForUpdate(self.name, 1000, PVP.OnUpdate)
 		PVP:Init3D()
 		PVP:InitControls()
 		PVP.playerName=GetRawUnitName('player')
@@ -3195,7 +3095,7 @@ CALLBACK_MANAGER:RegisterCallback(PVP.name.."_OnAddOnLoaded", function()
 end)
 
 function PVP:InitializeSV()
-	self.SV = ZO_SavedVars:NewAccountWide("PvpAlertsSettings", self.version, "Settings", self.defaults)
+	self.SV = ZO_SavedVars:NewAccountWide("PVPalerts_Settings", self.version, "Settings", self.defaults)
 	if self.SV.guild3d == nil then
 	    self.SV.guild3d = true
 	end

@@ -185,12 +185,12 @@ function PVP:Who(name, contains)
 	local foundPlayerNames, KOSIndex, looseMatch, stringPositionsArray
 
 	if name == "" then
-		d('No name provided!')
+		chat:Print('No name provided!')
 		return
 	end
 
 	if string.len(name) <= 2 then
-		d('Name has to be longer than 2 characters!')
+		chat:Print('Name has to be longer than 2 characters!')
 		return
 	end
 
@@ -205,9 +205,9 @@ function PVP:Who(name, contains)
 
 	if (not foundPlayerNames or #foundPlayerNames == 0) and (not looseMatch or #looseMatch == 0) then
 		if isDecorated then
-			d('No such account in the database!')
+			chat:Print('No such account in the database!')
 		else
-			d('No such player in the database!')
+			chat:Print('No such player in the database!')
 		end
 		return
 	end
@@ -217,12 +217,12 @@ function PVP:Who(name, contains)
 		local accName = PVP.SV.playersDB[foundPlayerNames[1]].unitAccName
 		if self.SV.CP[accName] then currentCP = ' with '..PVP:Colorize(self.SV.CP[accName]..'cp', 'FFFFFF')..',' end
 		if isDecorated then
-			d('The player '..PVP:GetFormattedAccountNameLink(accName, "FFFFFF")..currentCP..' has '..tostring(#foundPlayerNames)..' known character'..(#foundPlayerNames>1 and 's' or '')..':')
+			chat:Print('The player '..PVP:GetFormattedAccountNameLink(accName, "FFFFFF")..currentCP..' has '..tostring(#foundPlayerNames)..' known character'..(#foundPlayerNames>1 and 's' or '')..':')
 		else
-			d('Found '..PVP:GetFormattedAccountNameLink(accName, "FFFFFF")..' account'..currentCP..' for the player '..PVP:Colorize(zo_strformat(SI_UNIT_NAME, trimmedName), 'FF00FF')..' that has '..PVP:Colorize(#foundPlayerNames, 'FFFFFF')..' known characters:')
+			chat:Print('Found '..PVP:GetFormattedAccountNameLink(accName, "FFFFFF")..' account'..currentCP..' for the player '..PVP:Colorize(zo_strformat(SI_UNIT_NAME, trimmedName), 'FF00FF')..' that has '..PVP:Colorize(#foundPlayerNames, 'FFFFFF')..' known characters:')
 		end
 		for i=1,#foundPlayerNames do
-			d(tostring(i)..'. '..GetCharLink(foundPlayerNames[i]))
+			chat:Print(tostring(i)..'. '..GetCharLink(foundPlayerNames[i]))
 		end
 
 	else -- multiple players information returned
@@ -230,7 +230,7 @@ function PVP:Who(name, contains)
 		local patternLength = string.len (patternName)
 		local highlightedName = PVP:Colorize(patternName, 'FF00FF')
 
-		d('Found '..tostring(#foundPlayerNames+#looseMatch)..' players, similar to '..highlightedName..':')
+		chat:Print('Found '..tostring(#foundPlayerNames+#looseMatch)..' players, similar to '..highlightedName..':')
 
 		for i=1,#foundPlayerNames do
 			local currentAccName = PVP.SV.playersDB[foundPlayerNames[i]].unitAccName
@@ -240,7 +240,7 @@ function PVP:Who(name, contains)
 
 			local nameLink = GetCharAccLink(currentName)
 
-			d(tostring(i)..'. '..nameLink..currentAccCP)
+			chat:Print(tostring(i)..'. '..nameLink..currentAccCP)
 		end
 
 		if #looseMatch ~= 0 then
@@ -295,7 +295,7 @@ function PVP:Who(name, contains)
 					nameLink = GetCharAccLink(currentName)
 				end
 
-				d(tostring(i)..'. '..nameLink..currentAccCP)
+				chat:Print(tostring(i)..'. '..nameLink..currentAccCP)
 			end
 		end
 	end
@@ -352,9 +352,9 @@ function PVP:CheckKOSValidity(playerName)
 		end
 
 		if #foundNames ~=0 then
-			d('Found multiple names. Please use account name to add the desired person:')
+			chat:Print('Found multiple names. Please use account name to add the desired person:')
 			for i = 1, #foundNames do
-				d(tostring(i)..'. '..self:GetFormattedClassNameLink(foundNames[i], self:NameToAllianceColor(foundNames[i]))..self:GetFormattedAccountNameLink(PVP.SV.playersDB[foundNames[i]].unitAccName, "FFFFFF"))
+				chat:Print(tostring(i)..'. '..self:GetFormattedClassNameLink(foundNames[i], self:NameToAllianceColor(foundNames[i]))..self:GetFormattedAccountNameLink(PVP.SV.playersDB[foundNames[i]].unitAccName, "FFFFFF"))
 			end
 		end
 
@@ -435,24 +435,24 @@ function PVP:FindInCOOL(playerName)
 end
 
 function PVP:AddKOS(playerName, isSlashCommand)
-	if not self.SV.showKOSFrame then d('KOS/COOL system is disabled!') end
+	if not self.SV.showKOSFrame then chat:Print('KOS/COOL system is disabled!') end
 
-	if not playerName or playerName=="" then d("Name was not provided!") return end
+	if not playerName or playerName=="" then chat:Print("Name was not provided!") return end
 
 	local rawName, isInKOS, isAmbiguous, isMultiple = self:CheckKOSValidity(playerName)
 
 	if not rawName then
-		if not isMultiple then d("This player is not in the database!") end
+		if not isMultiple then chat:Print("This player is not in the database!") end
 		return
 	end
 
-	if isAmbiguous then d("The name is ambiguous!") return end
+	if isAmbiguous then chat:Print("The name is ambiguous!") return end
 
-	-- if isInKOS then d('This account is already in KOS as: '..self:GetFormattedName(rawName).."!") return end
+	-- if isInKOS then chat:Print('This account is already in KOS as: '..self:GetFormattedName(rawName).."!") return end
 
 	local cool = self:FindInCOOL(rawName)
 	if cool then
-		d("Removed from COOL: "..self:GetFormattedName(self.SV.playersDB[cool].unitName)..self.SV.playersDB[cool].unitAccName.."!")
+		chat:Print("Removed from COOL: "..self:GetFormattedName(self.SV.playersDB[cool].unitName)..self.SV.playersDB[cool].unitAccName.."!")
 		self.SV.coolList[cool] = nil
 		self:PopulateReticleOverNamesBuffer()
 	end
@@ -468,33 +468,33 @@ function PVP:AddKOS(playerName, isSlashCommand)
 			end
 		end
 		table.insert(self.SV.KOSList, {unitName=rawName, unitAccName=self.SV.playersDB[rawName].unitAccName, unitId=unitId})
-		d("Added to KOS: "..self:GetFormattedName(rawName)..self.SV.playersDB[rawName].unitAccName.."!")
+		chat:Print("Added to KOS: "..self:GetFormattedName(rawName)..self.SV.playersDB[rawName].unitAccName.."!")
 	else
-		d("Removed from KOS: "..self:GetFormattedName(rawName)..self.SV.playersDB[rawName].unitAccName.."!")
+		chat:Print("Removed from KOS: "..self:GetFormattedName(rawName)..self.SV.playersDB[rawName].unitAccName.."!")
 		table.remove(self.SV.KOSList, isInKOS)
 	end
 	self:PopulateKOSBuffer()
 end
 
 function PVP:AddCOOL(playerName, isSlashCommand)
-	if not self.SV.showKOSFrame then d('KOS/COOL system is disabled!') end
+	if not self.SV.showKOSFrame then chat:Print('KOS/COOL system is disabled!') end
 
-	if not playerName or playerName=="" then d("Name was not provided!") return end
+	if not playerName or playerName=="" then chat:Print("Name was not provided!") return end
 
 	local rawName, isInKOS, isAmbiguous, isMultiple = self:CheckKOSValidity(playerName)
 
 	if not rawName then
-		if not isMultiple then d("This player is not in the database!") end
+		if not isMultiple then chat:Print("This player is not in the database!") end
 		return
 	end
 
-	-- if isInKOS then d('This account is already in KOS as: '..self:GetFormattedName(rawName).."!") return end
-	if isAmbiguous then d("The name is ambiguous!") return end
+	-- if isInKOS then chat:Print('This account is already in KOS as: '..self:GetFormattedName(rawName).."!") return end
+	if isAmbiguous then chat:Print("The name is ambiguous!") return end
 
 	if isInKOS then
 		for i=1, #self.SV.KOSList do
 			if self.SV.KOSList[i].unitAccName==self.SV.playersDB[rawName].unitAccName then
-				d("Removed from KOS: "..self:GetFormattedName(self.SV.KOSList[i].unitName)..self.SV.KOSList[i].unitAccName.."!")
+				chat:Print("Removed from KOS: "..self:GetFormattedName(self.SV.KOSList[i].unitName)..self.SV.KOSList[i].unitAccName.."!")
 				table.remove(self.SV.KOSList, i)
 				break
 			end
@@ -506,11 +506,11 @@ function PVP:AddCOOL(playerName, isSlashCommand)
 
 	if not cool then
 		self.SV.coolList[rawName] = self.SV.playersDB[rawName].unitAccName
-		d("Added to COOL: "..self:GetFormattedName(rawName)..self.SV.playersDB[rawName].unitAccName.."!")
+		chat:Print("Added to COOL: "..self:GetFormattedName(rawName)..self.SV.playersDB[rawName].unitAccName.."!")
 	else
-		d("Removed from COOL: "..PVP:GetFormattedName(PVP.SV.playersDB[rawName].unitName)..PVP.SV.playersDB[rawName].unitAccName.."!")
+		chat:Print("Removed from COOL: "..PVP:GetFormattedName(PVP.SV.playersDB[rawName].unitName)..PVP.SV.playersDB[rawName].unitAccName.."!")
 		PVP.SV.coolList[cool] = nil
-		-- d(self:GetFormattedName(rawName)..self.SV.playersDB[rawName].unitAccName.." is already COOL!")
+		-- chat:Print(self:GetFormattedName(rawName)..self.SV.playersDB[rawName].unitAccName.." is already COOL!")
 	end
 
 	self:PopulateKOSBuffer()
@@ -577,7 +577,7 @@ function PVP:FindKOSPlayer(index)
 
 	if self.SV.KOSList[index].unitId==0 and unitId~=0 and self.SV.playKOSSound and (isInNames or self.playerAlliance[unitId]) then
 		if (isInNames and self.SV.playersDB[self.SV.KOSList[index].unitName].unitAlliance==self.allianceOfPlayer) or self.playerAlliance[unitId]==self.allianceOfPlayer or (IsActiveWorldBattleground() and PVP.bgNames and PVP.bgNames[self.SV.KOSList[index].unitName] and PVP.bgNames[self.SV.KOSList[index].unitName] == GetUnitBattlegroundAlliance('player')) then
-			-- d('KOS failed here')
+			-- chat:Print('KOS failed here')
 			if PVP.SV.KOSmode==2 then
 				if currentTime-self.kosSoundDelay>2000 then
 					PlaySound(SOUNDS.CROWN_CRATES_CARD_FLIPPING)
@@ -662,7 +662,7 @@ function PVP:PopulateKOSBuffer()
 						if PVP.kosActivityList[accName].chars[charName].points < alliancePoints then
 							if not PVP.kosActivityList.activeChars[accName] then
 							if self.SV.outputNewKos then
-								d("ACTIVE KOS: "..charName)
+								chat:Print("ACTIVE KOS: "..charName)
 							end
 								PVP.kosActivityList.activeChars[accName] = charName
 							end

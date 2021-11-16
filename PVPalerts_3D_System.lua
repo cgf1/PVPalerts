@@ -641,10 +641,10 @@ local function ProcessDynamicControlPosition(control)
 		bias = 15
 	end
 
-	-- d(control.params.type)
-	-- d(PVP.currentCameraInfo.player3dX)
+	-- chat:Print(control.params.type)
+	-- chat:Print(PVP.currentCameraInfo.player3dX)
 	if control.params.type == 'COMPASS' and PVP.currentCameraInfo and PVP.currentCameraInfo.player3dX and PVP.currentCameraInfo.player3dY then
-		-- d('test')
+		-- chat:Print('test')
 		if control.params.name == 'WEST' then
 			controlX = PVP.currentCameraInfo.cameraX - 500
 			controlY = PVP.currentCameraInfo.cameraY
@@ -1337,11 +1337,9 @@ function PVP:Init3D()
 	PVP_World3DCameraMeasurementIcon:SetHidden(true)
 
 	CALLBACK_MANAGER:RegisterCallback("On3DWorldOriginChanged", function()
-		-- d('New Origin Callback received!')
-		-- d('New origin callback time: '..tostring(GetFrameTimeMilliseconds()))
+		-- chat:Print('New Origin Callback received!')
+		-- chat:Print('New origin callback time: '..tostring(GetFrameTimeMilliseconds()))
 		if PVP.currentCameraInfo.lastDeltaX and PVP.currentCameraInfo.lastDeltaY then
-			d('ORIGIN CHANGED')
-			d('ORIGIN CHANGED')
 			d('ORIGIN CHANGED')
 			local objects = PVP.controls3DPool:GetActiveObjects()
 			-- local objectsCount = 0
@@ -1584,6 +1582,7 @@ local function OnWorldMapHidden(oldState, newState)
 end
 
 function PVP:Setup3DMeasurements()
+    if false then
 	PVP.currentCameraInfo = nil
 	WORLD_MAP_SCENE:UnregisterCallback("StateChange", OnWorldMapHidden)
 	PVP_World3DCameraMeasurement:SetHandler('OnUpdate', nil)
@@ -1592,6 +1591,7 @@ function PVP:Setup3DMeasurements()
 		Take3DMeasurements()
 		PVP_World3DCameraMeasurement:SetHandler("OnUpdate", function() Take3DMeasurements() end)
 	end
+    end
 end
 
 local function GetCurrent3DCameraInfo()
@@ -2797,7 +2797,7 @@ local function SetupNew3DMarker(keepId, distance, isActivated, isNewObjective)
 		local siegesEP = GetNumSieges(keepId, 1, 2) > 0 and '_EP' or ''
 		local siegesDC = GetNumSieges(keepId, 1, 3) > 0 and '_DC' or ''
 
-		local icon = 'PvpAlerts/textures/pin'..siegesAD..siegesDC..siegesEP..'.dds'
+		local icon = 'PVPalerts/textures/pin'..siegesAD..siegesDC..siegesEP..'.dds'
 		return icon
 	end
 
@@ -3466,7 +3466,6 @@ function PVP_SetMapPingOnMouseOver()
 				PVP.LMP:SetMapPing(MAP_PIN_TYPE_RALLY_POINT, MAP_TYPE_LOCATION_CENTERED, PVP.currentTooltip.params.X, PVP.currentTooltip.params.Y)
 			end
 		else
-d("XXXX PVP_SetMapPingOnMouseOver")
 			if PVP.currentTooltip.params.hasWaypoint or type == 'WAYPOINT' then
 				PVP.LMP:RemoveMapPing(MAP_PIN_TYPE_PLAYER_WAYPOINT)
 			else

@@ -5,9 +5,9 @@ local LAM2 = LibAddonMenu2
 function PVP:InitializeAddonMenu()
 	local panelData = {
 		type = "panel",
-		name = "Miat's Pvp Alerts",
-		displayName = "Miat's Pvp Alerts",
-		author = "Dorrino",
+		name = "PVP Alerts",
+		displayName = "PVP Alerts",
+		author = "Valandil",
 		version = self.textVersion,
 		slashCommand = "/pvpmenu",
 		registerForRefresh = true,
@@ -38,7 +38,7 @@ function PVP:InitializeAddonMenu()
 		end
 	}
 
-	local optionsPanel = LAM2:RegisterAddonPanel("Pvp_Alerts", panelData)
+	local optionsPanel = LAM2:RegisterAddonPanel("PVPalerts", panelData)
 
 	SLASH_COMMANDS["/pvpa"] = SLASH_COMMANDS["/pvpmenu"]
 
@@ -993,5 +993,5 @@ function PVP:InitializeAddonMenu()
 		end,
 	    }
 	}
-	LAM2:RegisterOptionControls("Pvp_Alerts", optionsData)
+	LAM2:RegisterOptionControls("PVPalerts", optionsData)
 end

@@ -597,23 +597,23 @@
 					<Anchor point="CENTER" offsetX="0" />
 					<Dimensions x="90" y="90" />
 				</Texture>
-				<Texture name="$(parent)Flags" textureFile="PvpAlerts/textures/2barsTemplateLargeFilled.dds" level="2" hidden="true" tier="1">
+				<Texture name="$(parent)Flags" textureFile="PVPalerts/textures/2barsTemplateLargeFilled.dds" level="2" hidden="true" tier="1">
 					<Anchor point="CENTER" offsetX="0" />
 					<Dimensions x="100" y="100" />
 				</Texture>
-				<Texture name="$(parent)Apse" textureFile="PvpAlerts/textures/flag1Large_100.dds" level="3" hidden="true" tier="1">
+				<Texture name="$(parent)Apse" textureFile="PVPalerts/textures/flag1Large_100.dds" level="3" hidden="true" tier="1">
 					<Anchor point="CENTER" offsetX="0" />
 					<Dimensions x="100" y="100" />
 				</Texture>
-				<Texture name="$(parent)Nave" textureFile="PvpAlerts/textures/flag2Large_100.dds" level="3" hidden="true" tier="1">
+				<Texture name="$(parent)Nave" textureFile="PVPalerts/textures/flag2Large_100.dds" level="3" hidden="true" tier="1">
 					<Anchor point="CENTER" offsetX="0" />
 					<Dimensions x="100" y="100" />
 				</Texture>
-				<Texture name="$(parent)Other" textureFile="PvpAlerts/textures/flag3Large_100.dds" level="3" hidden="true" tier="1">
+				<Texture name="$(parent)Other" textureFile="PVPalerts/textures/flag3Large_100.dds" level="3" hidden="true" tier="1">
 					<Anchor point="CENTER" offsetX="0" />
 					<Dimensions x="100" y="100" />
 				</Texture>
-				<Texture name="$(parent)Middle" textureFile="PvpAlerts/textures/2barsMiddleLineLarge.dds" level="4" hidden="true" tier="1">
+				<Texture name="$(parent)Middle" textureFile="PVPalerts/textures/2barsMiddleLineLarge.dds" level="4" hidden="true" tier="1">
 					<Anchor point="CENTER" offsetX="0" />
 					<Dimensions x="100" y="100" />
 				</Texture>
@@ -727,11 +727,11 @@
 		<TopLevelControl name="PVP_TX" layer="0" level="0" hidden="true">
 			<Anchor point="CENTER" offsetX="150" />
 			<Controls>
-				<Texture name="$(parent)tx1" textureFile="PvpAlerts/textures/rally.dds" level="1"> -->
+				<Texture name="$(parent)tx1" textureFile="PVPalerts/textures/rally.dds" level="1"> -->
 					<Dimensions x="2048" y="64"/> -->
 					<Anchor point="CENTER" /> -->
 				</Texture> -->
-				<!-- <Texture name="$(parent)tx2" textureFile="PvpAlerts/textures/link64.dds" level="1"> --> -->
+				<!-- <Texture name="$(parent)tx2" textureFile="PVPalerts/textures/link64.dds" level="1"> --> -->
 					<!-- <Dimensions x="128" y="128"/> --> -->
 					<!-- <Anchor point="CENTER" /> --> -->
 				<!-- <</Texture> --> -->
